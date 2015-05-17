@@ -61,6 +61,10 @@ function interface_scripts_styles_method() {
   
 	wp_enqueue_script( 'backtotop', INTERFACE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 	wp_enqueue_script( 'scripts', INTERFACE_JS_URL. '/scripts.js', array('jquery') );
+	
+	wp_enqueue_script( 'parallax', INTERFACE_JS_URL. '/jquery.parallax-1.1.3.js', array('jquery') );
+	
+	wp_enqueue_script( 'atg', INTERFACE_JS_URL. '/atg.js', array('jquery' ) );
 
    wp_enqueue_style( 'google_fonts' );
 

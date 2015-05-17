@@ -89,4 +89,13 @@ function interface_backtotop_html() {
 	echo '<div class="back-to-top"><a href="#branding">'.__( ' ', 'interface' ).'</a></div>';
 }
 
+add_action( 'interface_after_footer', 'atg_landing_image' );
+
+function atg_landing_image() {
+	$output = '<style type="text/css" rel="stylesheet"> .section-landing{ background-image: url(\'';
+	$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : INTERFACE_IMAGES_URL . '/background.jpg';
+	$output .= $imgUrl . '\');}</style>';
+	echo $output;
+}
+
 ?>

@@ -1,14 +1,14 @@
 /*
-Theme Name: ATG
-Theme URI: https://github.com/mzdon/atg
-Author: Marc Zdon
-Author URI: http://marczdon.com
-Description: ATG is a highly modified version of the Interface WordPress theme. Functionality has been added for a masonry grid with filtering capabilities and parallax scrolling. The intent is to create a single page website for Artisan Trade Guild based off designs provided by Kevin Ferko at No.2Pencil. Visit http://www.themehorse.com/themes/interface/ for more information about the original theme.
-Version: 1.0
+Theme Name: Interface
+Theme URI: http://themehorse.com/themes/interface
+Author: Theme Horse
+Author URI: http://themehorse.com
+Description: Interface is a Simple, Clean and Flat Responsive Retina Ready WordPress Theme. It is easily customizable with numerous theme options. Some of the highlighted options are two site layout (Narrow and Wide), 4 layouts for every post/page, 5 Page Templates, 8 widget areas, 6 custom widgets, featured slider to highlight your post/page, 10 social icons, top and bottom info bar to hightlight your contact/email/location and many more. Also has custom background, header, menu, favicon, CSS, webclip icon, and logo. Supports popular plugins like Breadcrumb NavXT, WP-PageNavi and Contact Form 7. It is also translation ready. Available Translation: Russian. Get free support at http://themehorse.com/support-forum/ and View beautiful demo site at http://themehorse.com/preview/interface
+Version: 1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, light, green, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, single-page
-Text Domain: atg
+Tags: white, light, green, two-columns, left-sidebar, right-sidebar, fluid-layout, custom-menu, custom-background, custom-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post
+Text Domain: interface
 
 /* =Reset
 -------------------------------------------------------------- */
@@ -122,6 +122,9 @@ body {
 }
 .wrapper {
 	width: 100%;
+	margin: 0;
+	padding: 0;
+	z-index: 100;
 	background-color: #fff;
 }
 .container {
@@ -616,6 +619,13 @@ a.more-link:hover {
 
 /* =Header
 ----------------------------------------------- */
+
+/* parallax */
+.parallax {
+	background-size: auto;
+	background-attachment: scroll;
+	background-position: 50% 0;
+}
 
 /* Header Info Bar */
 .info-bar {

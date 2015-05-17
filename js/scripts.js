@@ -36,4 +36,19 @@ jQuery( function() {
 				nav.toggleClass( 'toggled-on' );
 			} );
 		} )();
+		
+
+		var $window = jQuery(window),
+		landing = jQuery( '.section-landing' );
+		
+		function sizeLanding() {
+			var windowHeight = $window.height();
+			landing.height( windowHeight );
+		}
+		
+		sizeLanding();
+
+		$window.resize(function () {
+			sizeLanding();
+		});
 } );

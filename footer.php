@@ -7,10 +7,6 @@
  * @since 			Interface 1.0
  */
 ?>
-</div>
-<!-- .container -->
-</div>
-<!-- #main -->
 
 <?php
 		/** 

@@ -56,43 +56,4 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php
-		/** 
-		 * interface_before hook
-		 */
-		do_action( 'interface_before
-			' );
-	?>
 <div class="wrapper">
-<?php
-			/** 
-			 * interface_before_header hook
-			 */
-			do_action( 'interface_before_header' );
-		?>
-<header id="branding" >
-  <?php
-				/** 
-				 * interface_header hook
-				 *
-				 * HOOKED_FUNCTION_NAME PRIORITY
-				 *
-				 * interface_headercontent_details 10
-				 */
-				do_action( 'interface_header' );
-			?>
-</header>
-<?php
-			/** 
-			 * interface_after_header hook
-			 */
-			do_action( 'interface_after_header' );
-		?>
-<?php
-			/** 
-			 * interface_before_main hook
-			 */
-			do_action( 'interface_before_main' );
-		?>
-<div id="main">
-<div class="container clearfix">
