@@ -103,6 +103,10 @@ function interface_load_files() {
 	require_once( INTERFACE_STRUCTURE_DIR . '/sidebar-extensions.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/footer-extensions.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/content-extensions.php' );
+	
+	require_once( INTERFACE_STRUCTURE_DIR . '/landing.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/menu.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/masonry.php' );
 
 	/** Load Widgets and Widgetized Area */
 	require_once( INTERFACE_WIDGETS_DIR . '/interface_widgets.php' );
