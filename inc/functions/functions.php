@@ -46,7 +46,7 @@ function interface_scripts_styles_method() {
 	 * Register JQuery cycle js file for slider.
 	 * Register Jquery fancybox js and css file for fancybox effect.
 	 */
-	wp_register_script( 'jquery_cycle', INTERFACE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
+	wp_enqueue_script( 'jquery_cycle', INTERFACE_JS_URL . '/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
    wp_register_style( 'google_fonts', '//fonts.googleapis.com/css?family=PT+Sans:400,700italic,700,400italic' ); 
 
@@ -61,10 +61,6 @@ function interface_scripts_styles_method() {
   
 	wp_enqueue_script( 'backtotop', INTERFACE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 	wp_enqueue_script( 'scripts', INTERFACE_JS_URL. '/scripts.js', array('jquery') );
-	
-	wp_enqueue_script( 'parallax', INTERFACE_JS_URL. '/jquery.parallax-1.1.3.js', array('jquery') );
-	
-	wp_enqueue_script( 'atg', INTERFACE_JS_URL. '/atg.js', array('jquery' ) );
 
    wp_enqueue_style( 'google_fonts' );
 
@@ -120,13 +116,15 @@ function interface_pass_slider_effect_cycle_parameters() {
     
     global $interface_theme_default;
     $options = $interface_theme_default;
+	
+	wp_register_script( 'interface_slider', INTERFACE_JS_URL . '/interface-slider-setting.js' );
 
     $transition_effect = $options[ 'transition_effect' ];
     $transition_delay = $options[ 'transition_delay' ] * 1000;
     $transition_duration = $options[ 'transition_duration' ] * 1000;
     wp_localize_script( 
         'interface_slider',
-        'interface_slider_value',
+        'atg_slider_value',
         array(
             'transition_effect' => $transition_effect,
             'transition_delay' => $transition_delay,

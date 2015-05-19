@@ -52,9 +52,97 @@ function interface_open_sitegenerator_div() {
 }
 
 	/****************************************************************************************/
+	
+function atg_socialnetworks() {
+	global $interface_theme_setting_value;
+   	$options = $interface_theme_setting_value;
+
+   	$elements = array();
+		$elements = array( 	$options[ 'social_facebook' ], 
+									$options[ 'social_twitter' ],
+									$options[ 'social_googleplus' ],
+									$options[ 'social_pinterest' ],
+									$options[ 'social_youtube' ],
+									$options[ 'social_vimeo' ],
+									$options[ 'social_linkedin' ],
+									$options[ 'social_flickr' ],
+									$options[ 'social_tumblr' ],
+									$options[ 'social_rss' ]
+							 	);	
+
+		$set_flags = 0;		
+		if( !empty( $elements ) ) {
+			foreach( $elements as $option) {
+				if( !empty( $option ) ) {
+					$set_flags = 1;
+				}
+				else {
+					$set_flags = 0;
+				}
+				if( 1 == $set_flags ) {
+					break;
+				}
+			}
+		}
+		
+		$interface_socialnetworks = '';
+	if ( ( 1 != $set_flags ) || ( 1 == $set_flags ) )  {
+				$social_links = array(); 
+				$social_links_name = array();
+				$social_links_name = array( __( 'Facebook', 'interface' ), // __ double underscore gets the value for translation
+											__( 'Twitter', 'interface' ),
+											__( 'Google Plus', 'interface' ),
+											__( 'Pinterest', 'interface' ),
+											__( 'Youtube', 'interface' ),
+											__( 'Vimeo', 'interface' ),
+											__( 'LinkedIn', 'interface' ),
+											__( 'Flickr', 'interface' ),
+											__( 'Tumblr', 'interface' ),
+											__( 'RSS', 'interface' )
+											);
+				$social_links = array( 	'Facebook' 		=> 'social_facebook',
+												'Twitter' 		=> 'social_twitter',
+												'Google-Plus'	=> 'social_googleplus',
+												'Pinterest' 	=> 'social_pinterest',
+												'You-tube'		=> 'social_youtube',
+												'Vimeo'			=> 'social_vimeo',
+												'linkedin'			=> 'social_linkedin',
+												'Flickr'			=> 'social_flickr',
+												'Tumblr'			=> 'social_tumblr',
+												'RSS'				=> 'social_rss'  
+											);
+											
+											
+				
+				
+				$i=0;
+				$a = '';
+				foreach( $social_links as $key => $value ) {
+					if ( !empty( $options[ $value ] ) ) {
+						$a .=
+							'<li class="'.strtolower($key).'"><a href="'.esc_url( $options[ $value ] ).'" title="'.sprintf( esc_attr__( '%1$s on %2$s', 'interface' ), get_bloginfo( 'name' ), $social_links_name[$i] ).'" target="_blank">'.'</a></li>';
+					}
+				$i++;	
+				}
+				
+				if($i > 0)
+				{
+					$interface_socialnetworks .='<div class="social-profiles clearfix">
+					<ul>';
+					$interface_socialnetworks .= $a;
+						
+		
+					$interface_socialnetworks .='
+				</ul>
+				</div><!-- .social-profiles -->';
+				}	
+		
+	}
+	echo $interface_socialnetworks;
+}
 
 
-add_action( 'interface_footer', 'interface_socialnetworks', 25 );
+add_action( 'interface_footer', 'atg_socialnetworks', 25 );
 
 
 
@@ -89,12 +177,22 @@ function interface_backtotop_html() {
 	echo '<div class="back-to-top"><a href="#branding">'.__( ' ', 'interface' ).'</a></div>';
 }
 
-add_action( 'interface_after_footer', 'atg_landing_image' );
+add_action( 'interface_after_footer', 'atg_landing_images' );
 
-function atg_landing_image() {
-	$output = '<style type="text/css" rel="stylesheet"> .section-landing{ background-image: url(\'';
-	$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : INTERFACE_IMAGES_URL . '/background.jpg';
-	$output .= $imgUrl . '\');}</style>';
+function atg_landing_images() {
+	global $interface_theme_setting_value;
+   	$options = $interface_theme_setting_value;
+	$output = '<style type="text/css" rel="stylesheet">';
+	if( !empty( $options[ 'featured_post_slider' ] ) ) {
+		foreach( $options[ 'featured_post_slider' ] as $i => $uri ) {
+			$output .= '.landing-image' . $i . ' { background-image: url(\'' . $uri . '\');} ';
+		}
+	} else {
+		$output .= '.section-landing { background-image: url(\'';
+		$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : INTERFACE_IMAGES_URL . '/background.jpg';
+		$output .= $imgUrl . '\');}';
+	}
+	$output .= '</style>';
 	echo $output;
 }
 

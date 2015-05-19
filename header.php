@@ -29,12 +29,12 @@
 		 */
 			//global $interface_theme_setting_value;
 		 //echo $interface_theme_setting_value['home_slogan1' ]; 
-		do_action( 'interface_title' );
+		//do_action( 'interface_title' );
 
 		/** 
 		 * interface_meta hook
 		 */
-		do_action( 'interface_meta' );
+		//do_action( 'interface_meta' );
 
 		/** 
 		 * interface_links hook
@@ -46,7 +46,9 @@
 		 * interface_webpage_icon 20
 		 *
 		 */
-		do_action( 'interface_links' ); ?>
+		//do_action( 'interface_links' ); 
+		
+		do_action( 'atg_header' ); ?>
 <?php 
 		/** 
 		 * This hook is important for WordPress plugins and other many things

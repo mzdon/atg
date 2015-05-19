@@ -7,9 +7,9 @@
  
 jQuery(window).load(function() {
 							 
-var transition_effect = interface_slider_value.transition_effect;
-var transition_delay = interface_slider_value.transition_delay;
-var transition_duration = interface_slider_value.transition_duration;
+var transition_effect = atg_slider_value.transition_effect;
+var transition_delay = atg_slider_value.transition_delay;
+var transition_duration = atg_slider_value.transition_duration;
 jQuery('.slider-cycle').cycle({ 
    fx:            		transition_effect, 		// name of transition effect (or comma separated names, ex: 'fade,scrollUp,shuffle') 
    pager:  					'#controllers',  			// element, jQuery object, or jQuery selector string for the element to use as pager container 

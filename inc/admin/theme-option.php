@@ -709,10 +709,10 @@ function interface_theme_options_add_theme_page() {
                   <th scope="row"><label class="handle">
                       <?php _e( 'Featured Slider Post/Page #', 'interface' ); ?>
                       <span class="count"><?php echo absint( $i ); ?></span></label></th>
-                  <td><input type="text" name="interface_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>" />
-                    <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_post_slider', $options ) && array_key_exists ( $i, $options[ 'featured_post_slider' ] ) ) echo absint( $options[ 'featured_post_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank">
+                  <td><input type="text" name="interface_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo $options[ 'featured_post_slider' ][ $i ]; ?>" />
+                    <button class="button upload-button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank">
                     <?php _e( 'Click Here To Edit', 'interface' ); ?>
-                    </a></td>
+                    </button></td>
                 </tr>
                 <?php endfor; ?>
               </tbody>
@@ -942,9 +942,10 @@ function interface_theme_options_validate( $options ) { //validate individual op
 		$validated_input_values[ 'featured_post_slider' ] = array();
 	}   
 	if( isset( $input[ 'slider_quantity' ] ) )   
+	//file_put_contents( 'C:\out.txt', "Quantity: " . $input[ 'slider_quantity' ] );
 	for ( $i = 1; $i <= $input [ 'slider_quantity' ]; $i++ ) {
-		if ( intval( $input[ 'featured_post_slider' ][ $i ] ) ) {
-			$validated_input_values[ 'featured_post_slider' ][ $i ] = absint($input[ 'featured_post_slider' ][ $i ] );
+		if ( $input[ 'featured_post_slider' ][ $i ] ) {
+			$validated_input_values[ 'featured_post_slider' ][ $i ] = esc_url_raw( $input[ 'featured_post_slider' ][ $i ] );
 		}
 	}  
 	
