@@ -191,7 +191,7 @@
 
 	/* Responsive Navigation */
 	.menu-toggle {
-		display: block;
+		display: inline-block;
 		background-color: rgba(0, 0, 0, 0);
 		font-size: 0;
 		border: 0 none;
@@ -199,12 +199,11 @@
 		color: #777;
 		width: 30px;
 		height: 21px;
-		float: right;
-		margin-top: 39px;
+		margin: 20px 0;
 		cursor: pointer;
 	}
 	.menu-toggle:before {
-		display: block;
+		display: inline-block;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		font-size: 25px;
@@ -223,29 +222,30 @@
 	.toggled-on .nav-menu {
 		display: block;
 	}
-	#access {
-		float: none;
+	#section-menu {
+		text-align: center;
 	}
-	#access li {
+	#section-menu li {
 		position: inherit;
 		width: 100%;
 		border-top: 1px solid rgba(0, 0, 0, 0.1);
 		margin-left: 0;
+		float: none;
 	}
-	#access a {
+	#section-menu a {
 		float: none;
 		padding: 10px 0;
 		height: inherit;
 	}
 	/* Dropdown */
-	#access ul li ul,
-	#access ul li:hover ul ul,
-	#access ul ul li:hover ul ul,
-	#access ul ul ul li:hover ul ul,
-	#access ul ul ul ul li:hover ul ul {
+	#section-menu ul li ul,
+	#section-menu ul li:hover ul ul,
+	#section-menu ul ul li:hover ul ul,
+	#section-menu ul ul ul li:hover ul ul,
+	#section-menu ul ul ul ul li:hover ul ul {
 		display: block;
 	}
-	#access ul li ul {
+	#section-menu ul li ul {
 		position: inherit;
 		top: 0;
 		width: inherit;
@@ -254,20 +254,20 @@
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
-	#access ul li ul li a,
-	#access ul li.current-menu-item ul li a,
-	#access ul li ul li.current-menu-item a,
-	#access ul li.current_page_ancestor ul li a,
-	#access ul li.current-menu-ancestor ul li a,
-	#access ul li.current_page_item ul li a {
+	#section-menu ul li ul li a,
+	#section-menu ul li.current-menu-item ul li a,
+	#section-menu ul li ul li.current-menu-item a,
+	#section-menu ul li.current_page_ancestor ul li a,
+	#section-menu ul li.current-menu-ancestor ul li a,
+	#section-menu ul li.current_page_item ul li a {
 		padding: 10px 0 10px 15px;
 	}
-	#access ul li ul li a:hover,
-	#access ul li ul li:hover > a,
-	#access ul li.current-menu-item ul li a:hover {
+	#section-menu ul li ul li a:hover,
+	#section-menu ul li ul li:hover > a,
+	#section-menu ul li.current-menu-item ul li a:hover {
 		background-color: inherit;
 	}
-	#access ul li ul li ul {
+	#section-menu ul li ul li ul {
 		left: 0;
 		padding-left: 6px;
 		-webkit-box-shadow: none;

@@ -15,7 +15,7 @@ jQuery( function() {
 
 		// Enable menu toggle for small screens.
 		( function() {
-			var nav = jQuery( '#access' ), button, menu;
+			var nav = jQuery( '#section-menu' ), button, menu;
 			if ( ! nav ) {
 				return;
 			}
