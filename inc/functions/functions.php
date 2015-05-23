@@ -61,6 +61,7 @@ function interface_scripts_styles_method() {
   
 	wp_enqueue_script( 'backtotop', INTERFACE_JS_URL. '/backtotop.js', array( 'jquery' ) );
 	wp_enqueue_script( 'scripts', INTERFACE_JS_URL. '/scripts.js', array('jquery') );
+	wp_enqueue_script( 'jquery-masonry', false, array( 'jquery' ) );
 
    wp_enqueue_style( 'google_fonts' );
 

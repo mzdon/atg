@@ -42,13 +42,39 @@ jQuery( function() {
 		landing = jQuery( '.section-landing' );
 		
 		function sizeLanding() {
+			var cache = sizeLanding.cache = sizeLanding.cache || {};
+			
 			var windowHeight = $window.height();
 			landing.height( windowHeight );
+			
+			if( !cache.cycleAfter ) {
+				var cycle = jQuery('.slider-cycle').data( cycle ),
+					fn;
+				if( cycle && cycle[ 'cycle.opts' ] && cycle[ 'cycle.opts' ].after.length ) {
+					fn = function() {
+						var after = cycle[ 'cycle.opts' ].after;
+						for( var i = 0, len = after.length; i < len; i++ ) {
+							after[ i ].apply( cycle[ 'cycle.opts' ].elements[ cycle[ 'cycle.opts' ].currSlide ] );
+						}
+					}
+					cache.cycleAfter = fn;
+				}
+			}
+			cache.cycleAfter && cache.cycleAfter();
 		}
 		
 		sizeLanding();
 
 		$window.resize(function () {
 			sizeLanding();
+		});
+		
+		// Masonry
+		$container = jQuery( '.masonry' );
+		$container.masonry({
+		  itemSelector: '.masonry-item',
+		  columnWidth: '.grid-size',
+		  gutter: '.gutter-size',
+		  percentPosition: true
 		});
 } );

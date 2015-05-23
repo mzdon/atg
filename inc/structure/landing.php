@@ -26,12 +26,13 @@
 				$interface_featured_sliders .= '<figure class="section-landing landing-image'.$i.'"></figure>';
 				$interface_featured_sliders .= '</div><!-- .slides -->';
 			}
-			$interface_featured_sliders .= '</div><!-- .slider-cycle --><nav id="controllers" class="clearfix"></nav><!-- #controllers --></section><!-- .featured-slider -->';
-			$interface_featured_sliders .= '<div class="container clearfix"><div class="align-center welcome-content" id="welcome-content"><h2 id="headline" class="headline">';
+			$interface_featured_sliders .= '</div><!-- .slider-cycle -->';
+			$interface_featured_sliders .= '<div class="container clearfixS"><div class="aligncenter welcome-content" id="welcome-content"><h2 id="headline" class="headline">';
 			$interface_featured_sliders .= get_bloginfo( 'title' );
-			$interface_featured_sliders .= '</h2><div id="sub-headline" class="sub-headline">';
+			$interface_featured_sliders .= '</h2><div class="sub-headline">';
 			$interface_featured_sliders .= get_bloginfo( 'description' );
 			$interface_featured_sliders .= '</div></div></div>';
+			$interface_featured_sliders .= '<nav id="controllers" class="clearfix"></nav><!-- #controllers --></section><!-- .featured-slider -->';
 			
 			echo $interface_featured_sliders;
 		} else {

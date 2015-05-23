@@ -167,4 +167,11 @@ function interface_core_functionality() {
  * Hooking some functions of functions.php file to this action hook.
  */
 do_action( 'interface_init' );
+
+add_action( 'init', 'atg_init' );
+
+function atg_init() {
+	add_post_type_support( 'post', 'custom-fields' );
+}
+
 ?>
