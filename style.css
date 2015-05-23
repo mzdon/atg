@@ -920,15 +920,13 @@ a.more-link:hover {
 
 /* =Menu
 -------------------------------------------------------------- */
-#access {
-	float: left;
-}
-#access li {
+
+#section-menu li {
 	float: left;
 	position: relative;
 	margin: 0 0 0 20px;
 }
-#access a {
+#section-menu a {
 	color: #777;
 	display: block;
 	float: left;
@@ -937,32 +935,32 @@ a.more-link:hover {
 	padding: 39px 0 0;
 	height: 61px;
 }
-#access a:hover,
-#access ul li.current-menu-item a,
-#access ul li.current_page_ancestor a,
-#access ul li.current-menu-ancestor a,
-#access ul li.current_page_item a,
-#access ul li:hover > a {
+#section-menu a:hover,
+#section-menu ul li.current-menu-item a,
+#section-menu ul li.current_page_ancestor a,
+#section-menu ul li.current-menu-ancestor a,
+#section-menu ul li.current_page_item a,
+#section-menu ul li:hover > a {
 	color: #63C6AE;
 }
 
 /* Dropdown */
-#access ul li ul,
-#access ul li:hover ul ul,
-#access ul ul li:hover ul ul,
-#access ul ul ul li:hover ul ul,
-#access ul ul ul ul li:hover ul ul {
+#section-menu ul li ul,
+#section-menu ul li:hover ul ul,
+#section-menu ul ul li:hover ul ul,
+#section-menu ul ul ul li:hover ul ul,
+#section-menu ul ul ul ul li:hover ul ul {
 	display: none;
 	z-index: 9999;
 }
-#access ul li:hover ul,
-#access ul ul li:hover ul,
-#access ul ul ul li:hover ul,
-#access ul ul ul ul li:hover ul,
-#access ul ul ul ul ul li:hover ul {
+#section-menu ul li:hover ul,
+#section-menu ul ul li:hover ul,
+#section-menu ul ul ul li:hover ul,
+#section-menu ul ul ul ul li:hover ul,
+#section-menu ul ul ul ul ul li:hover ul {
 	display: block;
 }
-#access ul li ul {
+#section-menu ul li ul {
 	position: absolute;
 	background-color: #fff;
 	border-top: 4px solid #63C6AE;
@@ -973,16 +971,16 @@ a.more-link:hover {
 	-moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-#access ul li ul li {
+#section-menu ul li ul li {
 	float: none;
 	margin: 0;
 }
-#access ul li ul li a,
-#access ul li.current-menu-item ul li a,
-#access ul li ul li.current-menu-item a,
-#access ul li.current_page_ancestor ul li a,
-#access ul li.current-menu-ancestor ul li a,
-#access ul li.current_page_item ul li a {
+#section-menu ul li ul li a,
+#section-menu ul li.current-menu-item ul li a,
+#section-menu ul li ul li.current-menu-item a,
+#section-menu ul li.current_page_ancestor ul li a,
+#section-menu ul li.current-menu-ancestor ul li a,
+#section-menu ul li.current_page_item ul li a {
 	float: none;
 	line-height: 20px;
 	font-size: 13px;
@@ -992,13 +990,13 @@ a.more-link:hover {
 	color: #777;
 	text-transform: capitalize;
 }
-#access ul li ul li a:hover,
-#access ul li ul li:hover > a,
-#access ul li.current-menu-item ul li a:hover {
+#section-menu ul li ul li a:hover,
+#section-menu ul li ul li:hover > a,
+#section-menu ul li.current-menu-item ul li a:hover {
 	background-color: #F9F9F9;
 	color: #63C6AE;
 }
-#access ul li ul li ul {
+#section-menu ul li ul li ul {
 	left: 190px;
 	top: 0;
 	border: 0 none;

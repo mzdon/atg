@@ -70,11 +70,48 @@ jQuery( function() {
 		});
 		
 		// Masonry
-		$container = jQuery( '.masonry' );
-		$container.masonry({
+		$masonry = jQuery( '.masonry' );
+		$masonry.masonry({
 		  itemSelector: '.masonry-item',
 		  columnWidth: '.grid-size',
 		  gutter: '.gutter-size',
 		  percentPosition: true
 		});
+		
+		// Filtering
+		var $filters = jQuery( '.category-filter' );
+		for( var i = 0, len = $filters.length; i < len; i++ ) {
+			( function( masonry, filter ) {
+				var fn = function( e ) {
+					e.preventDefault();
+					e.stopPropagation();
+					
+					var cat = this.getAttribute( 'data-category' );
+					// Get masonry item
+					var bricks = jQuery( '.masonry-item' );
+					// Hide everything but the category we selected
+					if( cat !== 'All' ) {
+						for( var i = 0, len = bricks.length; i < len; i++ ) {
+							var brick = jQuery( bricks[ i ] );
+							if( brick.attr( 'class' ).indexOf( cat ) < 0 ) {
+								brick.css( 'display', 'none' );
+							} else {
+								brick.css( 'display', 'block' );
+							}
+						}
+					} else {
+						for( var i = 0, len = bricks.length; i < len; i++ ) {
+							jQuery(bricks[ i ]).css( 'display', 'block' );
+						}
+					}
+					
+					masonry.masonry();
+				}
+				if( filter.addEventListener ) {
+					filter.addEventListener( 'click', fn );
+				} else {
+					filter.attachEvent( 'onclick', fn );
+				}
+			})( $masonry, $filters[ i ] );
+		}
 } );
