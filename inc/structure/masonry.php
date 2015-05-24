@@ -25,12 +25,13 @@ function atg_render_masonry() {
 		if( $height > 1 ) {
 			array_push( $classes, "height-".$height );
 		}
-		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '"><a href="' . wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ] . '" rel="lightbox" class="masonry-item-wrapper" title="' . get_the_title( $id ) . '"><div class="title"><h2>' . get_the_title( $id ) . '</h2></div></a>';
-		$size = array(
+		$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
+		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '"><a href="' . $imgUrl . '" rel="lightbox" class="masonry-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2></div></a>';
+		/*$size = array(
 			500,
 			500
 		);
-		$output .= get_the_post_thumbnail( $id, $size, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );
+		$output .= get_the_post_thumbnail( $id, $size, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );*/
 		
 		$output .= '</article>';
 	}

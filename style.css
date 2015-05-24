@@ -631,6 +631,7 @@ a.more-link:hover {
 .section-landing figure {
 	background-size: cover;
 	background-position: center;
+	background-attachment: fixed;
 	height: 100%;
 }
 
@@ -1649,6 +1650,8 @@ footer.entry-meta a.readmore {
 	height: 100%;
 	text-align: center;
 	line-height: 24px;
+	background-size: cover;
+	background-position: center;
  }
  
 .masonry-item-wrapper .title {

@@ -37,9 +37,13 @@ jQuery( function() {
 			} );
 		} )();
 		
-
+		// Menu smooth scroll
+		jQuery( '.nav-menu' ).localScroll( 800 );
+		
+		//Parallax
 		var $window = jQuery(window),
 		landing = jQuery( '.section-landing' );
+		landing.parallax("50%", 0.5);
 		
 		function sizeLanding() {
 			var cache = sizeLanding.cache = sizeLanding.cache || {};
