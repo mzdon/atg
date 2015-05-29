@@ -100,11 +100,7 @@
 		margin: 0;
 	}
 	
-	.masonry .grid-size {
-		width: 24%;
-	}
-	
-	.masonry-item {
+	.masonry .grid-size, .masonry-item {
 		width: 24%;
 	}
 
@@ -116,12 +112,16 @@
 		width: 74%;
 	}
 
-	.masonry-item.width-4 {
+	.masonry-item.width-4, .masonry-item.width-5 {
 		width: 99%;
 	}
+	
+	.masonry-item.height-2 {
+		height: 450px;
+	}
 
-	.masonry-item.width-5 {
-		width: 99;
+	.masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+		height: 680px;
 	}
 }
 
@@ -224,6 +224,19 @@
 	}
 	#section-menu {
 		text-align: center;
+		position: relative;
+		z-index: 101;
+	}
+	#section-menu nav {
+		display: block;
+		position: absolute;
+		top: 61px;
+		left: 0;
+		width: 100%;
+		background-color: #2e0000;
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+		filter: alpha(opacity=90);
+		opacity: 0.9;
 	}
 	#section-menu li {
 		position: inherit;
@@ -433,33 +446,21 @@
 		text-align: center;
 	}
 	
-	.masonry .grid-size {
-		width: 24%;
-	}
-	
-	.masonry-item {
-	width: 24%;
-	}
-
-	.masonry-item.width-2 {
+	.masonry .grid-size, .masonry-item , .masonry-item.width-2 {
 		width: 49%;
 	}
 
-	.masonry-item.width-3 {
-		width: 74%;
-	}
-
-	.masonry-item.width-4 {
+	.masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5 {
 		width: 99%;
 	}
-
-	.masonry-item.width-5 {
-		width: 99%;
+	
+	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+		height: 450px;
 	}
 }
 
 /* All Mobile landscape size and All Mini Tablet Portrait size smaller than standard 768 and larger than 480 (devices and browsers) */
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (min-width: 326px) and (max-width: 767px) {
 	.container,
 	.narrow-layout .wrapper {
 		width: 460px;
@@ -502,43 +503,21 @@
 		width: 203px;
 	}
 	
-	.masonry .grid-size {
+	.masonry .grid-size, .masonry-item {
 		width: 49%;
 	}
-	
-	.masonry-item {
-	width: 49%;
-	}
 
-	.masonry-item.width-2 {
-		width: 99%;
-	}
-
-	.masonry-item.width-3 {
-		width: 99%;
-	}
-
-	.masonry-item.width-4 {
-		width: 99%;
-	}
-
-	.masonry-item.width-5 {
-		width: 99%;
-	}
-}
-
-@media only screen and (min-width: 480px) and (max-width: 590px) {
-	.masonry .grid-size {
+	.masonry-item.width-2, .masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5 {
 		width: 99%;
 	}
 	
-	.masonry-item {
-	width: 99%;
+	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+		height: 220px;
 	}
 }
 
 /* All Mobile size smaller than standard 320 (devices and browsers) */
-@media only screen and (max-width: 319px) {
+@media only screen and (max-width: 325px) {
 	.container,
 	.narrow-layout .wrapper,
 	.narrow-layout .container {
@@ -550,27 +529,11 @@
 		width: 100%;
 	}
 	
-	.masonry .grid-size {
+	.masonry .grid-size, .masonry-item, .masonry-item.width-2, .masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5  {
 		width: 99%;
 	}
 	
-	.masonry-item {
-	width: 99%;
-	}
-
-	.masonry-item.width-2 {
-		width: 99%;
-	}
-
-	.masonry-item.width-3 {
-		width: 99%;
-	}
-
-	.masonry-item.width-4 {
-		width: 99%;
-	}
-
-	.masonry-item.width-5 {
-		width: 99%;
+	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+		height: 220px;
 	}
 }

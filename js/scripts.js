@@ -40,9 +40,26 @@ jQuery( function() {
 		// Menu smooth scroll
 		jQuery( '.nav-menu' ).localScroll( 800 );
 		
+		var $window = jQuery( window ),
+			navSection = jQuery( '#section-menu' );
+			
+		function checkStickyMenu() {
+			if( !navSection.hasClass( 'sticky' ) && window.scrollY > window.innerHeight ) {
+				navSection.addClass( 'sticky' );
+			} else if( navSection.hasClass( 'sticky' ) && window.scrollY <= window.innerHeight ) {
+				navSection.removeClass( 'sticky' );
+			}
+		};
+		
+		checkStickyMenu();
+			
+		$window.scroll( function() {
+			checkStickyMenu();
+		} );
+		
+		
 		//Parallax
-		var $window = jQuery(window),
-		landing = jQuery( '.section-landing' );
+		var landing = jQuery( '.section-landing' );
 		landing.parallax("50%", 0.5);
 		
 		function sizeLanding() {

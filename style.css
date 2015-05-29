@@ -109,6 +109,41 @@ object {
 
 /* =Global
 ----------------------------------------------- */
+
+/* Colors */
+.c-background-1 {
+	/* dark brown/red */
+	background-color: #2e0000;
+}
+
+.c-background-2 {
+	/* brown/red */
+	background-color: #3e0201;
+}
+
+.c-background-3 {
+	/* darkest brown/red */
+	background-color: #1d0100;
+}
+
+.c-accent-1 {
+	/* bright red/orange */
+	color: #bw1f17;
+}
+
+.c-accent-2 {
+	/* tan */
+	color: #7f5b4f;
+}
+
+.c-white {
+	color: #fff;
+}
+
+.c-black {
+	color: #000;
+}
+
 body,
 input,
 textarea {
@@ -118,14 +153,14 @@ textarea {
 	word-wrap: break-word;
 }
 body {
-	background-color: #ececec;
+	background-color: #2e0000;
 }
 .wrapper {
 	width: 100%;
 	margin: 0;
 	padding: 0;
 	z-index: 100;
-	background-color: #fff;
+	background-color: #2e0000;
 }
 .container {
 	margin: 0 auto;
@@ -921,6 +956,17 @@ a.more-link:hover {
 
 /* =Menu
 -------------------------------------------------------------- */
+#section-menu.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #2e0000;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+	filter: alpha(opacity=90);
+	opacity: 0.9;
+	z-index: 101;
+}
 
 #section-menu li {
 	float: left;
@@ -933,8 +979,8 @@ a.more-link:hover {
 	float: left;
 	font-size: 14px;
 	text-transform: uppercase;
-	padding: 39px 0 0;
-	height: 61px;
+	padding: 23px 0 0;
+	height: 39px;
 }
 #section-menu a:hover,
 #section-menu ul li.current-menu-item a,
@@ -1663,15 +1709,10 @@ footer.entry-meta a.readmore {
 	color: #fff;
 }
 
-.masonry-item img {
-	height: auto;
-	width: 100%;
-}
-
 .masonry-item {
 	width: 19%;
 	height: 220px;
-	margin-bottom: 1%;
+	margin-bottom: 10px;
 	overflow: hidden;
 }
 
@@ -1692,19 +1733,19 @@ footer.entry-meta a.readmore {
 }
 
 .masonry-item.height-2 {
-	height: 440px;
+	height: 450px;
 }
 
 .masonry-item.height-3 {
-	height: 660px;
+	height: 680px;
 }
 
 .masonry-item.height-4 {
-	height: 880px;
+	height: 910px;
 }
 
 .masonry-item.height-5 {
-	height: 1100px;
+	height: 1500px;
 }
 
 /* =Attachments
@@ -2456,7 +2497,6 @@ div.bbp-search-form button {
 #site-generator {
 	padding: 30px 0px;
 	color: #666;
-	background-color: #1a1a1a;
 }
 #site-generator .social-profiles {
 	width: 31.28%;

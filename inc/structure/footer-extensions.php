@@ -185,6 +185,7 @@ function atg_landing_images() {
 	$output = '<style type="text/css" rel="stylesheet">';
 	if( !empty( $options[ 'featured_post_slider' ] ) ) {
 		foreach( $options[ 'featured_post_slider' ] as $i => $uri ) {
+			$uri = preg_replace( '/http:\/\/localhost/', '', $uri );
 			$output .= '.landing-image' . $i . ' { background-image: url(\'' . $uri . '\');} ';
 		}
 	} else {

@@ -174,4 +174,115 @@ function atg_init() {
 	add_post_type_support( 'post', 'custom-fields' );
 }
 
+/**
+ * Adds a box to the main column on the Post and Page edit screens.
+ */
+function masonry_add_meta_box() {
+
+	$screens = array( 'post' );
+
+	foreach ( $screens as $screen ) {
+
+		add_meta_box(
+			'masonry_dimensions',
+			'Masonry Dimensions',
+			'masonry_dimensions_callback',
+			$screen
+		);
+	}
+}
+add_action( 'add_meta_boxes', 'masonry_add_meta_box' );
+
+/**
+ * Prints the box content.
+ * 
+ * @param WP_Post $post The object for the current post/page.
+ */
+function masonry_dimensions_callback( $post ) {
+
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'masonry_dimensions', 'masonry_dimensions_nonce' );
+
+	/*
+	 * Use get_post_meta() to retrieve an existing value
+	 * from the database and use the value for the form.
+	 */
+	$width = get_post_meta( $post->ID, 'masonry_width', true );
+
+	echo '<label for="masonry_width">';
+	echo 'Masonry Item Width in Units';
+	echo '</label> ';
+	echo '<input type="text" id="masonry_width" name="masonry_width" value="' . esc_attr( $width ) . '" size="25" /><br /><br />';
+	
+	$height = get_post_meta( $post->ID, 'masonry_height', true );
+
+	echo '<label for="masonry_height">';
+	echo 'Masonry Item Height in Units';
+	echo '</label> ';
+	echo '<input type="text" id="masonry_height" name="masonry_height" value="' . esc_attr( $height ) . '" size="25" />';
+}
+
+/**
+ * When the post is saved, saves our custom data.
+ *
+ * @param int $post_id The ID of the post being saved.
+ */
+function masonry_dimensions_save_data( $post_id ) {
+
+	/*
+	 * We need to verify this came from our screen and with proper authorization,
+	 * because the save_post action can be triggered at other times.
+	 */
+
+	// Check if our nonce is set.
+	if ( ! isset( $_POST['masonry_dimensions_nonce'] ) ) {
+		return;
+	}
+
+	// Verify that the nonce is valid.
+	if ( ! wp_verify_nonce( $_POST['masonry_dimensions_nonce'], 'masonry_dimensions' ) ) {
+		return;
+	}
+
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Check the user's permissions.
+	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+
+	} else {
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+
+	/* OK, it's safe for us to save the data now. */
+	
+	// Make sure that it is set.
+	if ( ! isset( $_POST[ 'masonry_width' ] ) && ! isset( $_POST[ 'masonry_height' ] ) ) {
+		return;
+	}
+
+	// Sanitize user input.
+	$width_data = ( int ) sanitize_text_field( $_POST['masonry_width'] );
+	if( $width_data > 5 ) {
+		$width_data = 5;
+	}
+	$height_data = ( int ) sanitize_text_field( $_POST['masonry_height'] );
+	if( $height_data > 3 ) {
+		$height_data = 3;
+	}
+	// Update the meta field in the database.
+	update_post_meta( $post_id, 'masonry_width', $width_data );
+	update_post_meta( $post_id, 'masonry_height', $height_data );
+}
+add_action( 'save_post', 'masonry_dimensions_save_data' );
+
 ?>
