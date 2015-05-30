@@ -123,6 +123,10 @@
 	.masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
 		height: 680px;
 	}
+	
+	#section-contact {
+		width: 860px;
+	}
 }
 
 /* All Mobile Portrait size smaller than 768 (devices and browsers) */
@@ -456,6 +460,16 @@
 	
 	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
 		height: 450px;
+	}
+	
+	#section-contact {
+		width: 100%;
+		margin: 0 1%;
+	}
+	
+	.col-half {
+		width: 100%;
+		float: none;
 	}
 }
 

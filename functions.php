@@ -107,6 +107,11 @@ function interface_load_files() {
 	require_once( INTERFACE_STRUCTURE_DIR . '/landing.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/menu.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/masonry.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/testimonial.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/visual-highlight.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/case-study.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/quote.php' );
+	require_once( INTERFACE_STRUCTURE_DIR . '/contact.php' );
 
 	/** Load Widgets and Widgetized Area */
 	require_once( INTERFACE_WIDGETS_DIR . '/interface_widgets.php' );
@@ -172,6 +177,104 @@ add_action( 'init', 'atg_init' );
 
 function atg_init() {
 	add_post_type_support( 'post', 'custom-fields' );
+	
+	$labels = array(
+		'name'               => 'Testimonials',
+		'singular_name'      => 'Testimonial',
+		'menu_name'          => 'Testimonials',
+		'name_admin_bar'     => 'Testimonial',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Testimonial',
+		'new_item'           => 'New Testimonial',
+		'edit_item'          => 'Edit Testimonial',
+		'view_item'          => 'View Testimonial',
+		'all_items'          => 'All Testimonials',
+		'search_items'       => 'Search Testimonials',
+		'parent_item_colon'  => 'Parent Testimonials:',
+		'not_found'          => 'No testimonials found.',
+		'not_found_in_trash' => 'No testimonials found in Trash.'
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'testimonial' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'taxonomies'         => array( 'category' ),
+		'supports'           => array( 'title', 'editor', 'thumbnail' )
+	);
+
+	register_post_type( 'testimonial', $args );
+	
+	$labels = array(
+		'name'               => 'Visual Highlights',
+		'singular_name'      => 'Visual Highlight',
+		'menu_name'          => 'Visual Highlights',
+		'name_admin_bar'     => 'Visual Highlight',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Visual Highlight',
+		'new_item'           => 'New Visual Highlight',
+		'edit_item'          => 'Edit Visual Highlight',
+		'view_item'          => 'View Visual Highlight',
+		'all_items'          => 'All Visual Highlights',
+		'search_items'       => 'Search Visual Highlights',
+		'parent_item_colon'  => 'Parent Visual Highlights:',
+		'not_found'          => 'No visual highlights found.',
+		'not_found_in_trash' => 'No visual highlights found in Trash.'
+	);
+	
+	$args = array_merge( $args, [ 'labels' => $labels ] );
+	
+	register_post_type( 'visual hightlight', $args );
+	
+	$labels = array(
+		'name'               => 'Case Studies',
+		'singular_name'      => 'Case Study',
+		'menu_name'          => 'Case Studies',
+		'name_admin_bar'     => 'Case Study',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Case Study',
+		'new_item'           => 'New Case Study',
+		'edit_item'          => 'Edit Case Study',
+		'view_item'          => 'View Case Study',
+		'all_items'          => 'All Case Studies',
+		'search_items'       => 'Search Case Studies',
+		'parent_item_colon'  => 'Parent Case Studies:',
+		'not_found'          => 'No case studies found.',
+		'not_found_in_trash' => 'No case studies found in Trash.'
+	);
+	
+	$args = array_merge( $args, [ 'labels' => $labels ] );
+	
+	register_post_type( 'case studies', $args );
+	
+	$labels = array(
+		'name'               => 'Quotes',
+		'singular_name'      => 'Quote',
+		'menu_name'          => 'Quotes',
+		'name_admin_bar'     => 'Quote',
+		'add_new'            => 'Add New',
+		'add_new_item'       => 'Add New Quote',
+		'new_item'           => 'New Quote',
+		'edit_item'          => 'Edit Quote',
+		'view_item'          => 'View Quote',
+		'all_items'          => 'All Quotes',
+		'search_items'       => 'Search Quotes',
+		'parent_item_colon'  => 'Parent Quotes:',
+		'not_found'          => 'No quotes found.',
+		'not_found_in_trash' => 'No quotes found in Trash.'
+	);
+	
+	$args = array_merge( $args, [ 'labels' => $labels ] );
+	
+	register_post_type( 'quotes', $args );
 }
 
 /**

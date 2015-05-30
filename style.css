@@ -128,7 +128,7 @@ object {
 
 .c-accent-1 {
 	/* bright red/orange */
-	color: #bw1f17;
+	color: #be1f17;
 }
 
 .c-accent-2 {
@@ -349,6 +349,15 @@ blockquote cite {
 }
 
 /* Forms */
+
+label {
+	color: #fff;
+}
+
+label .required {
+	color: #be1f17;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="search"],
@@ -376,43 +385,32 @@ input[type="url"],
 input[type="date"],
 textarea {
 	padding: 10px;
-	border: 1px solid rgba(0, 0, 0, 0.05);
+	border: 0px solid #be1f17;
+	border-bottom-width: 2px;
 	width: 100%;
 	margin: 0 0 30px;
-	background-color: #f9f9f9;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-}
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="search"]:focus,
-input[type="password"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-textarea:focus {
-	border-color: rgba(0, 0, 0, 0.15);
+	background-color: #2e0000;
+	color: #FFF;
 }
 input[type="reset"],
 input[type="button"],
 input[type="submit"] {
-	border: 0 none;
+	border: 1px solid #7f5b4f;
 	cursor: pointer;
 	margin-bottom: 30px;
-	color: #fff;
+	color: #be1f17;
 	font-size: 14px;
 	font-weight: bold;
 	text-transform: uppercase;
 	display: block;
 	text-align: center;
 	height: 40px;
-	padding: 0px 20px;
+	padding: 0;
 	margin-top: 5px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color: #63c6ae;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	background-color: transparent;
 	-ms-transition: all 0.3s ease-out;
 	-moz-transition: all 0.3s ease-out;
 	-webkit-transition: all 0.3s ease-out;
@@ -422,7 +420,7 @@ input[type="submit"] {
 input[type="reset"]:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover {
-	background-color: #777;
+	background-color: #7f5b4f;
 }
 input.s {
 	height: 22px;
@@ -651,6 +649,25 @@ a.more-link:hover {
 }
 .back-to-top a:before {
 	content: '\f432';
+}
+
+.col-half {
+	float: left;
+	width: 48%;
+	overflow: hidden;
+	margin-left: 2%;
+}
+
+.col-half:first-child {
+	margin-left: 0;
+}
+
+#section-contact p {
+	color: #fff;
+}
+
+#section-contact  input[type="submit"] {
+	width: 99%;
 }
 
 /* =Header
@@ -1746,6 +1763,12 @@ footer.entry-meta a.readmore {
 
 .masonry-item.height-5 {
 	height: 1500px;
+}
+
+/* Contact */
+#section-contact {
+	width: 1020px;
+	margin: 0 auto;
 }
 
 /* =Attachments

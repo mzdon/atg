@@ -129,42 +129,7 @@ function interface_register_settings() {
  */
 function interface_theme_options_add_theme_page() {
 ?>
-<div class="them_option_block clearfix">
-  <div class="theme_option_title">
-    <h2>
-      <?php _e( 'Theme Options by', 'interface' ); ?>
-    </h2>
-  </div>
-  <div class="theme_option_link"><a href="<?php echo esc_url( __( 'http://themehorse.com/', 'interface' ) ); ?>" title="<?php esc_attr_e( 'Theme Horse', 'interface' ); ?>" target="_blank"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL . '/theme-horse.png'; ?>" alt="'<?php _e( 'Theme Horse', 'interface' ); ?>" /></a> </div>
-</div>
-<br/>
-<br/>
-<br/>
-<div class="donate-info"> <strong>
-  <?php _e( 'Want to add bunch of additional features? Upgrade to Pro version!', 'interface' ); ?>
-  </strong><br/>
-   <a href="<?php echo esc_url( 'http://themehorse.com/themes/interface-pro/' ); ?>" title="<?php esc_attr_e( 'Upgrade to Pro', 'interface' ); ?>" target="_blank" class="upgrade">
-    <?php _e( 'Upgrade to Pro', 'interface' ); ?>
-  </a>
-  <a title="<?php esc_attr_e( 'Donate', 'interface' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank" class="donate">
-  <?php _e( 'Donate', 'interface' ); ?>
-  </a> <a title="<?php esc_attr_e( 'Review Interface', 'interface' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/interface' ); ?>" target="_blank" class="review">
-  <?php _e( 'Rate Interface', 'interface' ); ?>
-  </a>
-   <a href="<?php echo esc_url( 'http://themehorse.com/theme-instruction/interface/' ); ?>" title="<?php esc_attr_e( 'Interface Theme Instructions', 'interface' ); ?>" target="_blank" class="instruction">
-    <?php _e( 'Theme Instructions', 'interface' ); ?>
-  </a>
-  <a href="<?php echo esc_url( 'http://themehorse.com/support-forum/' ); ?>" title="<?php esc_attr_e( 'Support Forum', 'interface' ); ?>" target="_blank" class="support">
-    <?php _e( 'Support Forum', 'interface' ); ?>
-  </a>
-  <a href="<?php echo esc_url( 'http://themehorse.com/preview/interface/' ); ?>" title="<?php esc_attr_e( 'Interface Demo', 'interface' ); ?>" target="_blank" class="demo">
-    <?php _e( 'View Demo', 'interface' ); ?>
-  </a>
-  <div id="social-share">
-    <div class="fb-like" data-href="https://www.facebook.com/themehorse" data-send="false" data-layout="button_count" data-width="90" data-show-faces="true"></div>
-    <div class="tw-follow" ><a href="<?php echo esc_url( 'http://twitter.com/Theme_Horse' ); ?>" class="twitter-follow-button" data-button="grey" data-text-color="#FFFFFF" data-link-color="#00AEFF" data-width="150px" data-show-screen-name="true" data-show-count="false"></a></div>
-  </div>
-</div>
+
 <div id="themehorse" class="wrap">
   <form method="post" action="options.php">
     <?php
