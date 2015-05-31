@@ -8,7 +8,7 @@
 		if( !empty( $categories ) ) {
 			$output .= '<li class="category-filter" data-category="All"><a href="">All</a></li>';
 			foreach( $categories as $category ) {
-				$output .= '<li class="category-filter" data-category="' . $category->name . '"><a href="">' . $category->name . '</a></li>';
+				$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="">' . $category->name . '</a></li>';
 			}
 		}
 		

@@ -169,13 +169,13 @@ echo '</div><!-- .container -->
 
 /****************************************************************************************/
 
-add_action( 'interface_footer', 'interface_backtotop_html', 40 );
+/*add_action( 'interface_footer', 'interface_backtotop_html', 40 );*/
 /**
  * Shows the back to top icon to go to top.
  */
-function interface_backtotop_html() {
+/*function interface_backtotop_html() {
 	echo '<div class="back-to-top"><a href="#branding">'.__( ' ', 'interface' ).'</a></div>';
-}
+}*/
 
 add_action( 'interface_after_footer', 'atg_landing_images' );
 

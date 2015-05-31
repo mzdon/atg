@@ -10,6 +10,7 @@ function atg_render_masonry() {
 		the_post();
 		$id = get_the_ID();
 		$meta = get_post_meta($id);
+		$isAbout = false;
 		$width = $meta[ 'masonry_width' ] ? $meta[ 'masonry_width' ][ 0 ] : 1;
 		$height = $meta[ 'masonry_height' ] ? $meta[ 'masonry_height' ][ 0 ] : 1;
 		$classes = array(
@@ -17,7 +18,10 @@ function atg_render_masonry() {
 		);
 		$categories = get_the_category( $id );
 		foreach( $categories as $category ) {
-			array_push( $classes, $category->name );
+			array_push( $classes, $category->slug );
+			if( strtolower( $category->slug ) == 'about-artisan' ) {
+				$isAbout = true;
+			}
 		}
 		if( $width > 1 ) {
 			array_push( $classes, "width-".$width );
@@ -25,8 +29,14 @@ function atg_render_masonry() {
 		if( $height > 1 ) {
 			array_push( $classes, "height-".$height );
 		}
-		$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
-		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '"><a href="' . $imgUrl . '" rel="lightbox" class="masonry-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2></div></a>';
+		
+		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
+		if( !$isAbout ) {
+			$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
+			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="masonry-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2></div></a>';
+		} else {
+			$output .= '<h6>' . get_the_title( $id ) . '</h6><p class="content-font">' . get_the_content() . '</p>';
+		}
 		/*$size = array(
 			500,
 			500
