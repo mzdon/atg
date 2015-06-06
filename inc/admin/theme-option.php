@@ -149,15 +149,15 @@ function interface_theme_options_add_theme_page() {
     <?php endif; ?>
     <div id="interface_tabs">
       <ul id="main-navigation" class="tab-navigation">
-        <li><a href="#responsivelayout">
+        <?php /*<li><a href="#responsivelayout">
           <?php _e( 'Layout Options', 'interface' );?>
-          </a></li>
+          </a></li>*/ ?>
         <li><a href="#designoptions">
           <?php _e( 'Design Options', 'interface' );?>
           </a></li>
-        <li><a href="#advancedoptions">
+        <?php /*<li><a href="#advancedoptions">
           <?php _e( 'Advance Options', 'interface' );?>
-          </a></li>
+          </a></li>*/ ?>
         <li><a href="#featuredpostslider">
           <?php _e( 'Featured Post/Page Slider', 'interface' );?>
           </a></li>
@@ -167,7 +167,7 @@ function interface_theme_options_add_theme_page() {
       </ul>
       <!-- .tab-navigation #main-navigation --> 
       <!-- Option for Design Options -->
-      <div id="responsivelayout">
+      <?php /*<div id="responsivelayout">
         <div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Site Layout', 'interface' ); ?>
@@ -276,10 +276,10 @@ function interface_theme_options_add_theme_page() {
           <!-- .option-content --> 
         </div>
         <!-- .option-container --> 
-      </div>
+      </div>*/ ?>
       <!-- #Responsive Layout -->
       <div id="designoptions">
-        <div class="option-container">
+        <?php /*<div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Custom Header', 'interface' ); ?>
             </a></h3>
@@ -332,7 +332,7 @@ function interface_theme_options_add_theme_page() {
             </p>
           </div>
           <!-- .option-content --> 
-        </div>
+        </div>*/ ?>
         <!-- .option-container -->
         
         <div class="option-container">
@@ -373,7 +373,7 @@ function interface_theme_options_add_theme_page() {
         </div>
         <!-- .option-container -->
         
-        <div class="option-container">
+        <?php /*<div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Web Clip Icon Options', 'interface' ); ?>
             </a></h3>
@@ -463,13 +463,13 @@ function interface_theme_options_add_theme_page() {
             </p>
           </div>
           <!-- .option-content --> 
-        </div>
+        </div>*/ ?>
         <!-- .option-container --> 
         
       </div>
       <!-- #designoptions --> 
       <!-- Options for Theme Options -->
-      <div id="advancedoptions">
+      <?php /*<div id="advancedoptions">
         <div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Home Slogan Options', 'interface' ); ?>
@@ -547,7 +547,7 @@ function interface_theme_options_add_theme_page() {
                       <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>>
                       <?php _e( '--Disabled--', 'interface' ); ?>
                       </option>
-                      <?php /* Get the list of categories */ 
+                      <?php 
                                  	if( empty( $options[ 'front_page_category' ] ) ) {
                                     	$options[ 'front_page_category' ] = array();
                                   	}
@@ -571,7 +571,7 @@ function interface_theme_options_add_theme_page() {
         </div>
         <!-- .option-container --> 
         
-      </div>
+      </div>*/ ?>
       <!-- #advancedoptions --> 
       <!-- Option for Featured Post Slier -->
       <div id="featuredpostslider"> 
@@ -700,7 +700,7 @@ function interface_theme_options_add_theme_page() {
       <!-- #featuredpostslider --> 
       <!-- Option for Design Settings -->
       <div id="sociallink">
-        <div class="option-container">
+        <?php /*<div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Contact Info Bar', 'interface' ); ?>
             </a></h3>
@@ -749,7 +749,7 @@ function interface_theme_options_add_theme_page() {
             </p>
           </div>
           <!-- .option-content --> 
-        </div>
+        </div>*/ ?>
         <!-- .option-container -->
         
         <?php 

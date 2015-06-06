@@ -91,9 +91,9 @@ jQuery( function() {
 		});
 		
 		// Masonry
-		$masonry = jQuery( '.masonry' );
-		$masonry.masonry({
-		  itemSelector: '.masonry-item',
+		$grid = jQuery( '.grid' );
+		$grid.masonry({
+		  itemSelector: '.grid-item',
 		  columnWidth: '.grid-size',
 		  gutter: '.gutter-size',
 		  percentPosition: true
@@ -102,22 +102,23 @@ jQuery( function() {
 		// Filtering
 		var $filters = jQuery( '.category-filter' );
 		for( var i = 0, len = $filters.length; i < len; i++ ) {
-			( function( masonry, filter ) {
+			( function( grid, filter ) {
 				var fn = function( e ) {
 					e.preventDefault();
 					e.stopPropagation();
 					
 					var cat = this.getAttribute( 'data-category' );
+					var re = RegExp( "(?:[^\\w-]|\\s+)" + cat + "(?:[^\\w-]|\\s+)" );
 					// Get masonry item
-					var bricks = jQuery( '.masonry-item' );
+					var bricks = jQuery( '.grid-item' );
 					// Hide everything but the category we selected
 					if( cat !== 'All' ) {
 						for( var i = 0, len = bricks.length; i < len; i++ ) {
 							var brick = jQuery( bricks[ i ] );
-							if( brick.attr( 'class' ).indexOf( cat ) < 0 ) {
-								brick.css( 'display', 'none' );
-							} else {
+							if( re.test( brick.attr( 'class' ) ) ) {
 								brick.css( 'display', 'block' );
+							} else {
+								brick.css( 'display', 'none' );
 							}
 						}
 					} else {
@@ -126,13 +127,13 @@ jQuery( function() {
 						}
 					}
 					
-					masonry.masonry();
+					grid.masonry();
 				}
 				if( filter.addEventListener ) {
 					filter.addEventListener( 'click', fn );
 				} else {
 					filter.attachEvent( 'onclick', fn );
 				}
-			})( $masonry, $filters[ i ] );
+			})( $grid, $filters[ i ] );
 		}
 } );

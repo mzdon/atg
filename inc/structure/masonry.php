@@ -4,23 +4,35 @@ add_action( 'atg_masonry', 'atg_render_masonry' );
 
 function atg_render_masonry() {
 	
-	$output = '<section id="section-masonry"><div class="clearfix masonry full-width"><div class="grid-size"></div><div class="gutter-size"></div>';
+	$output = '<section id="section-grid"><div class="clearfix grid full-width"><div class="grid-size"></div><div class="gutter-size"></div>';
+	
+	$args = array(
+		'meta_key'   => 'display_priority',
+		'orderby'    => 'meta_value_num id',
+		'order'      => 'DESC',
+		'nopaging'   => true
+	);
+	$query = new WP_Query( $args );
 
-	while( have_posts() ) {
-		the_post();
-		$id = get_the_ID();
+	while( $query->have_posts() ) {
+		$query->the_post();
+		$id = $query->post->ID;
 		$meta = get_post_meta($id);
 		$isAbout = false;
+		$uncategorized = false;
 		$width = $meta[ 'masonry_width' ] ? $meta[ 'masonry_width' ][ 0 ] : 1;
 		$height = $meta[ 'masonry_height' ] ? $meta[ 'masonry_height' ][ 0 ] : 1;
 		$classes = array(
-			"masonry-item"
+			"grid-item"
 		);
 		$categories = get_the_category( $id );
 		foreach( $categories as $category ) {
 			array_push( $classes, $category->slug );
-			if( strtolower( $category->slug ) == 'about-artisan' ) {
+			if( $category->slug == 'about-artisan' ) {
 				$isAbout = true;
+			}
+			if( $category->slug == 'uncategorized' ) {
+				$uncategorized = true;
 			}
 		}
 		if( $width > 1 ) {
@@ -30,18 +42,16 @@ function atg_render_masonry() {
 			array_push( $classes, "height-".$height );
 		}
 		
+		$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
+		
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
-		if( !$isAbout ) {
-			$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
-			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="masonry-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2></div></a>';
+		if( $isAbout ) {
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><h6>' . get_the_title( $id ) . '</h6><p>' .get_the_content() . '</div>';
+		} else if( $uncategorized ) {
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
 		} else {
-			$output .= '<h6>' . get_the_title( $id ) . '</h6><p class="content-font">' . get_the_content() . '</p>';
+			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
 		}
-		/*$size = array(
-			500,
-			500
-		);
-		$output .= get_the_post_thumbnail( $id, $size, array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );*/
 		
 		$output .= '</article>';
 	}

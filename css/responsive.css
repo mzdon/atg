@@ -100,27 +100,27 @@
 		margin: 0;
 	}
 	
-	.masonry .grid-size, .masonry-item {
+	.grid .grid-size, .grid-item {
 		width: 24%;
 	}
 
-	.masonry-item.width-2 {
+	.grid-item.width-2 {
 		width: 49%;
 	}
 
-	.masonry-item.width-3 {
+	.grid-item.width-3, .grid-item.about-artisan.width-2  {
 		width: 74%;
 	}
 
-	.masonry-item.width-4, .masonry-item.width-5 {
+	.grid-item.width-4, .grid-item.width-5 {
 		width: 99%;
 	}
 	
-	.masonry-item.height-2 {
+	.grid-item.height-2 {
 		height: 450px;
 	}
 
-	.masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+	.grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 680px;
 	}
 	
@@ -450,15 +450,16 @@
 		text-align: center;
 	}
 	
-	.masonry .grid-size, .masonry-item , .masonry-item.width-2 {
+	.grid .grid-size, .grid-item , .grid-item.width-2 {
 		width: 49%;
 	}
 
-	.masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5 {
+	.grid-item.width-3, .grid-item.width-4, .grid-item.width-5, 
+	.grid-item.about-artisan.width-2  {
 		width: 99%;
 	}
 	
-	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+	.grid-item.height-2, .grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 450px;
 	}
 	
@@ -517,20 +518,34 @@
 		width: 203px;
 	}
 	
-	.masonry .grid-size, .masonry-item {
+	.grid .grid-size, .grid-item {
 		width: 49%;
 	}
 
-	.masonry-item.width-2, .masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5 {
+	.grid-item.width-2, .grid-item.width-3, .grid-item.width-4, .grid-item.width-5 {
 		width: 99%;
 	}
 	
-	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+	.grid-item.height-2, .grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 220px;
 	}
 	
-	.masonry-item.height-2.about-artisan {
-		height: 450px;
+	.grid-item.about-artisan.height-2 {
+		height: 500px;
+	}
+}
+
+@media only screen and (min-width: 326px) and (max-width: 520px) {
+	.grid-item.about-artisan.height-2 {
+		height: 500px;
+	}
+	
+	.grid-item.about-artisan h6 {
+		margin: 10px auto;
+	}
+	
+	.grid-item.about-artisan .grid-item-wrapper {
+		background-image: none !important;
 	}
 }
 
@@ -547,11 +562,23 @@
 		width: 100%;
 	}
 	
-	.masonry .grid-size, .masonry-item, .masonry-item.width-2, .masonry-item.width-3, .masonry-item.width-4, .masonry-item.width-5  {
+	.grid .grid-size, .grid-item, .grid-item.width-2, .grid-item.width-3, .grid-item.width-4, .grid-item.width-5  {
 		width: 99%;
 	}
 	
-	.masonry-item.height-2, .masonry-item.height-3, .masonry-item.height-4, .masonry-item.height-5 {
+	.grid-item.height-2, .grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 220px;
+	}
+	
+	.grid-item.about-artisan.height-2 {
+		height: 660px;
+	}
+	
+	.grid-item.about-artisan h6 {
+		margin: 10px auto;
+	}
+	
+	.grid-item.about-artisan .grid-item-wrapper {
+		background-image: none !important;
 	}
 }

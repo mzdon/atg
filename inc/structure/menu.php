@@ -4,11 +4,17 @@
 	function render_atg_menu() {
 		$output =  '<section id="section-menu"><button class="menu-toggle">Responsive Menu</button><nav><div class="atg-menu"><ul class="nav-menu">';
 		
+		$skip = [
+			'uncategorized',
+			'text'
+		];
 		$categories = get_categories();
 		if( !empty( $categories ) ) {
 			$output .= '<li class="category-filter" data-category="All"><a href="">All</a></li>';
 			foreach( $categories as $category ) {
-				$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="">' . $category->name . '</a></li>';
+				if( !in_array( $category->slug, $skip ) ) {
+					$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="">' . $category->name . '</a></li>';
+				}
 			}
 		}
 		

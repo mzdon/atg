@@ -1,0 +1,17 @@
+05/16/15 - 1 hour - env setup
+05/17/15 - 3 hours - env setup - start working on theme framework
+05/18/15 - 4 hours - theme framework - landing image
+05/20/15 - 3 hours - finish up landing image and start masonry work
+05/23/15 - 2 house - masonry work
+05/23/15 - 3 hours - menu, filtering, parallax landing
+05/28/15 - 1 hours - colors and menu
+05/29/15 - 3 hours - menu post types and start contact
+05/31/15 - 4 hours - contact form and new header animation and comment out shit css
+06/05/15 - 3 hours - implement post priorty, update images
+06/06/15 - 3 hours - porfolio roll over, comment out theme options, started writing docs, fix up landing animations
+
+
+Fonts
+Excelsior
+Helvetica Neue
+Plantin

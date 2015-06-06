@@ -232,7 +232,7 @@ function atg_init() {
 	
 	$args = array_merge( $args, [ 'labels' => $labels ] );
 	
-	register_post_type( 'visual hightlight', $args );
+	register_post_type( 'visual_highlight', $args );
 	
 	$labels = array(
 		'name'               => 'Case Studies',
@@ -253,7 +253,7 @@ function atg_init() {
 	
 	$args = array_merge( $args, [ 'labels' => $labels ] );
 	
-	register_post_type( 'case studies', $args );
+	register_post_type( 'case_studies', $args );
 	
 	$labels = array(
 		'name'               => 'Quotes',
@@ -292,6 +292,14 @@ function masonry_add_meta_box() {
 			'masonry_dimensions_callback',
 			$screen
 		);
+		
+		add_meta_box(
+			'display_priority',
+			'Display Priority',
+			'display_priority_callback',
+			$screen
+		);
+		
 	}
 }
 add_action( 'add_meta_boxes', 'masonry_add_meta_box' );
@@ -311,6 +319,10 @@ function masonry_dimensions_callback( $post ) {
 	 * from the database and use the value for the form.
 	 */
 	$width = get_post_meta( $post->ID, 'masonry_width', true );
+	
+	if( is_null( $width ) || $width <= 0 ) {
+		$width = 1;
+	}
 
 	echo '<label for="masonry_width">';
 	echo 'Masonry Item Width in Units';
@@ -318,6 +330,10 @@ function masonry_dimensions_callback( $post ) {
 	echo '<input type="text" id="masonry_width" name="masonry_width" value="' . esc_attr( $width ) . '" size="25" /><br /><br />';
 	
 	$height = get_post_meta( $post->ID, 'masonry_height', true );
+	
+	if( is_null( $height ) || $height <= 0 ) {
+		$height = 1;
+	}
 
 	echo '<label for="masonry_height">';
 	echo 'Masonry Item Height in Units';
@@ -377,15 +393,101 @@ function masonry_dimensions_save_data( $post_id ) {
 	$width_data = ( int ) sanitize_text_field( $_POST['masonry_width'] );
 	if( $width_data > 5 ) {
 		$width_data = 5;
+	} else if ( $width_data <= 0 || is_null( $width_data ) ) {
+		$width_data = 1;
 	}
 	$height_data = ( int ) sanitize_text_field( $_POST['masonry_height'] );
 	if( $height_data > 3 ) {
 		$height_data = 3;
+	} else if ( $height_data <= 0 || is_null( $height_data )) {
+		$height_data = 1;
 	}
 	// Update the meta field in the database.
 	update_post_meta( $post_id, 'masonry_width', $width_data );
 	update_post_meta( $post_id, 'masonry_height', $height_data );
 }
 add_action( 'save_post', 'masonry_dimensions_save_data' );
+
+/**
+ * Prints the box content.
+ * 
+ * @param WP_Post $post The object for the current post/page.
+ */
+function display_priority_callback( $post ) {
+
+	// Add a nonce field so we can check for it later.
+	wp_nonce_field( 'display_priority', 'display_priority_nonce' );
+
+	/*
+	 * Use get_post_meta() to retrieve an existing value
+	 * from the database and use the value for the form.
+	 */
+	$priority = get_post_meta( $post->ID, 'display_priority', true );
+
+	echo '<label for="display_priority">';
+	echo 'Display Priority';
+	echo '</label> ';
+	echo '<input type="text" id="display_priority" name="display_priority" value="' . esc_attr( $priority ) . '" size="25" />';
+}
+
+/**
+ * When the post is saved, saves our custom data.
+ *
+ * @param int $post_id The ID of the post being saved.
+ */
+function display_priority_save_data( $post_id ) {
+
+	/*
+	 * We need to verify this came from our screen and with proper authorization,
+	 * because the save_post action can be triggered at other times.
+	 */
+
+	// Check if our nonce is set.
+	if ( ! isset( $_POST['display_priority_nonce'] ) ) {
+		return;
+	}
+
+	// Verify that the nonce is valid.
+	if ( ! wp_verify_nonce( $_POST['display_priority_nonce'], 'display_priority' ) ) {
+		return;
+	}
+
+	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
+
+	// Check the user's permissions.
+	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+
+	} else {
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+
+	/* OK, it's safe for us to save the data now. */
+	
+	// Make sure that it is set.
+	if ( ! isset( $_POST[ 'display_priority' ] ) ) {
+		return;
+	}
+
+	// Sanitize user input.
+	$display_priority_data = ( int ) sanitize_text_field( $_POST['display_priority'] );
+	if( $display_priority_data > 100 ) {
+		$display_priority_data = 100;
+	} else if ( $display_priority_data < 0 || is_null( $display_priority_data ) ) {
+		$display_priority_data = 0;
+	}
+	// Update the meta field in the database.
+	update_post_meta( $post_id, 'display_priority', $display_priority_data );
+}
+add_action( 'save_post', 'display_priority_save_data' );
 
 ?>
