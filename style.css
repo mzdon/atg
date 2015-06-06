@@ -1868,6 +1868,46 @@ footer.entry-meta a.readmore {
 	text-overflow: ellipsis;
 }
 
+/* =Visual Highlight Slider
+----------------------------------------------- */
+.highlight-slider, .highlight-image {
+	height: 440px;
+	position: relative;
+}
+
+.highlight-image {
+	background-size: cover;
+	background-position: center;
+}
+
+/* Controllers */
+#highlight-controllers {
+	text-align: center;
+	line-height: 0;
+	position: absolute;
+	width: 100%;
+	bottom: 15px;
+	z-index: 9999;
+}
+#highlight-controllers a {
+	width: 13px;
+	height: 13px;
+	margin: 0 4px;
+	overflow: hidden;
+	display: inline-block;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 2px solid #fff;
+	color: #fff;
+	text-indent: -100px;
+}
+#highlight-controllers a:hover,
+#highlight-controllers a.active {
+	background-color: #fff;
+	color: #fff;
+}
+
 /* =Contact Form
 ----------------------------------------------- */
 

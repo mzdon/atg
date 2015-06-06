@@ -193,6 +193,12 @@ function atg_landing_images() {
 		$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : INTERFACE_IMAGES_URL . '/background.jpg';
 		$output .= $imgUrl . '\');}';
 	}
+	if( !empty( $options[ 'highlight_slider' ] ) ) {
+		foreach( $options[ 'highlight_slider' ] as $i => $uri ) {
+			$uri = preg_replace( '/http:\/\/localhost/', '', $uri );
+			$output .= '.highlight-image' . $i . ' { background-image: url(\'' . $uri . '\');} ';
+		}
+	}
 	$output .= '</style>';
 	echo $output;
 }

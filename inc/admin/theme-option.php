@@ -159,7 +159,7 @@ function interface_theme_options_add_theme_page() {
           <?php _e( 'Advance Options', 'interface' );?>
           </a></li>*/ ?>
         <li><a href="#featuredpostslider">
-          <?php _e( 'Featured Post/Page Slider', 'interface' );?>
+          <?php _e( 'Slider Options', 'interface' );?>
           </a></li>
         <li><a href="#sociallink">
           <?php _e( 'Contact / Social Links', 'interface' );?>
@@ -582,12 +582,12 @@ function interface_theme_options_add_theme_page() {
             </a></h3>
           <div class="option-content inside">
             <table class="form-table">
-              <tr>
+              <?php /*<tr>
                 <th scope="row"><?php _e( 'Disable Slider', 'interface' ); ?></th>
                 <input type='hidden' value='0' name='interface_theme_options[disable_slider]'>
                 <td><input type="checkbox" id="headerlogo" name="interface_theme_options[disable_slider]" value="1" <?php checked( '1', $options['disable_slider'] ); ?> />
                   <?php _e('Check to disable', 'interface'); ?></td>
-              </tr>
+              </tr> 
               <tr>
                 <th scope="row"><label>
                     <?php _e( 'Slider Content', 'interface' ); ?>
@@ -600,7 +600,7 @@ function interface_theme_options_add_theme_page() {
                     <input type="radio" name="interface_theme_options[slider_content]" id="off" <?php checked($options['slider_content'], 'off') ?> value="off"  />
                     <?php _e( 'OFF   <span class="description">(Slider Content will not be displayed)</span>', 'interface' ); ?>
                   </label></td>
-              </tr>
+              </tr>*/ ?>
               <tr>
                 <th scope="row"><?php _e( 'Number of Slides', 'interface' ); ?></th>
                 <td><input type="text" name="interface_theme_options[slider_quantity]" value="<?php echo intval( $options[ 'slider_quantity' ] ); ?>" size="2" /></td>
@@ -658,21 +658,21 @@ function interface_theme_options_add_theme_page() {
         
         <div class="option-container">
           <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Featured Post/Page Slider Options', 'interface' ); ?>
+            <?php _e( 'Landing Slider Options', 'interface' ); ?>
             </a></h3>
           <div class="option-content inside">
             <table class="form-table">
-              <tr>
+              <?php /*<tr>
                 <th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'interface' ); ?></th>
                 <input type='hidden' value='0' name='interface_theme_options[exclude_slider_post]'>
                 <td><input type="checkbox" id="headerlogo" name="interface_theme_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> />
                   <?php _e('Check to exclude', 'interface'); ?></td>
-              </tr>
+              </tr>*/ ?>
               <tbody class="sortable">
                 <?php for ( $i = 1; $i <= $options[ 'slider_quantity' ]; $i++ ): ?>
                 <tr>
                   <th scope="row"><label class="handle">
-                      <?php _e( 'Featured Slider Post/Page #', 'interface' ); ?>
+                      <?php _e( 'Landing Slider #', 'interface' ); ?>
                       <span class="count"><?php echo absint( $i ); ?></span></label></th>
                   <td><input type="text" name="interface_theme_options[featured_post_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_post_slider', $options ) && array_key_exists( $i, $options[ 'featured_post_slider' ] ) ) echo $options[ 'featured_post_slider' ][ $i ]; ?>" />
                     <button class="button upload-button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank">
@@ -683,10 +683,38 @@ function interface_theme_options_add_theme_page() {
               </tbody>
             </table>
             <p>
-              <?php _e( '<strong>Following are the steps on how to use the featured slider.</strong><br />* Create Post, Add featured image to the Post.<br />* Add all the Post ID that you want to use in the featured slider. <br /> &nbsp;(You can now see the Posts\' respective ID in the All Posts\' table in last column.)<br />* Featured Slider will show featured images, Title and excerpt of the respected added post\'s IDs.', 'interface' ); ?>
+              <strong>Select the images you want to include in this slider.  To select an image, upload one, or click 'show' under the media gallery tab and click the 'insert into post' button in the pop up.  The save your changes when you're done.</strong>
             </p>
+            <p class="submit">
+              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
+            </p>
+          </div>
+          <!-- .option-content --> 
+        </div>
+        <!-- .option-container --> 
+		
+		<div class="option-container">
+          <h3 class="option-toggle"><a href="#">
+            <?php _e( 'Visual Highlight Slider Options', 'interface' ); ?>
+            </a></h3>
+          <div class="option-content inside">
+            <table class="form-table">
+              <tbody class="sortable">
+                <?php for ( $i = 1; $i <= $options[ 'slider_quantity' ]; $i++ ): ?>
+                <tr>
+                  <th scope="row"><label class="handle">
+                      <?php _e( 'Highlight Slider #', 'interface' ); ?>
+                      <span class="count"><?php echo absint( $i ); ?></span></label></th>
+                  <td><input type="text" name="interface_theme_options[highlight_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'highlight_slider', $options ) && array_key_exists( $i, $options[ 'highlight_slider' ] ) ) echo $options[ 'highlight_slider' ][ $i ]; ?>" />
+                    <button class="button upload-button" title="<?php esc_attr_e('Click Here To Edit'); ?>" target="_blank">
+                    <?php _e( 'Click Here To Edit', 'interface' ); ?>
+                    </button></td>
+                </tr>
+                <?php endfor; ?>
+              </tbody>
+            </table>
             <p>
-              <?php _e( '<strong>Note:</strong> You can now add Pages ID too. (You can now see the Pages\' respective ID in the All Pages\' table in last column.) .', 'interface' ); ?>
+              <strong>Select the images you want to include in this slider.  To select an image, upload one, or click 'show' under the media gallery tab and click the 'insert into post' button in the pop up.  The save your changes when you're done.</strong>
             </p>
             <p class="submit">
               <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
@@ -827,7 +855,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	$input = array();
 	$input = $options;
 
-	if ( isset( $input[ 'header_logo' ] ) ) {
+	/*if ( isset( $input[ 'header_logo' ] ) ) {
 		$validated_input_values[ 'header_logo' ] = esc_url_raw( $input[ 'header_logo' ] );
 	}
 										//esc_url_raw -> To save at the databaseSSSS
@@ -863,7 +891,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 
 	if( isset( $options[ 'redirect_button_link' ] ) ) {
 		$validated_input_values[ 'redirect_button_link' ] = esc_url_raw( $input[ 'redirect_button_link' ] );
-	}
+	}*/
         
 	if ( isset( $input[ 'favicon' ] ) ) {
 		$validated_input_values[ 'favicon' ] = esc_url_raw( $input[ 'favicon' ] );
@@ -873,7 +901,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 		$validated_input_values[ 'disable_favicon' ] = $input[ 'disable_favicon' ];
 	}
 
-	if ( isset( $input[ 'webpageicon' ] ) ) {
+	/*if ( isset( $input[ 'webpageicon' ] ) ) {
 		$validated_input_values[ 'webpageicon' ] = esc_url_raw( $input[ 'webpageicon' ] );
 	}
 
@@ -894,23 +922,25 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	// Data Validation for Featured Slider
 	if( isset( $input[ 'disable_slider' ] ) ) {
 		$validated_input_values[ 'disable_slider' ] = $input[ 'disable_slider' ];
-	}
+	}*/
 
 	if ( isset( $input[ 'slider_quantity' ] ) ) {
 		$validated_input_values[ 'slider_quantity' ] = absint( $input[ 'slider_quantity' ] ) ? $input [ 'slider_quantity' ] : 4;
 	}
-	if ( isset( $input['exclude_slider_post'] ) ) {
+	/*if ( isset( $input['exclude_slider_post'] ) ) {
 		$validated_input_values[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
 
-	}
+	}*/
 	if ( isset( $input[ 'featured_post_slider' ] ) ) {
 		$validated_input_values[ 'featured_post_slider' ] = array();
 	}   
-	if( isset( $input[ 'slider_quantity' ] ) )   
-	//file_put_contents( 'C:\out.txt', "Quantity: " . $input[ 'slider_quantity' ] );
+	if( isset( $input[ 'slider_quantity' ] ) )
 	for ( $i = 1; $i <= $input [ 'slider_quantity' ]; $i++ ) {
 		if ( $input[ 'featured_post_slider' ][ $i ] ) {
 			$validated_input_values[ 'featured_post_slider' ][ $i ] = esc_url_raw( $input[ 'featured_post_slider' ][ $i ] );
+		}
+		if( $input[ 'highlight_slider' ][ $i ] ) {
+			$validated_input_values[ 'highlight_slider' ][ $i ] = esc_url_raw( $input[ 'highlight_slider' ][ $i ] );
 		}
 	}  
 	
@@ -933,12 +963,12 @@ function interface_theme_options_validate( $options ) { //validate individual op
     
    // data validation for Social Icons
 
-   if ( isset( $input['disable_top'] ) ) {
+   /*if ( isset( $input['disable_top'] ) ) {
 		$validated_input_values[ 'disable_top' ] = $input[ 'disable_top' ];
 	}
 	 if ( isset( $input['disable_bottom'] ) ) {
 		$validated_input_values[ 'disable_bottom' ] = $input[ 'disable_bottom' ];
-	}
+	}*/
    if ( isset( $input[ 'social_phone' ] ) ) {
 		$validated_input_values[ 'social_phone' ] = preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]);
 	}
@@ -985,20 +1015,20 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	}   
 
 	//Custom CSS Style Validation
-	if ( isset( $input['custom_css'] ) ) {
+	/*if ( isset( $input['custom_css'] ) ) {
 		$validated_input_values['custom_css'] = wp_filter_nohtml_kses($input['custom_css']);
 	}
 
 	if( isset( $input[ 'site_design' ] ) ) {
 		$validated_input_values[ 'site_design' ] = $input[ 'site_design' ];
-	}   
+	}  */ 
 	
 	if( isset( $input[ 'slider_content' ] ) ) {
 		$validated_input_values[ 'slider_content' ] = $input[ 'slider_content' ];
 	} 
     
 	// Layout settings verification
-	if( isset( $input[ 'reset_layout' ] ) ) {
+	/*if( isset( $input[ 'reset_layout' ] ) ) {
 		$validated_input_values[ 'reset_layout' ] = $input[ 'reset_layout' ];
 	}
 	if( 0 == $validated_input_values[ 'reset_layout' ] ) {
@@ -1008,7 +1038,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	}
 	else {
 		$validated_input_values['default_layout'] = $interface_default[ 'default_layout' ];
-	}
+	}*/
 
 	
     

@@ -7,7 +7,7 @@
 		$options = $interface_theme_setting_value;
 		
 		if( !empty( $options[ 'featured_post_slider' ] ) ) {
-			$interface_featured_sliders .= '<section id="section-landing" class="section-landing parallax featured-slider"><div class="site-overlay"></div><div class="slider-cycle">';
+			$interface_featured_sliders .= '<section id="section-landing" class="section-landing parallax featured-slider"><div class="slider-cycle">';
 			
 			foreach( $options[ 'featured_post_slider' ] as $i => $url ) {
 				$match = preg_match( "/\/([^\/]*)\.(?:png|jpg)$/", $url, $matches );
