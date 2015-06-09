@@ -20,6 +20,7 @@ function atg_render_masonry() {
 		$meta = get_post_meta($id);
 		$isAbout = false;
 		$uncategorized = false;
+		$text = false;
 		$width = $meta[ 'masonry_width' ] ? $meta[ 'masonry_width' ][ 0 ] : 1;
 		$height = $meta[ 'masonry_height' ] ? $meta[ 'masonry_height' ][ 0 ] : 1;
 		$classes = array(
@@ -33,6 +34,9 @@ function atg_render_masonry() {
 			}
 			if( $category->slug == 'uncategorized' ) {
 				$uncategorized = true;
+			}
+			if( $category->slug == 'text' ) {
+				$text = true;
 			}
 		}
 		if( $width > 1 ) {
@@ -49,8 +53,10 @@ function atg_render_masonry() {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><h6>' . get_the_title( $id ) . '</h6><p>' .get_the_content() . '</div>';
 		} else if( $uncategorized ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
-		} else {
+		} else if( $text ) {
 			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
+		}else {
+			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
 		}
 		
 		$output .= '</article>';

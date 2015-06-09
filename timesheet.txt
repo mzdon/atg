@@ -10,8 +10,38 @@
 06/05/15 - 3 hours - implement post priorty, update images
 06/06/15 - 3 hours - porfolio roll over, comment out theme options, started writing docs, fix up landing animations
 
+		   30 hours so far
+		   
+
+
 
 Fonts
 Excelsior
 Helvetica Neue
 Plantin
+
+
+
+Need to do:
+	Ajax loading screen
+	Contact form responsive update
+	Header banner border
+	Disclaimer
+	Social icons
+	Case study
+	Quote
+	Testimonial
+	
+Need from you:
+	PNGs with transparent background
+		- Print pattern images on testimonial area
+		- Tangerine spade and hammer at the bottom of the case study text
+		- Star images under proud to be a cellar dweller - individual and three
+		- Flower image next to social media icons
+		- Maybe social media icons
+		- Pike head next to quote name
+		- Red ATG icon for top left of banner
+		- Little flower looking things on either side of the banner text if you want theme
+	Content
+		- Visual highlight images without text and let me know what any associated text should be
+		- Any images in the case study, testimonial, or quote

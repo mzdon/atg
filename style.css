@@ -1195,7 +1195,7 @@ a.more-link:hover {
 	text-align: center;
 	width: 92%;
 	padding: 8px;
-	border: 3px solid #7f5b4f;
+	border: 3px solid #eeede2;
 	left: -50%;
 	right: -50%;
 	z-index: 10;
@@ -1772,10 +1772,35 @@ footer.entry-meta a.readmore {
 	background-position: center;
  }
  
+ .grid-item-wrapper .shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: #7f5b4f;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+ }
+ 
+ .grid-item-wrapper:hover .shadow {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+	-ms-transition: all 1s;
+	-moz-transition: all 1s;
+	-o-transition: all 1s;
+	-webkit-transition: all 1s;
+    transition: all 1s;
+ }
+ 
 .grid-item.uncategorized .grid-item-wrapper .title,
 .grid-item-wrapper .title {
 	display: table-cell;
 	vertical-align: middle;
+	text-transform: uppercase;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
 	opacity: 0;
@@ -1929,7 +1954,8 @@ footer.entry-meta a.readmore {
 }
 
 #section-contact  input[type="submit"] {
-	width: 99%;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 .banner {

@@ -214,27 +214,6 @@ function atg_init() {
 	register_post_type( 'testimonial', $args );
 	
 	$labels = array(
-		'name'               => 'Visual Highlights',
-		'singular_name'      => 'Visual Highlight',
-		'menu_name'          => 'Visual Highlights',
-		'name_admin_bar'     => 'Visual Highlight',
-		'add_new'            => 'Add New',
-		'add_new_item'       => 'Add New Visual Highlight',
-		'new_item'           => 'New Visual Highlight',
-		'edit_item'          => 'Edit Visual Highlight',
-		'view_item'          => 'View Visual Highlight',
-		'all_items'          => 'All Visual Highlights',
-		'search_items'       => 'Search Visual Highlights',
-		'parent_item_colon'  => 'Parent Visual Highlights:',
-		'not_found'          => 'No visual highlights found.',
-		'not_found_in_trash' => 'No visual highlights found in Trash.'
-	);
-	
-	$args = array_merge( $args, [ 'labels' => $labels ] );
-	
-	register_post_type( 'visual_highlight', $args );
-	
-	$labels = array(
 		'name'               => 'Case Studies',
 		'singular_name'      => 'Case Study',
 		'menu_name'          => 'Case Studies',

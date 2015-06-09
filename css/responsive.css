@@ -464,13 +464,14 @@
 	}
 	
 	#section-contact {
-		width: 100%;
+		width: 98%;
 		margin: 0 1%;
 	}
 	
 	.col {
 		width: 100%;
 		float: none;
+		margin-left: 0;
 	}
 }
 
