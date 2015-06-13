@@ -45,3 +45,8 @@ Need from you:
 	Content
 		- Visual highlight images without text and let me know what any associated text should be
 		- Any images in the case study, testimonial, or quote
+		
+Concerns:
+	The cutout text effect on the quote
+	The border of the text area in the case study
+	
