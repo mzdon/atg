@@ -688,9 +688,9 @@ a.more-link:hover {
 
 .section-landing figure {
 	background-size: cover;
+	background-repeat: no-repeat;
 	background-position: center;
-	background-attachment: fixed;
-	height: 100%;
+	width: 100%;
 }
 
 .section-landing .container {
@@ -1182,6 +1182,7 @@ a.more-link:hover {
 	color: #fff;
 	text-indent: -100px;
 }
+
 #controllers a:hover,
 #controllers a.active {
 	background-color: #fff;
@@ -1189,20 +1190,22 @@ a.more-link:hover {
 }
 
 #section-landing .slides > div {
-	margin: 0 auto;
+	margin: auto;
 	position: absolute;
-	top: 50%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: table;
+	height: auto;
 	text-align: center;
 	width: 92%;
 	padding: 8px;
 	border: 3px solid #eeede2;
-	left: -50%;
-	right: -50%;
 	z-index: 10;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter: alpha(opacity=0);
-	opacity: 0;
-	
+	opacity: 0;	
 }
 
 #section-landing .slides.active-slide > div {
@@ -1213,7 +1216,7 @@ a.more-link:hover {
 	-moz-transition: all 1s ease 1s;
 	-o-transition: all 1s ease 1s;
 	-webkit-transition: all 1s ease 1s;
-    transition: all 1s ease 1s;
+    	transition: all 1s ease 1s;
 }
 
 #section-landing .caption {

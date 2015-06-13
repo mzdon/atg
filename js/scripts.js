@@ -47,7 +47,7 @@ jQuery( function() {
 		
 		//Parallax
 		var landing = jQuery( '.section-landing' );
-		landing.parallax("50%", 0.5);
+		//landing.parallax("50%", 0.5);
 		
 		function sizeLanding() {
 			var cache = sizeLanding.cache = sizeLanding.cache || {};

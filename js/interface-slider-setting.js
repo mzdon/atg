@@ -15,8 +15,8 @@ jQuery(window).load(function() {
 		activePagerClass: 'active',
 		timeout: transition_delay,
 		speed: transition_duration,
-		pause: 1,
 		width: '100%',
+		height: '100%',
 		containerResize: 0,
 		fit: 1,
 		after: function ()	{
@@ -32,8 +32,6 @@ jQuery(window).load(function() {
 		activePagerClass: 'active',
 		timeout: transition_delay,
 		speed: transition_duration,
-		pause: 1,
-		pauseOnPagerHover: 1,
 		width: '100%',
 		containerResize: 0,
 		fit: 1,

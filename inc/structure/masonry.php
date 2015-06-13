@@ -39,15 +39,28 @@ function atg_render_masonry() {
 				$text = true;
 			}
 		}
+
 		if( $width > 1 ) {
 			array_push( $classes, "width-".$width );
 		}
 		if( $height > 1 ) {
 			array_push( $classes, "height-".$height );
 		}
+
+		if( class_exists('Dynamic_Featured_Image') ) {
+     		global $dynamic_featured_image;
+     		$imgs = $dynamic_featured_image->get_all_featured_images( );
+ 		}
 		
-		$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
-		
+		if( !empty( $imgs ) ) {
+			$imgUrl = $imgs[ 0 ][ full ];
+			if( !is_null( $imgs[ 1 ] ) ) {
+				$fullImgUrl = $imgs[ 1 ][ full ];
+			}
+ 		} else {
+			$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
+		}
+
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
 		if( $isAbout ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><h6>' . get_the_title( $id ) . '</h6><p>' .get_the_content() . '</div>';
@@ -56,9 +69,8 @@ function atg_render_masonry() {
 		} else if( $text ) {
 			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
 		}else {
-			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
+			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
 		}
-		
 		$output .= '</article>';
 	}
 	
