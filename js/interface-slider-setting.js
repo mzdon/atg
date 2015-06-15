@@ -11,7 +11,7 @@ jQuery(window).load(function() {
 	var transition_duration = atg_slider_value.transition_duration;
 	jQuery('.slider-cycle').cycle({ 
 		fx: transition_effect, 
-		pager: '#controllers',
+		//pager: '#controllers',
 		activePagerClass: 'active',
 		timeout: transition_delay,
 		speed: transition_duration,
@@ -28,7 +28,7 @@ jQuery(window).load(function() {
 	});
 	jQuery('.highlight-cycle').cycle({ 
 		fx: transition_effect, 
-		pager: '#highlight-controllers',
+		//pager: '#highlight-controllers',
 		activePagerClass: 'active',
 		timeout: transition_delay,
 		speed: transition_duration,

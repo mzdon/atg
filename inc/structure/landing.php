@@ -39,7 +39,7 @@
 				}
 				$interface_featured_sliders .= '</div><!-- .slides -->';
 			}
-			$interface_featured_sliders .= '</div><!-- .slider-cycle --><nav id="controllers" class="clearfix"></nav><!-- #controllers --></section><!-- .featured-slider -->';
+			$interface_featured_sliders .= '</div><!-- .slider-cycle --><!--<nav id="controllers" class="clearfix"></nav>--><!-- #controllers --></section><!-- .featured-slider -->';
 			
 			echo $interface_featured_sliders;
 		} else {

@@ -39,7 +39,7 @@
 				}*/
 				$highlight_sliders .= '</div><!-- .slides -->';
 			}
-			$highlight_sliders .= '</div><!-- .slider-cycle --><nav id="highlight-controllers" class="clearfix"></nav><!-- #controllers --></section><!-- .featured-slider -->';
+			$highlight_sliders .= '</div><!-- .slider-cycle --><!--<nav id="highlight-controllers" class="clearfix"></nav>--><!-- #controllers --></section><!-- .featured-slider -->';
 			
 			echo $highlight_sliders;
 		}
