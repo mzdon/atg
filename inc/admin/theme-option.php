@@ -161,9 +161,9 @@ function interface_theme_options_add_theme_page() {
         <li><a href="#featuredpostslider">
           <?php _e( 'Slider Options', 'interface' );?>
           </a></li>
-        <li><a href="#sociallink">
+        <?php /*<li><a href="#sociallink">
           <?php _e( 'Contact / Social Links', 'interface' );?>
-          </a></li>
+          </a></li>*/ ?>
       </ul>
       <!-- .tab-navigation #main-navigation --> 
       <!-- Option for Design Options -->
@@ -727,8 +727,8 @@ function interface_theme_options_add_theme_page() {
       </div>
       <!-- #featuredpostslider --> 
       <!-- Option for Design Settings -->
-      <div id="sociallink">
-        <?php /*<div class="option-container">
+      <?php /*<div id="sociallink">
+        <div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Contact Info Bar', 'interface' ); ?>
             </a></h3>
@@ -777,7 +777,7 @@ function interface_theme_options_add_theme_page() {
             </p>
           </div>
           <!-- .option-content --> 
-        </div>*/ ?>
+        </div>
         <!-- .option-container -->
         
         <?php 
@@ -832,7 +832,7 @@ function interface_theme_options_add_theme_page() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */ ?>
       <!-- #sociallink --> 
     </div>
     <!-- #interface_tabs -->
@@ -938,10 +938,14 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	for ( $i = 1; $i <= $input [ 'slider_quantity' ]; $i++ ) {
 		if ( $input[ 'featured_post_slider' ][ $i ] ) {
 			$validated_input_values[ 'featured_post_slider' ][ $i ] = esc_url_raw( $input[ 'featured_post_slider' ][ $i ] );
-		}
+		} else {
+      $validated_input_values[ 'featured_post_slider' ][ $i ] = '';
+    }
 		if( $input[ 'highlight_slider' ][ $i ] ) {
 			$validated_input_values[ 'highlight_slider' ][ $i ] = esc_url_raw( $input[ 'highlight_slider' ][ $i ] );
-		}
+		} else {
+      $validated_input_values[ 'highlight_slider' ][ $i ] = '';
+    }
 	}  
 	
 	
@@ -968,7 +972,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	}
 	 if ( isset( $input['disable_bottom'] ) ) {
 		$validated_input_values[ 'disable_bottom' ] = $input[ 'disable_bottom' ];
-	}*/
+	}
    if ( isset( $input[ 'social_phone' ] ) ) {
 		$validated_input_values[ 'social_phone' ] = preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]);
 	}
@@ -1012,7 +1016,7 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	}  
 	if( isset( $input[ 'social_rss' ] ) ) {
 		$validated_input_values[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
-	}   
+	}*/   
 
 	//Custom CSS Style Validation
 	/*if ( isset( $input['custom_css'] ) ) {

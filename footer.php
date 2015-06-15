@@ -35,7 +35,7 @@
 	   	do_action( 'interface_before_footer' );
 	   ?>
 
-<footer id="colophon" class="clearfix">
+<footer id="section-footer" class="clearfix">
   <?php
 		      /** 
 		       * interface_footer hook		       

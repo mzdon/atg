@@ -2631,7 +2631,45 @@ div.bbp-search-form button {
 
 /* =Footer
 ----------------------------------------------- */
-#colophon form input,
+#section-footer {
+	color: #7f5b4f;
+	text-align: center;
+}
+
+#section-footer .social-wrap {
+	margin: 1.25em 0;
+}
+
+#section-footer .widget-wrap,
+.pre-social,
+.post-social {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#section-footer .widget-wrap .simple-social-icons ul li {
+	margin: 12px 6px !important;
+}
+
+.pre-social, .post-social {
+	text-transform: uppercase;
+}
+
+.pre-social span, .post-social span {
+	display: inline-block;
+	background-image: url( './images/flower_social.png' );
+	height: 1.5em;
+	width: 1.5em;
+	background-size: contain;
+	margin: 0 6px;
+	vertical-align: middle;
+}
+
+.copyright {
+	font-size: 0.75em;
+	line-height: 0.6em;
+}
+/*#colophon form input,
 #colophon form textarea {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
@@ -2700,7 +2738,7 @@ div.bbp-search-form button {
 	margin-bottom: 20px;
 }
 
-/* Footer Info Bar  */
+/* Footer Info Bar  /
 #colophon .info-bar {
 	background-color: #2c2c2c;
 	padding-bottom: 5px;
@@ -2728,7 +2766,7 @@ div.bbp-search-form button {
 	font-weight: normal;
 }
 
-/* Site Generator */
+/* Site Generator /
 #site-generator {
 	padding: 30px 0px;
 	color: #666;
@@ -2752,4 +2790,4 @@ div.bbp-search-form button {
 }
 #site-generator .copyright a:hover {
 	color: #63c6ae;
-}
+}*/

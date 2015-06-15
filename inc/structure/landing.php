@@ -10,6 +10,11 @@
 			$interface_featured_sliders .= '<section id="section-landing" class="section-landing parallax featured-slider"><div class="slider-cycle">';
 			
 			foreach( $options[ 'featured_post_slider' ] as $i => $url ) {
+
+				if( $url == '' ) {
+					continue;
+				}
+
 				$match = preg_match( "/\/([^\/]*)\.(?:png|jpg)$/", $url, $matches );
 				
 				if( $match ) {

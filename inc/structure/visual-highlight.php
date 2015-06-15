@@ -10,6 +10,11 @@
 			$highlight_sliders .= '<section id="section-visual-highlight" class="highlight-slider"><div class="highlight-cycle">';
 			
 			foreach( $options[ 'highlight_slider' ] as $i => $url ) {
+
+				if( $url == '' ) {
+					continue;
+				}
+
 				$match = preg_match( "/\/([^\/]*)\.(?:png|jpg)$/", $url, $matches );
 				
 				if( $match ) {
