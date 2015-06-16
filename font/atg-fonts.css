@@ -1,0 +1,108 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3042495, 2015-06-15T14:26:45-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: ExcelsiorLT by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/excelsior/excelsior/
+ * Copyright: Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted (c) 1987, 1993, 2003 Linotype Library GmbH, www.linotype.com. All rights reserved. This software is the property of Linotype Library GmbH, and 
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: ExcelsiorLT-Italic by Linotype
+ * URL: http://www.myfonts.com/fonts/linotype/excelsior/italic/
+ * Copyright: Part of the digitally encoded machine readable outline data for producing the Typefaces provided is copyrighted (c) 1987, 1993, 2003 Linotype Library GmbH, www.linotype.com. All rights reserved. This software is the property of Linotype Library GmbH, and 
+ * Licensed pageviews: 500,000
+ * 
+ * Webfont: PlantinMT-SemiBold by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/semibold/
+ * Copyright: Typeface &#x00A9; The Monotype Corporation. Data &#x00A9; The Monotype Corporation
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: PlantinMT-BoldCondensed by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/bold-condensed/
+ * Copyright: Typeface &#x00A9; The Monotype Corporation. Data &#x00A9; The Monotype Corporation
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: PlantinMT-SemiBoldItalic by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/semibold-italic/
+ * Copyright: Typeface &#x00A9; The Monotype Corporation. Data &#x00A9; The Monotype Corporation
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: PlantinMT-Light by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/light/
+ * Copyright: Typeface &#x00A9; The Monotype Corporation. Data &#x00A9; The Monotype Corporation
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: PlantinMT-LightItalic by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/light-italic/
+ * Copyright: Typeface &#x00A9; The Monotype Corporation. Data &#x00A9; The Monotype Corporation
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: Plantin-Bold by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/bold/
+ * Copyright: Digitized data copyright The Monotype Corporation 1991-1995. All rights reserved. Plantin&#x00AE; is a trademark of The Monotype Corporation which may be registered in certain jurisdictions.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: Plantin-BoldItalic by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/bold-italic/
+ * Copyright: Digitized data copyright The Monotype Corporation 1991-1995. All rights reserved. Plantin&#x00AE; is a trademark of The Monotype Corporation which may be registered in certain jurisdictions.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: Plantin-Italic by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/italic/
+ * Copyright: Digitized data copyright The Monotype Corporation 1991-1995. All rights reserved. Plantin&#x00AE; is a trademark of The Monotype Corporation which may be registered in certain jurisdictions.
+ * Licensed pageviews: 250,000
+ * 
+ * Webfont: Plantin by Monotype 
+ * URL: http://www.myfonts.com/fonts/mti/plantin/plantin/
+ * Copyright: Digitized data copyright The Monotype Corporation 1991-2001. All rights reserved. Plantin&#x00AE; is a trademark of The Monotype Corporation which may be registered in certain jurisdictions.
+ * Licensed pageviews: 250,000
+ * 
+ * 
+ * License: http://www.myfonts.com/viewlicense?type=web&buildid=3042495
+ * 
+ * © 2015 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/2e6cbf");
+
+  
+@font-face {font-family: 'ExcelsiorLT';src: url('webfonts/2E6CBF_0_0.eot');src: url('webfonts/2E6CBF_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_0_0.woff2') format('woff2'),url('webfonts/2E6CBF_0_0.woff') format('woff'),url('webfonts/2E6CBF_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'ExcelsiorLT-Italic';src: url('webfonts/2E6CBF_1_0.eot');src: url('webfonts/2E6CBF_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_1_0.woff2') format('woff2'),url('webfonts/2E6CBF_1_0.woff') format('woff'),url('webfonts/2E6CBF_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PlantinMT-SemiBold';src: url('webfonts/2E6CBF_2_0.eot');src: url('webfonts/2E6CBF_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_2_0.woff2') format('woff2'),url('webfonts/2E6CBF_2_0.woff') format('woff'),url('webfonts/2E6CBF_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PlantinMT-BoldCondensed';src: url('webfonts/2E6CBF_3_0.eot');src: url('webfonts/2E6CBF_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_3_0.woff2') format('woff2'),url('webfonts/2E6CBF_3_0.woff') format('woff'),url('webfonts/2E6CBF_3_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PlantinMT-SemiBoldItalic';src: url('webfonts/2E6CBF_4_0.eot');src: url('webfonts/2E6CBF_4_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_4_0.woff2') format('woff2'),url('webfonts/2E6CBF_4_0.woff') format('woff'),url('webfonts/2E6CBF_4_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PlantinMT-Light';src: url('webfonts/2E6CBF_5_0.eot');src: url('webfonts/2E6CBF_5_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_5_0.woff2') format('woff2'),url('webfonts/2E6CBF_5_0.woff') format('woff'),url('webfonts/2E6CBF_5_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'PlantinMT-LightItalic';src: url('webfonts/2E6CBF_6_0.eot');src: url('webfonts/2E6CBF_6_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_6_0.woff2') format('woff2'),url('webfonts/2E6CBF_6_0.woff') format('woff'),url('webfonts/2E6CBF_6_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Plantin-Bold';src: url('webfonts/2E6CBF_7_0.eot');src: url('webfonts/2E6CBF_7_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_7_0.woff2') format('woff2'),url('webfonts/2E6CBF_7_0.woff') format('woff'),url('webfonts/2E6CBF_7_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Plantin-BoldItalic';src: url('webfonts/2E6CBF_8_0.eot');src: url('webfonts/2E6CBF_8_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_8_0.woff2') format('woff2'),url('webfonts/2E6CBF_8_0.woff') format('woff'),url('webfonts/2E6CBF_8_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Plantin-Italic';src: url('webfonts/2E6CBF_9_0.eot');src: url('webfonts/2E6CBF_9_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_9_0.woff2') format('woff2'),url('webfonts/2E6CBF_9_0.woff') format('woff'),url('webfonts/2E6CBF_9_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'Plantin';src: url('webfonts/2E6CBF_A_0.eot');src: url('webfonts/2E6CBF_A_0.eot?#iefix') format('embedded-opentype'),url('webfonts/2E6CBF_A_0.woff2') format('woff2'),url('webfonts/2E6CBF_A_0.woff') format('woff'),url('webfonts/2E6CBF_A_0.ttf') format('truetype');}
+ 

@@ -16,30 +16,6 @@
 	.clearfix-half {
 		clear: both;
 	}
-	#site-title a img {
-		max-width: 708px;
-	}
-	.featured-text {
-		bottom: 50px;
-	}
-	.featured-text .featured-title {
-		font-size: 25px;
-		line-height: 32px;
-	}
-	.featured-text .featured-title,
-	.featured-text .featured-content {
-		padding: 8px 15px;
-	}
-	#primary,
-	#secondary {
-		float: none;
-		margin-left: 0;
-		width: 100%;
-	}
-	.no-sidebar-template #content {
-		margin: 0 ;
-		width: 100%;
-	}
 	/* Column */
 	.column {
 		margin-left: -2.99%;
@@ -52,52 +28,6 @@
 	.one-third,
 	.one-fourth {
 		width: 30.43%;
-	}	
-	.widget_service .one-third,
-	.widget_service .one-fourth,
-	.widget_recent_work .one-fourth {
-		width: 47.02%;
-	}
-	.widget_recent_work {
-		margin-bottom: 10px;
-	}
-	.widget_recent_work .one-fourth {
-		padding-bottom: 25px;
-	}
-	.widget_testimonial .column {
-		margin-left: 0;
-	}
-	.widget_testimonial .one-half {
-		margin: 0;
-		padding-bottom: 30px;
-		width: 100%;
-	}
-	.widget_promotional_bar .promotional-text {
-		width: 77.5%;
-	}
-	/* Custom Gallery Page */
-	.custom-gallery #main .column {
-		margin-left: -20px;
-	}
-	.custom-gallery #main .one-half,
-	.custom-gallery #main .one-third,
-	.custom-gallery #main .one-fourth {
-		margin-left: 20px;
-	}
-	.custom-gallery #main .one-half {
-		width: 324px;
-	}
-	.custom-gallery #main .one-third,
-	.custom-gallery #main .one-fourth {
-		width: 209px;
-	}
-	#colophon .widget-area {
-		margin-left: 0;
-	}
-	#colophon .one-third {
-		width: 100%;
-		float: none;
-		margin: 0;
 	}
 	
 	.grid .grid-size, .grid-item {
@@ -153,44 +83,8 @@
 	input.s {
 		margin: 0;
 	}
-	.container,
-	.narrow-layout .wrapper {
-		width: 300px;
-	}
-	.narrow-layout .container {
-		width: 280px;
-	}
-	.comments-title,
-	#respond h3#reply-title {
-		font-size: 26px;
-		line-height: 32px;
-	}
-	#content h1,
-	#content h2,
-	#content h3,
-	#content h4,
-	#content h5,
-	#content h6 {
-		padding-bottom: 10px;
-	}
-	.narrow-layout #colophon {
-		margin-bottom: 10px;
-	}
-	#branding .info-bar {
-		display: none;
-	}
-	#site-logo {
-		margin-bottom: 32px;
-		max-width: 265px;
-	}
-	#site-title a img {
-		max-width: 265px;
-	}
 	.hgroup-right {
 		padding-right: 0;
-	}
-	.search-toggle {
-		display: none;
 	}
 
 	/* Responsive Navigation */
@@ -291,30 +185,6 @@
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
-	.featured-title,
-	.featured-content {
-		display: none;
-	}
-	.slogan-wrap {
-		padding: 15px 0;
-	}
-	.slogan-wrap .slogan {
-		font-size: 17px;
-		line-height: 24px;
-	}
-	.slogan-wrap .slogan span {
-		font-size: 14px;
-		line-height: 21px;
-		padding-top: 3px;
-	}
-	.page-title-wrap {
-		padding: 10px 0;
-	}
-	.breadcrumb {
-		margin-top: 0px;
-		float: none;
-		text-align: left;
-	}
 	#main {
 		padding-top: 50px;
 	}
@@ -324,130 +194,27 @@
 	}
 	.one-half,
 	.one-third,
-	.one-fourth,
-	.widget_service .one-half,
-	.widget_service .one-third,
-	.widget_service .one-fourth,
-	.widget_recent_work .one-fourth {
+	.one-fourth {
 		margin: 0;
 		padding-bottom: 20px;
 		width: 100%;
 	}
-	/* Custom Gallery Page */
-	.custom-gallery #main .column {
-		margin-left: 0;
-	}
-	.custom-gallery #main .one-half,
-	.custom-gallery #main .one-third,
-	.custom-gallery #main .one-fourth {
-		margin: 0;
-		padding-bottom: 10px;
-		width: 280px;
-	}
-	#content .post {
-		padding-bottom: 40px;
-	}
-	#content .sticky {
-		padding: 10px;
-		margin-bottom: 40px;
-	}
-	footer.entry-meta .tag-links {
-		float: none;
-		width: 100%;
-	}
-	#wp_page_numbers,
-	.wp-pagenavi,
-	#content ul.default-wp-page,
-	.pagination {
-		margin-bottom: 40px;
-	}
-	#wp_page_numbers ul li.page_info,
-	.wp-pagenavi .pages {
-		display: none;
-	}
 	.widget {
 		margin-bottom: 40px;
 	}
-	.widget_custom-tagcloud {
-		margin-bottom: 32px;
-	}
-	.widget_article {
-		margin-bottom: 20px;
-	}
-	.widget_service {
-		margin-bottom: 0;
-	}
-	.widget_recent_work,
-	.widget_testimonial {
-		margin-bottom: 10px;
-	}
-	.widget_recent_work .one-fourth {
-		padding-bottom: 15px;
-	}
-	.widget_testimonial .testimonial-image {
+
+	.phone .alignleft,
+	.phone .alignright {
 		float: none;
-		margin: 0 auto 10px;
-	}
-	.widget_testimonial .testimonial-content {
+		display: block;
 		text-align: center;
+		margin-left: 0;
+		margin-right: 0;
 	}
-	.widget_ourclients {
-		margin-bottom: 0;
-	}
-	.widget_ourclients ul li {
-		max-width: 120px;
-	}
-	.widget_promotional_bar {
-		padding: 15px;
-	}
-	.widget_promotional_bar .promotional-text,
-	.widget_promotional_bar .call-to-action {
-		float: none;
-		width: 100%;
-	}
-	.widget_promotional_bar .call-to-action {
-		margin-top: 10px;
-		padding-right: 0;
-		padding-left: 0;
-	}
-	#colophon .widget-area {
-		padding-top: 40px;
-	}
-	#colophon .widget {
-		margin-bottom: 30px;
-	}
-	#colophon .widget_article {
-		margin-bottom: 10px;
-	}
-	#colophon .info-bar .info ul li {
-		font-weight: normal;
-	}
-	#colophon .info-bar .info ul li:before {
-		font-size: 22px;
-		width: 22px;
-		height: 22px;
-		margin-top: 7px;
-		line-height: 23px;
-	}
-	#site-generator {
-		padding: 20px 0;
-	}
-	#site-generator .social-profiles,
-	#site-generator .copyright {
-		float: none;
-		width: 100%;
-	}
-	#site-generator .social-profiles ul {
-		text-align: center;
-		float: none;
-	}
-	#site-generator .social-profiles ul li {
-		display: inline-block;
-		float: none;
-	}
-	#site-generator .copyright {
-		padding-top: 10px;
-		text-align: center;
+
+	.pre-social,
+	.post-social {
+		display: none;
 	}
 	
 	.grid .grid-size, .grid-item , .grid-item.width-2 {
@@ -504,20 +271,6 @@
 		margin: 0 0 0 3.44%;
 		width: 46.56%;
 	}
-	.widget_service .column,
-	.widget_recent_work .column {
-		margin-left: 0;
-	}
-	/* Custom Gallery Page */
-	.custom-gallery #main .column {
-		margin-left: -14px;
-	}
-	.custom-gallery #main .one-half,
-	.custom-gallery #main .one-third,
-	.custom-gallery #main .one-fourth {
-		margin-left: 14px;
-		width: 203px;
-	}
 	
 	.grid .grid-size, .grid-item {
 		width: 49%;
@@ -533,6 +286,18 @@
 	
 	.grid-item.about-artisan.height-2 {
 		height: 500px;
+	}
+
+	#section-quote {
+		height: 220px;
+	}
+
+	#section-quote .quote-text h1 {
+		font-size: 2em;
+	}
+
+	#section-quote .quote-text p {
+		font-size: 0.75em;
 	}
 }
 
@@ -581,5 +346,25 @@
 	
 	.grid-item.about-artisan .grid-item-wrapper {
 		background-image: none !important;
+	}
+
+	.banner p {
+		font-size: 2.5em;
+	}
+
+	.banner p:first-child, .banner p:last-child {
+		font-size: 1.5em;
+	}
+
+	#section-quote {
+		height: 220px;
+	}
+
+	#section-quote .quote-text h1 {
+		font-size: 2em;
+	}
+
+	#section-quote .quote-text p {
+		font-size: 0.75em;
 	}
 }
