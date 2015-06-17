@@ -1,10 +1,16 @@
 <?php
 
-add_action( 'atg_masonry', 'atg_render_masonry' );
+add_action( 'atg_masonry', 'render_atg_masonry' );
 
-function atg_render_masonry() {
+function render_atg_masonry( $postType = false ) {
 	
-	$output = '<section id="section-grid"><div class="clearfix grid full-width"><div class="grid-size"></div><div class="gutter-size"></div>';
+	$sectionId = "section-grid";
+
+	if( $postType == 'case_study' ) {
+		$sectionId = "section-case-study";
+	}
+
+	$output = '<section id="' . $sectionId . '"><div class="clearfix grid full-width"><div class="grid-size"></div><div class="gutter-size"></div>';
 	
 	$args = array(
 		'meta_key'   => 'display_priority',
@@ -12,6 +18,11 @@ function atg_render_masonry() {
 		'order'      => 'DESC',
 		'nopaging'   => true
 	);
+
+	if( $postType != false ) {
+		$args[ 'post_type' ] = $postType;
+	}
+
 	$query = new WP_Query( $args );
 
 	while( $query->have_posts() ) {
@@ -62,14 +73,14 @@ function atg_render_masonry() {
 		}
 
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
-		if( $isAbout ) {
+		if( $isAbout && !$uncategorized ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><h6>' . get_the_title( $id ) . '</h6><p>' .get_the_content() . '</div>';
 		} else if( $uncategorized ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
 		} else if( $text ) {
 			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
 		}else {
-			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
+			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
 		}
 		$output .= '</article>';
 

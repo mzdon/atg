@@ -78,7 +78,7 @@ jQuery( function() {
 		});
 		
 		// Masonry
-		$grid = jQuery( '.grid' );
+		var $grid = jQuery( '#section-grid .grid' );
 		$grid.masonry({
 		  itemSelector: '.grid-item',
 		  columnWidth: '.grid-size',
@@ -97,7 +97,7 @@ jQuery( function() {
 					var cat = this.getAttribute( 'data-category' );
 					var re = RegExp( "(?:[^\\w-]|\\s+)" + cat + "(?:[^\\w-]|\\s+)" );
 					// Get masonry item
-					var bricks = jQuery( '.grid-item' );
+					var bricks = jQuery( '#section-grid .grid-item' );
 					// Hide everything but the category we selected
 					if( cat !== 'All' ) {
 						for( var i = 0, len = bricks.length; i < len; i++ ) {
@@ -123,4 +123,12 @@ jQuery( function() {
 				}
 			})( $grid, $filters[ i ] );
 		}
+
+		var $caseStudy = jQuery( '#section-case-study .grid' );
+		$caseStudy.masonry({
+		  itemSelector: '.grid-item',
+		  columnWidth: '.grid-size',
+		  gutter: '.gutter-size',
+		  percentPosition: true
+		});
 } );

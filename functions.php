@@ -232,28 +232,8 @@ function atg_init() {
 	
 	$args = array_merge( $args, [ 'labels' => $labels ] );
 	
-	register_post_type( 'case_studies', $args );
+	register_post_type( 'case_study', $args );
 	
-	$labels = array(
-		'name'               => 'Quotes',
-		'singular_name'      => 'Quote',
-		'menu_name'          => 'Quotes',
-		'name_admin_bar'     => 'Quote',
-		'add_new'            => 'Add New',
-		'add_new_item'       => 'Add New Quote',
-		'new_item'           => 'New Quote',
-		'edit_item'          => 'Edit Quote',
-		'view_item'          => 'View Quote',
-		'all_items'          => 'All Quotes',
-		'search_items'       => 'Search Quotes',
-		'parent_item_colon'  => 'Parent Quotes:',
-		'not_found'          => 'No quotes found.',
-		'not_found_in_trash' => 'No quotes found in Trash.'
-	);
-	
-	$args = array_merge( $args, [ 'labels' => $labels ] );
-	
-	register_post_type( 'quotes', $args );
 }
 
 /**
@@ -261,7 +241,7 @@ function atg_init() {
  */
 function masonry_add_meta_box() {
 
-	$screens = array( 'post' );
+	$screens = array( 'post', 'case_study' );
 
 	foreach ( $screens as $screen ) {
 
