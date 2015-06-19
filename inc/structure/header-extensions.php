@@ -41,7 +41,6 @@ function atg_add_links() {
 ?>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700' rel='stylesheet' type='text/css'>
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 	<![endif]-->
@@ -115,85 +114,6 @@ function atg_header_setup() {
 	if( function_exists( 'interface_pass_slider_effect_cycle_parameters' ) ) {
 		interface_pass_slider_effect_cycle_parameters();
 	}
-
-if ( ! function_exists( 'atg_home_slogan' ) ) :
-
-/**
- * Display Home Slogan.
- *
- * Function that enable/disable the home slogan1 and home slogan2.
- */
-function atg_home_slogan() {	
-	global $interface_theme_setting_value;
-   $options = $interface_theme_setting_value;
-	
-	$interface_home_slogan = '';
-	if( !empty( $options[ 'home_slogan1' ] ) || !empty( $options[ 'home_slogan2' ] ) ) {
-      
-		if ( "0" == $options[ 'disable_slogan' ] ) {
-			$interface_home_slogan .= '<section class="slogan-wrap"><div class="container"><div class="slogan">';
-			if ( !empty( $options[ 'home_slogan1' ] ) ) {
-				$interface_home_slogan .= esc_html( $options[ 'home_slogan1' ] );
-			}
-			if ( !empty( $options[ 'home_slogan2' ] ) ) {
-				$interface_home_slogan .= '<span>'.esc_html( $options[ 'home_slogan2' ] ).'</span>';
-			}
-			$interface_home_slogan .= '</div><!-- .slogan -->';
-			$interface_home_slogan .= '</div><!-- .container --></section><!-- .slogan-wrap -->';
-		}
-		
-	}	
-	echo $interface_home_slogan;
-}
-endif;
-
-/****************************************************************************************/
-
-if ( ! function_exists( 'atg_breadcrumb' ) ) :
-/**
- * Display breadcrumb on header.
- *
- * If the page is home or front page, slider is displayed.
- * In other pages, breadcrumb will display if breadcrumb NavXT plugin exists.
- */
-function atg_breadcrumb() {
-	if( function_exists( 'bcn_display' ) ) {
-		echo '<div class="breadcrumb">';                
-		bcn_display();               
-		echo '</div> <!-- .breadcrumb -->'; 
-	}   
-}
-endif;
-
-/****************************************************************************************/
-
-if ( ! function_exists( 'atg_header_title' ) ) :
-/**
- * Show the title in header
- *
- * @since Interface 1.0
- */
-function atg_header_title() {
-	if( is_archive() ) {
-		$interface_header_title = single_cat_title( '', FALSE );
-	}
-	elseif( is_404() ) {
-		$interface_header_title = __( 'Page NOT Found', 'interface' );
-	}
-	elseif( is_search() ) {
-		$interface_header_title = __( 'Search Results', 'interface' );
-	}
-	elseif( is_page_template()  ) {
-		$interface_header_title = get_the_title();
-	}
-	else {
-		$interface_header_title = get_the_title();
-	}
-
-	return $interface_header_title;
-
-}
-endif;
 }
 
 ?>

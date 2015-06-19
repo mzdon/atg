@@ -149,192 +149,15 @@ function interface_theme_options_add_theme_page() {
     <?php endif; ?>
     <div id="interface_tabs">
       <ul id="main-navigation" class="tab-navigation">
-        <?php /*<li><a href="#responsivelayout">
-          <?php _e( 'Layout Options', 'interface' );?>
-          </a></li>*/ ?>
         <li><a href="#designoptions">
           <?php _e( 'Design Options', 'interface' );?>
           </a></li>
-        <?php /*<li><a href="#advancedoptions">
-          <?php _e( 'Advance Options', 'interface' );?>
-          </a></li>*/ ?>
         <li><a href="#featuredpostslider">
           <?php _e( 'Slider Options', 'interface' );?>
           </a></li>
-        <?php /*<li><a href="#sociallink">
-          <?php _e( 'Contact / Social Links', 'interface' );?>
-          </a></li>*/ ?>
       </ul>
-      <!-- .tab-navigation #main-navigation --> 
-      <!-- Option for Design Options -->
-      <?php /*<div id="responsivelayout">
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Site Layout', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label>
-                      <?php _e( 'Site Layout', 'interface' ); ?>
-                    </label>
-                    <p><small>
-                      <?php _e( 'This change is reflected in whole website', 'interface' ); ?>
-                      </small></p>
-                  </th>
-                  <td><label title="narrow-layout" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/one-column.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[site_layout]" id="narrow-layout" <?php checked($options['site_layout'], 'narrow-layout') ?> value="narrow-layout"  />
-                      <?php _e( 'Narrow Layout', 'interface' ); ?>
-                    </label>
-                    <label title="wide-layout" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/no-sidebar-fullwidth.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[site_layout]" id="wide-layout" <?php checked($options['site_layout'], 'wide-layout') ?> value="wide-layout"  />
-                      <?php _e( 'Wide Layout', 'interface' ); ?>
-                    </label></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Content Layout', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label>
-                      <?php _e( 'Layouts', 'interface' ); ?>
-                    </label></th>
-                  <td><label title="no-sidebar" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/no-sidebar.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[default_layout]" id="no-sidebar" <?php checked($options['default_layout'], 'no-sidebar') ?> value="no-sidebar"  />
-                      <?php _e( 'No Sidebar', 'interface' ); ?>
-                    </label>
-                    <label title="no-sidebar-full-width" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/no-sidebar-fullwidth.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[default_layout]" id="no-sidebar-full-width" <?php checked($options['default_layout'], 'no-sidebar-full-width') ?> value="no-sidebar-full-width"  />
-                      <?php _e( 'No Sidebar, Full Width', 'interface' ); ?>
-                    </label>
-                    <label title="left-Sidebar" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/left-sidebar.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[default_layout]" id="left-sidebar" <?php checked($options['default_layout'], 'left-sidebar') ?> value="left-sidebar"  />
-                      <?php _e( 'Left Sidebar', 'interface' ); ?>
-                    </label>
-                    <label title="right-sidebar" class="box" style="margin-right: 18px"><img src="<?php echo INTERFACE_ADMIN_IMAGES_URL; ?>/right-sidebar.png" alt="Content-Sidebar" /><br />
-                      <input type="radio" name="interface_theme_options[default_layout]" id="right-sidebar" <?php checked($options['default_layout'], 'right-sidebar') ?> value="right-sidebar"  />
-                      <?php _e( 'Right Sidebar', 'interface' ); ?>
-                    </label></td>
-                </tr>
-                <?php if( "1" == $options[ 'reset_layout' ] ) { $options[ 'reset_layout' ] = "0"; } ?>
-                <tr>
-                  <th scope="row"><label for="reset_layout">
-                      <?php _e( 'Reset Layout', 'interface' ); ?>
-                    </label></th>
-                  <input type='hidden' value='0' name='interface_theme_options[reset_layout]'>
-                  <td><input type="checkbox" id="reset_layout" name="interface_theme_options[reset_layout]" value="1" <?php checked( '1', $options['reset_layout'] ); ?> />
-                    <?php _e('Check to reset', 'interface'); ?></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Responsive Layout', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label>
-                      <?php _e( 'Responsive Layout', 'interface' ); ?>
-                    </label></th>
-                  <td><label title="on" class="box">
-                      <input type="radio" name="interface_theme_options[site_design]" id="on" <?php checked($options['site_design'], 'on') ?> value="on"  />
-                      <?php _e( 'ON <span class="description">(Responsive view will be displayed in small devices )</span>', 'interface' ); ?>
-                    </label>
-                    <label title="off" class="box">
-                      <input type="radio" name="interface_theme_options[site_design]" id="off" <?php checked($options['site_design'], 'off') ?> value="off"  />
-                      <?php _e( 'OFF   <span class="description">(Full site will display as desktop view)</span>', 'interface' ); ?>
-                    </label></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container --> 
-      </div>*/ ?>
       <!-- #Responsive Layout -->
-      <div id="designoptions">
-        <?php /*<div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Custom Header', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label for="header_logo">
-                      <?php _e( 'Header Logo', 'interface' ); ?>
-                    </label></th>
-                  <td><input class="upload" size="65" type="text" id="header_logo" name="interface_theme_options[header_logo]" value="<?php echo esc_url( $options [ 'header_logo' ] ); ?>" />
-                    <input class="upload-button button" name="image-add" type="button" value="<?php esc_attr_e( 'Change Header Logo', 'interface' ); ?>" /></td>
-                </tr>
-                <tr>
-                  <th scope="row"><?php _e( 'Preview', 'interface' ); ?></th>
-                  <td><?php
-										       echo '<img src="'.esc_url( $options[ 'header_logo' ] ).'" alt="'.__( 'Header Logo', 'interface' ).'" />';
-										   ?></td>
-                </tr>
-                <tr>
-                  <th scope="row"><label>
-                      <?php _e( 'Show', 'interface' ); ?>
-                    </label></th>
-                  <td><?php // interface_theme_options[header_show] this is defined in register_setting second parameter?>
-                    <input type="radio" name="interface_theme_options[header_show]" id="header-logo" <?php checked($options['header_show'], 'header-logo') ?> value="header-logo"  />
-                    <?php _e( 'Header Logo Only', 'interface' ); ?>
-                    </br>
-                    <input type="radio" name="interface_theme_options[header_show]" id="header-text" <?php checked($options['header_show'], 'header-text') ?> value="header-text"  />
-                    <?php _e( 'Header Text Only', 'interface' ); ?>
-                    </br>
-                    <input type="radio" name="interface_theme_options[header_show]" id="header-text" <?php checked($options['header_show'], 'disable-both') ?> value="disable-both"  />
-                    <?php _e( 'Disable', 'interface' ); ?>
-                    </br></td>
-                </tr>
-                <tr>
-                  <th> <?php _e( 'Need to replace Header Image?', 'interface' ); ?>
-                  </th>
-                  <td><?php printf( __('<a class="button" href="%s">Click here</a>', 'interface' ), admin_url('themes.php?page=custom-header')); ?></td>
-                </tr>
-                <tr>
-                  <th scope="row"><?php _e( 'Hide Searchform from Header', 'interface' ); ?></th>
-                  <input type='hidden' value='0' name='interface_theme_options[hide_header_searchform]'>
-                  <td><input type="checkbox" id="headerlogo" name="interface_theme_options[hide_header_searchform]" value="1" <?php checked( '1', $options['hide_header_searchform'] ); ?> />
-                    <?php _e('Check to hide', 'interface'); ?></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>*/ ?>
-        <!-- .option-container -->
-        
+      <div id="designoptions">   
         <div class="option-container">
           <h3 class="option-toggle"><a href="#">
             <?php _e( 'Fav Icon Options', 'interface' ); ?>
@@ -372,207 +195,7 @@ function interface_theme_options_add_theme_page() {
           <!-- .option-content --> 
         </div>
         <!-- .option-container -->
-        
-        <?php /*<div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Web Clip Icon Options', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label for="disable_webpageicon">
-                      <?php _e( 'Disable Web Clip Icon', 'interface' ); ?>
-                    </label></th>
-                  <input type='hidden' value='0' name='interface_theme_options[disable_webpageicon]'>
-                  <td><input type="checkbox" id="disable_webpageicon" name="interface_theme_options[disable_webpageicon]" value="1" <?php checked( '1', $options['disable_webpageicon'] ); ?> />
-                    <?php _e('Check to disable', 'interface'); ?></td>
-                </tr>
-                <tr>
-                  <th scope="row"><label for="webpageicon_icon_url">
-                      <?php _e( 'Web Clip Icon URL', 'interface' ); ?>
-                    </label></th>
-                  <td><input class="upload" size="65" type="text" id="webpageicon_icon_url" name="interface_theme_options[webpageicon]" value="<?php echo esc_url( $options [ 'webpageicon' ] ); ?>" />
-                    <input class="upload-button button" name="image-add" type="button" value="<?php esc_attr_e( 'Change Web Clip Icon', 'interface' ); ?>" /></td>
-                </tr>
-                <tr>
-                  <th scope="row"><?php _e( 'Preview', 'interface' ); ?></th>
-                  <td><?php
-										       echo '<img src="'.esc_url( $options[ 'webpageicon' ] ).'" alt="'.__( 'webpage icon', 'interface' ).'" />';
-										   ?></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Custom Background', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th> <?php _e( 'Need to replace default background?', 'interface' ); ?>
-                  </th>
-                  <td style="padding-bottom: 64px;"><?php printf(__('<a class="button" href="%s">Click here</a>', 'interface'), admin_url('themes.php?page=custom-background')); ?></td>
-                  <td style="padding-bottom: 20px;"><p><small>
-                      <?php _e( 'Note: The custom background change will be reflected in the background if the site layout is set to be narrow layout instead of the wide layout.', 'interface' ); ?>
-                      </small></p></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Custom CSS', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"><label for="custom-css">
-                      <?php _e( 'Enter your custom CSS styles.', 'interface' ); ?>
-                    </label>
-                    <p><small>
-                      <?php _e( 'This CSS will overwrite the CSS of style.css file.', 'interface' ); ?>
-                      </small></p>
-                  </th>
-                  <td><textarea name="interface_theme_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea></td>
-                </tr>
-                <tr>
-                  <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'interface' ); ?></th>
-                  <td><a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','interface' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'interface' ); ?>" target="_blank">
-                    <?php _e( 'Click Here to Read', 'interface' );?>
-                    </a></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>*/ ?>
-        <!-- .option-container --> 
-        
       </div>
-      <!-- #designoptions --> 
-      <!-- Options for Theme Options -->
-      <?php /*<div id="advancedoptions">
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Home Slogan Options', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"> <label for="slogan">
-                      <?php _e( 'Disable Slogan Part', 'interface' ); ?>
-                    </label>
-                  </th>
-                  <input type='hidden' value='0' name='interface_theme_options[disable_slogan]'>
-                  <td><input type="checkbox" id="slogan" name="interface_theme_options[disable_slogan]" value="1" <?php checked( '1', $options['disable_slogan'] ); ?> />
-                    <?php _e('Check to disable', 'interface'); ?></td>
-                </tr>
-                <tr>
-                  <th scope="row"><label>
-                      <?php _e( 'Slogan Position', 'interface' ); ?>
-                    </label></th>
-                  <td><label title="above-slider" class="box">
-                      <input type="radio" name="interface_theme_options[slogan_position]" id="above-slider" <?php checked($options['slogan_position'], 'above-slider') ?> value="above-slider"  />
-                      <?php _e( 'Above Slider', 'interface' ); ?>
-                    </label>
-                    <label title="below-slider" class="box">
-                      <input type="radio" name="interface_theme_options[slogan_position]" id="below-slider" <?php checked($options['slogan_position'], 'below-slider') ?> value="below-slider"  />
-                      <?php _e( 'Below Slider', 'interface' ); ?>
-                    </label></td>
-                </tr>
-                <tr>
-                  <th scope="row"><label for="slogan_1">
-                      <?php _e( 'Home Page Primary Slogan', 'interface' ); ?>
-                    </label>
-                    <p><small>
-                      <?php _e( 'The appropriate length of the slogan is around 10 words.', 'interface' ); ?>
-                      </small></p>
-                  </th>
-                  <td><textarea class="textarea input-bg" id="slogan_1" name="interface_theme_options[home_slogan1]" cols="60" rows="3"><?php echo esc_textarea( $options[ 'home_slogan1' ] ); ?></textarea></td>
-                </tr>
-                <tr>
-                  <th scope="row"><label for="slogan_2">
-                      <?php _e( 'Home Page Secondary Slogan', 'interface' ); ?>
-                    </label>
-                    <p><small>
-                      <?php _e( 'The appropriate length of the slogan is around 10 words.', 'interface' ); ?>
-                      </small></p>
-                  </th>
-                  <td><textarea class="textarea input-bg" id="slogan_2" name="interface_theme_options[home_slogan2]" cols="60" rows="3"><?php echo esc_textarea( $options[ 'home_slogan2' ] ); ?></textarea></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Homepage Blog Category Setting', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <tr>
-                  <th scope="row"> <label for="frontpage_posts_cats">
-                      <?php _e( 'Front page posts categories:', 'interface' ); ?>
-                    </label>
-                    <p> <small>
-                      <?php _e( 'Only posts that belong to the categories selected here will be displayed on the front page.', 'interface' ); ?>
-                      </small> </p>
-                  </th>
-                  <td><select name="interface_theme_options[front_page_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
-                      <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { selected( true, true ); } ?>>
-                      <?php _e( '--Disabled--', 'interface' ); ?>
-                      </option>
-                      <?php 
-                                 	if( empty( $options[ 'front_page_category' ] ) ) {
-                                    	$options[ 'front_page_category' ] = array();
-                                  	}
-                                  	$categories = get_categories();
-                                  	foreach ( $categories as $category) :?>
-                      <option value="<?php echo $category->cat_ID; ?>" <?php if ( in_array( $category->cat_ID, $options['front_page_category'] ) ) {echo 'selected="selected"';}?>><?php echo $category->cat_name; ?></option>
-                      <?php endforeach; ?>
-                    </select>
-                    <br />
-                    <span class="description">
-                    <?php _e( 'You may select multiple categories by holding down the CTRL key.', 'interface' ); ?>
-                    </span></td>
-                </tr>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container --> 
-        
-      </div>*/ ?>
-      <!-- #advancedoptions --> 
       <!-- Option for Featured Post Slier -->
       <div id="featuredpostslider"> 
         <!-- Option for More Slider Options -->
@@ -582,25 +205,6 @@ function interface_theme_options_add_theme_page() {
             </a></h3>
           <div class="option-content inside">
             <table class="form-table">
-              <?php /*<tr>
-                <th scope="row"><?php _e( 'Disable Slider', 'interface' ); ?></th>
-                <input type='hidden' value='0' name='interface_theme_options[disable_slider]'>
-                <td><input type="checkbox" id="headerlogo" name="interface_theme_options[disable_slider]" value="1" <?php checked( '1', $options['disable_slider'] ); ?> />
-                  <?php _e('Check to disable', 'interface'); ?></td>
-              </tr> 
-              <tr>
-                <th scope="row"><label>
-                    <?php _e( 'Slider Content', 'interface' ); ?>
-                  </label></th>
-                <td><label title="on" class="box">
-                    <input type="radio" name="interface_theme_options[slider_content]" id="on" <?php checked($options['slider_content'], 'on') ?> value="on"  />
-                    <?php _e( 'ON <span class="description">(Slider Content will be displayed)</span>', 'interface' ); ?>
-                  </label>
-                  <label title="off" class="box">
-                    <input type="radio" name="interface_theme_options[slider_content]" id="off" <?php checked($options['slider_content'], 'off') ?> value="off"  />
-                    <?php _e( 'OFF   <span class="description">(Slider Content will not be displayed)</span>', 'interface' ); ?>
-                  </label></td>
-              </tr>*/ ?>
               <tr>
                 <th scope="row"><?php _e( 'Number of Slides', 'interface' ); ?></th>
                 <td><input type="text" name="interface_theme_options[slider_quantity]" value="<?php echo intval( $options[ 'slider_quantity' ] ); ?>" size="2" /></td>
@@ -662,12 +266,6 @@ function interface_theme_options_add_theme_page() {
             </a></h3>
           <div class="option-content inside">
             <table class="form-table">
-              <?php /*<tr>
-                <th scope="row"><?php _e( 'Exclude Slider post from Homepage posts?', 'interface' ); ?></th>
-                <input type='hidden' value='0' name='interface_theme_options[exclude_slider_post]'>
-                <td><input type="checkbox" id="headerlogo" name="interface_theme_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> />
-                  <?php _e('Check to exclude', 'interface'); ?></td>
-              </tr>*/ ?>
               <tbody class="sortable">
                 <?php for ( $i = 1; $i <= $options[ 'slider_quantity' ]; $i++ ): ?>
                 <tr>
@@ -723,117 +321,7 @@ function interface_theme_options_add_theme_page() {
           <!-- .option-content --> 
         </div>
         <!-- .option-container --> 
-        
       </div>
-      <!-- #featuredpostslider --> 
-      <!-- Option for Design Settings -->
-      <?php /*<div id="sociallink">
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Contact Info Bar', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tr>
-                <th scope="row" style="padding: 0px;"><h4>
-                    <?php _e( 'Disable Top Info Bar', 'interface' ); ?>
-                  </h4></th>
-                <input type='hidden' value='0' name='interface_theme_options[disable_top]'>
-                <td><input type="checkbox" id="disable_top" name="interface_theme_options[disable_top]" value="1" <?php checked( '1', $options['disable_top'] ); ?> />
-                  <?php _e('Check to disable', 'interface'); ?></td>
-              </tr>
-              <tr>
-                <th scope="row" style="padding: 0px;"><h4>
-                    <?php _e( 'Disable Bottom Info Bar', 'interface' ); ?>
-                  </h4></th>
-                <input type='hidden' value='0' name='interface_theme_options[disable_bottom]'>
-                <td><input type="checkbox" id="disable_bottom" name="interface_theme_options[disable_bottom]" value="1" <?php checked( '1', $options['disable_bottom'] ); ?> />
-                  <?php _e('Check to disable', 'interface'); ?></td>
-              </tr>
-              <tr>
-                <th scope="row" style="padding: 0px;"><h4>
-                    <?php _e( 'Phone Number', 'interface' ); ?>
-                  </h4></th>
-                <td><input type="text" size="45" name="interface_theme_options[social_phone]" value="<?php echo  preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]) ; ?>" />
-                  <?php _e('Enter your Phone number only', 'interface'); ?></td>
-              </tr>
-              <tr>
-                <th scope="row" style="padding: 0px;"><h4>
-                    <?php _e( 'Email ID Only', 'interface' ); ?>
-                  </h4></th>
-                <td><input type="text" size="45" name="interface_theme_options[social_email]" value="<?php echo  is_email($options[ 'social_email'] ); ?>" />
-                  <?php _e('Enter your Email ID', 'interface'); ?></td>
-              </tr>
-              <tr>
-                <th scope="row" style="padding: 0px;"><h4>
-                    <?php _e( 'Location Only', 'interface' ); ?>
-                  </h4></th>
-                <td><input type="text" size="45" name="interface_theme_options[social_location]" value="<?php echo  esc_attr($options[ 'social_location']); ?>" />
-                  <?php _e('Enter your Address', 'interface'); ?></td>
-              </tr>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-          <!-- .option-content --> 
-        </div>
-        <!-- .option-container -->
-        
-        <?php 
-						$social_links = array(); 
-						$social_links_name = array();
-						$social_links_name = array( __( 'Facebook', 'interface' ),
-													__( 'Twitter', 'interface' ),
-													__( 'Google Plus', 'interface' ),
-													__( 'Pinterest', 'interface' ),
-													__( 'Youtube', 'interface' ),
-													__( 'Vimeo', 'interface' ),
-													__( 'LinkedIn', 'interface' ),
-													__( 'Flickr', 'interface' ),
-													__( 'Tumblr', 'interface' ),
-													__( 'RSS', 'interface' )
-													);
-						$social_links = array( 	'Facebook' 		=> 'social_facebook',
-														'Twitter' 		=> 'social_twitter',
-														'Google-Plus'	=> 'social_googleplus',
-														'Pinterest' 	=> 'social_pinterest',
-														'You-tube'		=> 'social_youtube',
-														'Vimeo'			=> 'social_vimeo',
-														'linkedin'			=> 'social_linkedin',
-														'Flickr'			=> 'social_flickr',
-														'Tumblr'			=> 'social_tumblr',
-														'RSS'				=> 'social_rss' 
-													);
-					?>
-        <div class="option-container">
-          <h3 class="option-toggle"><a href="#">
-            <?php _e( 'Social Links', 'interface' ); ?>
-            </a></h3>
-          <div class="option-content inside">
-            <table class="form-table">
-              <tbody>
-                <?php
-						$i = 0;
-						foreach( $social_links as $key => $value ) {
-						?>
-                <tr>
-                  <th scope="row" style="padding: 0px;"><h4><?php printf( __( '%s', 'interface' ), $social_links_name[ $i ] ); ?></h4></th>
-                  <td><input type="text" size="45" name="interface_theme_options[<?php echo $value; ?>]" value="<?php echo esc_url( $options[$value] ); ?>" /></td>
-                </tr>
-                <?php
-						$i++;
-						}
-						?>
-              </tbody>
-            </table>
-            <p class="submit">
-              <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save All Changes', 'interface' ); ?>" />
-            </p>
-          </div>
-        </div>
-      </div> */ ?>
-      <!-- #sociallink --> 
     </div>
     <!-- #interface_tabs -->
   </form>
@@ -854,44 +342,6 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	$validated_input_values = $interface_theme_default;
 	$input = array();
 	$input = $options;
-
-	/*if ( isset( $input[ 'header_logo' ] ) ) {
-		$validated_input_values[ 'header_logo' ] = esc_url_raw( $input[ 'header_logo' ] );
-	}
-										//esc_url_raw -> To save at the databaseSSSS
-										// esc_url -> to echo the url
-										//sanitize_text_field -> for normal text only if you dont want html text.
-	if( isset( $input[ 'header_show' ] ) ) {
-		$validated_input_values[ 'header_show' ] = $input[ 'header_show' ];
-	}
-
-   if ( isset( $options[ 'hide_header_searchform' ] ) ) {
-		$validated_input_values[ 'hide_header_searchform' ] = $input[ 'hide_header_searchform' ];
-	}
-    
-	if ( isset( $options[ 'disable_slogan' ] ) ) {
-		$validated_input_values[ 'disable_slogan' ] = $input[ 'disable_slogan' ];
-	}
-
-	if( isset( $options[ 'home_slogan1' ] ) ) {
-		$validated_input_values[ 'home_slogan1' ] = sanitize_text_field( $input[ 'home_slogan1' ] );
-	}
-
-	if( isset( $options[ 'home_slogan2' ] ) ) {
-		$validated_input_values[ 'home_slogan2' ] = sanitize_text_field( $input[ 'home_slogan2' ] );
-	}
-
-	if( isset( $input[ 'slogan_position' ] ) ) {
-		$validated_input_values[ 'slogan_position' ] = $input[ 'slogan_position' ];
-	}	
-
-	if( isset( $options[ 'button_text' ] ) ) {
-		$validated_input_values[ 'button_text' ] = sanitize_text_field( $input[ 'button_text' ] );
-	}
-
-	if( isset( $options[ 'redirect_button_link' ] ) ) {
-		$validated_input_values[ 'redirect_button_link' ] = esc_url_raw( $input[ 'redirect_button_link' ] );
-	}*/
         
 	if ( isset( $input[ 'favicon' ] ) ) {
 		$validated_input_values[ 'favicon' ] = esc_url_raw( $input[ 'favicon' ] );
@@ -901,36 +351,10 @@ function interface_theme_options_validate( $options ) { //validate individual op
 		$validated_input_values[ 'disable_favicon' ] = $input[ 'disable_favicon' ];
 	}
 
-	/*if ( isset( $input[ 'webpageicon' ] ) ) {
-		$validated_input_values[ 'webpageicon' ] = esc_url_raw( $input[ 'webpageicon' ] );
-	}
-
-	if ( isset( $input['disable_webpageicon'] ) ) {
-		$validated_input_values[ 'disable_webpageicon' ] = $input[ 'disable_webpageicon' ];
-	}
-
-	//Site Layout
-	if( isset( $input[ 'site_layout' ] ) ) {
-		$validated_input_values[ 'site_layout' ] = $input[ 'site_layout' ];
-	}
-
-   // Front page posts categories
-	if( isset( $input['front_page_category' ] ) ) {
-		$validated_input_values['front_page_category'] = $input['front_page_category'];
-	}
-    
-	// Data Validation for Featured Slider
-	if( isset( $input[ 'disable_slider' ] ) ) {
-		$validated_input_values[ 'disable_slider' ] = $input[ 'disable_slider' ];
-	}*/
-
 	if ( isset( $input[ 'slider_quantity' ] ) ) {
 		$validated_input_values[ 'slider_quantity' ] = absint( $input[ 'slider_quantity' ] ) ? $input [ 'slider_quantity' ] : 4;
 	}
-	/*if ( isset( $input['exclude_slider_post'] ) ) {
-		$validated_input_values[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];	
 
-	}*/
 	if ( isset( $input[ 'featured_post_slider' ] ) ) {
 		$validated_input_values[ 'featured_post_slider' ] = array();
 	}   
@@ -948,8 +372,6 @@ function interface_theme_options_validate( $options ) { //validate individual op
     }
 	}  
 	
-	
-	
    // data validation for transition effect
 	if( isset( $input[ 'transition_effect' ] ) ) {
 		$validated_input_values['transition_effect'] = wp_filter_nohtml_kses( $input['transition_effect'] );
@@ -964,89 +386,10 @@ function interface_theme_options_validate( $options ) { //validate individual op
 	if ( isset( $input[ 'transition_duration' ] ) && is_numeric( $input[ 'transition_duration' ] ) ) {
 		$validated_input_values[ 'transition_duration' ] = $input[ 'transition_duration' ];
 	}
-    
-   // data validation for Social Icons
-
-   /*if ( isset( $input['disable_top'] ) ) {
-		$validated_input_values[ 'disable_top' ] = $input[ 'disable_top' ];
-	}
-	 if ( isset( $input['disable_bottom'] ) ) {
-		$validated_input_values[ 'disable_bottom' ] = $input[ 'disable_bottom' ];
-	}
-   if ( isset( $input[ 'social_phone' ] ) ) {
-		$validated_input_values[ 'social_phone' ] = preg_replace("/[^() 0-9+-]/", '', $options[ 'social_phone' ]);
-	}
-
-	if( isset( $input[ 'social_email' ] ) ) {
-		$validated_input_values[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
-	}
-	if( isset( $input[ 'social_location' ] ) ) {
-		$validated_input_values[ 'social_location' ] = sanitize_text_field( $input[ 'social_location' ] );
-	}
-
-	if( isset( $input[ 'social_facebook' ] ) ) {
-		$validated_input_values[ 'social_facebook' ] = esc_url_raw( $input[ 'social_facebook' ] );
-	}
-	if( isset( $input[ 'social_twitter' ] ) ) {
-		$validated_input_values[ 'social_twitter' ] = esc_url_raw( $input[ 'social_twitter' ] );
-	}
-	if( isset( $input[ 'social_googleplus' ] ) ) {
-		$validated_input_values[ 'social_googleplus' ] = esc_url_raw( $input[ 'social_googleplus' ] );
-	}
-	if( isset( $input[ 'social_pinterest' ] ) ) {
-		$validated_input_values[ 'social_pinterest' ] = esc_url_raw( $input[ 'social_pinterest' ] );
-	}   
-	if( isset( $input[ 'social_youtube' ] ) ) {
-		$validated_input_values[ 'social_youtube' ] = esc_url_raw( $input[ 'social_youtube' ] );
-	}
-	if( isset( $input[ 'social_vimeo' ] ) ) {
-		$validated_input_values[ 'social_vimeo' ] = esc_url_raw( $input[ 'social_vimeo' ] );
-	}   
-	if( isset( $input[ 'social_linkedin' ] ) ) {
-		$validated_input_values[ 'social_linkedin' ] = esc_url_raw( $input[ 'social_linkedin' ] );
-	}
-	if( isset( $input[ 'social_flickr' ] ) ) {
-		$validated_input_values[ 'social_flickr' ] = esc_url_raw( $input[ 'social_flickr' ] );
-	}
-	if( isset( $input[ 'social_tumblr' ] ) ) {
-		$validated_input_values[ 'social_tumblr' ] = esc_url_raw( $input[ 'social_tumblr' ] );
-	}   
-	if( isset( $input[ 'social_myspace' ] ) ) {
-		$validated_input_values[ 'social_myspace' ] = esc_url_raw( $input[ 'social_myspace' ] );
-	}  
-	if( isset( $input[ 'social_rss' ] ) ) {
-		$validated_input_values[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
-	}*/   
-
-	//Custom CSS Style Validation
-	/*if ( isset( $input['custom_css'] ) ) {
-		$validated_input_values['custom_css'] = wp_filter_nohtml_kses($input['custom_css']);
-	}
-
-	if( isset( $input[ 'site_design' ] ) ) {
-		$validated_input_values[ 'site_design' ] = $input[ 'site_design' ];
-	}  */ 
 	
 	if( isset( $input[ 'slider_content' ] ) ) {
 		$validated_input_values[ 'slider_content' ] = $input[ 'slider_content' ];
-	} 
-    
-	// Layout settings verification
-	/*if( isset( $input[ 'reset_layout' ] ) ) {
-		$validated_input_values[ 'reset_layout' ] = $input[ 'reset_layout' ];
 	}
-	if( 0 == $validated_input_values[ 'reset_layout' ] ) {
-		if( isset( $input[ 'default_layout' ] ) ) {
-			$validated_input_values[ 'default_layout' ] = $input[ 'default_layout' ];
-		}
-	}
-	else {
-		$validated_input_values['default_layout'] = $interface_default[ 'default_layout' ];
-	}*/
-
-	
-    
-	
     
    return $validated_input_values;
 }
@@ -1055,15 +398,5 @@ function interface_themeoption_invalidate_caches(){
 	delete_transient( 'interface_socialnetworks' );  
 	
 }
-
-/*	 _e() -> to echo the text
-*	 __() -> to get the value
-*	 printf () -> to echo the value eg:- my name is $name
-*	 eg:- printf( __( 'Your city is %1$s, and your zip code is %2$s.', 'my-text-domain' ), $city, $zipcode );
-*	 sprintf() - > to get the value 
-* 	 eg:- $url = 'http://example.com';
-*	 $link = sprintf( __( 'Check out this link to my <a href="%s">website</a> made with WordPress.', 'my-text-domain' ), esc_url( $url ) );
-*	 echo $link;
-*/
 
 ?>

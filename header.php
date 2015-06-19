@@ -18,44 +18,25 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
-<?php		
-		/** 
-		 * interface_title hook
-		 *
-		 * HOOKED_FUNCTION_NAME PRIORITY
-		 *
-		 * interface_add_meta_name 5
-		 *
-		 */
-			//global $interface_theme_setting_value;
-		 //echo $interface_theme_setting_value['home_slogan1' ]; 
-		//do_action( 'interface_title' );
+	<?php
+		do_action( 'atg_header' );
 
-		/** 
-		 * interface_meta hook
-		 */
-		//do_action( 'interface_meta' );
-
-		/** 
-		 * interface_links hook
-		 *
-		 * HOOKED_FUNCTION_NAME PRIORITY
-		 *
-		 * interface_add_links 10
-		 * interface_favicon 15
-		 * interface_webpage_icon 20
-		 *
-		 */
-		//do_action( 'interface_links' ); 
-		
-		do_action( 'atg_header' ); ?>
-<?php 
 		/** 
 		 * This hook is important for WordPress plugins and other many things
 		 */
 		wp_head();
 	?>
+	<script type="text/javascript">
+		( function( $ ) {
+			console.log( 'Creating the event handler!' );
+			$( window ).load( function() {
+				console.log( 'Calling the event handler!' );
+				$( '#loading-cover' ).fadeOut( 1000 );
+			} );
+		})( jQuery );
+	</script>
 </head>
 
 <body <?php body_class(); ?>>
+<div id="loading-cover"></div>
 <div class="wrapper">
