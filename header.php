@@ -28,9 +28,7 @@
 	?>
 	<script type="text/javascript">
 		( function( $ ) {
-			console.log( 'Creating the event handler!' );
 			$( window ).load( function() {
-				console.log( 'Calling the event handler!' );
 				$( '#loading-cover' ).fadeOut( 1000 );
 			} );
 		})( jQuery );

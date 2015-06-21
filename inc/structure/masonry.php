@@ -74,7 +74,7 @@ function render_atg_masonry( $postType = false ) {
 
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
 		if( $isAbout && !$uncategorized ) {
-			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><h6>' . get_the_title( $id ) . '</h6><p>' .get_the_content() . '</div>';
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</div>';
 		} else if( $uncategorized ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
 		} else if( $text ) {

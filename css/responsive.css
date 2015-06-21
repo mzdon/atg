@@ -229,6 +229,32 @@
 	.grid-item.height-2, .grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 450px;
 	}
+
+	#section-testimonial .main {
+		width: 100%;
+		float: none;
+		margin-left: 0;
+	}
+
+	#section-testimonial .testimonial-cycle {
+		width: 100%;
+		margin-left: 0;
+	}
+
+	#section-testimonial .testimonial .pattern {
+		width: 260px;
+	}
+
+	#section-testimonial #left-button {
+		top: auto;
+		bottom: 240px;
+		left: 0;
+	}
+
+	#section-testimonial #right-button {
+		top: auto;
+		bottom: 240px;
+	}
 	
 	#section-contact {
 		width: 98%;

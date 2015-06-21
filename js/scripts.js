@@ -72,8 +72,46 @@ jQuery( function() {
 		
 	sizeLanding();
 
-	$window.resize(function () {
-		sizeLanding();
+	function sizeTestimonial() {
+		var cycle = jQuery( '.testimonial-cycle' ).data( cycle ),
+			origOpts = cycle[ 'cycle.opts' ];
+
+	if( cycle && origOpts ) {
+			jQuery( '.testimonial-cycle' ).cycle( 'destroy' );
+			jQuery( '.testimonial-cycle figure' ).each( function( idx, node ) {
+				jQuery( node ).css( 'height', '' );
+				jQuery( node ).css( 'width', '' );
+			});
+
+			var opts = {
+				fx: origOpts.fx,
+				activePagerClass: origOpts.activePagerClass,
+				timeout: origOpts.timeout,
+				speed: origOpts.speed,
+				containerResize: origOpts.containerResize,
+				cleartypeNoBg: origOpts.cleartypeNoBg,
+				next: origOpts.next,
+				prev: origOpts.prev,
+			}
+			if( $window.width() <= 768 ) {
+				opts[ 'width' ] = '100%';
+				opts[ 'height'] = '460px';
+				opts[ 'fit' ] = 1;
+			} else {
+				opts[ 'width' ] = '59%';
+				opts[ 'height' ] = '100%';
+			}
+			jQuery( '.testimonial-cycle' ).cycle( opts );
+		}
+	}
+
+	var rszTmr;
+	$window.resize( function() {
+		clearTimeout( rszTmr );
+		rszTmr = setTimeout( function () {
+			sizeLanding();
+			sizeTestimonial();
+		}, 500 ) 
 	});
 	
 	// Masonry

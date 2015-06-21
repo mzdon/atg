@@ -157,6 +157,12 @@ body {
 	z-index: 100;
 	background-color: #2e0000;
 }
+
+.wrapper > section {
+	margin: 10px 0 0 0;
+	overflow: hidden;
+}
+
 .container {
 	margin: 0 auto;
 	max-width: 978px;
@@ -529,6 +535,10 @@ img#wpstats {
 /* =Header
 ----------------------------------------------- */
 
+#section-landing {
+	margin: 0;
+}
+
 /* Landing Image */
 .parallax {
 	background-size: auto;
@@ -609,7 +619,7 @@ img#wpstats {
 /* =Menu
 -------------------------------------------------------------- */
 #section-menu {
-	  background-color: #2e0000;
+	margin: 0;
 }
 
 #section-menu.sticky {
@@ -1098,6 +1108,156 @@ img#wpstats {
 
 .math-quiz input {
 	max-width: 2.1875em;
+}
+
+/* =Testimonail
+----------------------------------------------- */
+#section-testimonial {
+	position: relative;
+}
+
+#section-testimonial .testimonial {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	margin: 10px 0;
+}
+
+#section-testimonial .main {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	width: 39%;
+	float: left;
+	margin-left: 1%;
+	background-color: #5c0f09;
+}
+
+#section-testimonial .main .content {
+	display: block;
+	position: relative;
+	box-sizing: border-box;
+	padding: 45px;
+	z-index: 10;
+}
+
+#section-testimonial .main h2 {
+	font-size: 1.25em;
+	color: #eee;
+}
+
+#section-testimonial .main h4 {
+	font-family: helvetica;
+	text-transform: uppercase;
+	color: #be1f17;
+	font-size: 0.8em;
+	line-height: 3em;
+}
+
+#section-testimonial .main p {
+	font-family: helvetica;
+	color: #eee;
+	font-size: 0.75em;
+}
+
+#section-testimonial .main > div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#section-testimonial .main .top-left {
+	background: url( 'images/pattern_tl.png' );
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+#section-testimonial .main .top-right {
+	background: url( 'images/corner_pattern_tr.png' );
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+#section-testimonial .main .bottom-left {
+	background: url( 'images/corner_pattern_bl.png' );
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+
+#section-testimonial .main .bottom-right {
+	background: url( 'images/pattern_br.png' );
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+#section-testimonial .testimonial .pattern {
+	position: absolute;
+	display: block;
+	top: 0;
+	width: 59%;
+	height: 100%;
+	background-image: url( 'images/pattern_br.png' );
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	-moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+	z-index: 10;
+}
+
+#section-testimonial .testimonial-cycle {
+	display: block;
+	width: 59%;
+	height: 100%;
+	margin: 0 0 0 41%;
+}
+
+#section-testimonial .testimonial-cycle figure {
+	display: block;
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-size: cover;
+	background-position: center;
+}
+
+#section-testimonial #left-button {
+	position: absolute;
+	left: 41%;
+	top: 42%;
+	display: block;
+	height: 40px;
+	width: 48px;
+	background-image: url( 'images/arrow_left.png' );
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	z-index: 10;
+}
+
+#section-testimonial #right-button {
+	position: absolute;
+	right: 0;
+	top: 42%;
+	display: block;
+	height: 40px;
+	width: 48px;
+	background-image: url( 'images/arrow_right.png' );
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	z-index: 10;
+}
+
+/* =Case Study
+----------------------------------------------- */
+#section-case-study .about-artisan p {
+	margin: 50px auto;
 }
 
 /* =Quote
