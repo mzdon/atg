@@ -29,8 +29,8 @@ function render_atg_masonry( $postType = false ) {
 		$query->the_post();
 		$id = $query->post->ID;
 		$meta = get_post_meta($id);
+		$isAboutContent = false;
 		$isAbout = false;
-		$uncategorized = false;
 		$text = false;
 		$width = $meta[ 'masonry_width' ] ? $meta[ 'masonry_width' ][ 0 ] : 1;
 		$height = $meta[ 'masonry_height' ] ? $meta[ 'masonry_height' ][ 0 ] : 1;
@@ -40,11 +40,11 @@ function render_atg_masonry( $postType = false ) {
 		$categories = get_the_category( $id );
 		foreach( $categories as $category ) {
 			array_push( $classes, $category->slug );
-			if( $category->slug == 'about-artisan' ) {
+			if( $category->slug == 'about-artisan' && preg_match( '/about-artisan/', get_permalink() ) ) {
+				$isAboutContent = true;
+				array_push( $classes, 'content' );
+			} else if( $category->slug == 'about-artistan' ) {
 				$isAbout = true;
-			}
-			if( $category->slug == 'uncategorized' ) {
-				$uncategorized = true;
 			}
 			if( $category->slug == 'text' ) {
 				$text = true;
@@ -73,12 +73,12 @@ function render_atg_masonry( $postType = false ) {
 		}
 
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
-		if( $isAbout && !$uncategorized ) {
-			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</div>';
-		} else if( $uncategorized ) {
+		if( $isAboutContent ) {
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</p></div>';
+		} else if( $isAbout ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
 		} else if( $text ) {
-			$output .= '<a href="' . $imgUrl . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</div></a>';
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></div>';
 		}else {
 			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
 		}

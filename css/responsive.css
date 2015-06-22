@@ -38,7 +38,7 @@
 		width: 49%;
 	}
 
-	.grid-item.width-3, .grid-item.about-artisan.width-2  {
+	.grid-item.width-3, .grid-item.about-artisan.content.width-2  {
 		width: 74%;
 	}
 
@@ -222,7 +222,7 @@
 	}
 
 	.grid-item.width-3, .grid-item.width-4, .grid-item.width-5, 
-	.grid-item.about-artisan.width-2  {
+	.grid-item.about-artisan.content.width-2  {
 		width: 99%;
 	}
 	
@@ -310,7 +310,7 @@
 		height: 220px;
 	}
 	
-	.grid-item.about-artisan.height-2 {
+	.grid-item.about-artisan.content.height-2 {
 		height: 500px;
 	}
 
@@ -328,15 +328,15 @@
 }
 
 @media only screen and (min-width: 326px) and (max-width: 520px) {
-	.grid-item.about-artisan.height-2 {
+	.grid-item.about-artisan.content.height-2 {
 		height: 500px;
 	}
 	
-	.grid-item.about-artisan h6 {
+	.grid-item.about-artisan.content h6 {
 		margin: 10px auto;
 	}
 	
-	.grid-item.about-artisan .grid-item-wrapper {
+	.grid-item.about-artisan.content .grid-item-wrapper {
 		background-image: none !important;
 	}
 }
@@ -362,15 +362,15 @@
 		height: 220px;
 	}
 	
-	.grid-item.about-artisan.height-2 {
+	.grid-item.about-artisan.content.height-2 {
 		height: 660px;
 	}
 	
-	.grid-item.about-artisan h6 {
+	.grid-item.about-artisan.content h6 {
 		margin: 10px auto;
 	}
 	
-	.grid-item.about-artisan .grid-item-wrapper {
+	.grid-item.about-artisan.content .grid-item-wrapper {
 		background-image: none !important;
 	}
 

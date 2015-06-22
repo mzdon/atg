@@ -838,10 +838,9 @@ img#wpstats {
 }
 
 #section-landing .caption {
-	font-size: 36px;
+	font-size: 2em;
 	background-color: #2e0000;
-	line-height: 36px;
-	padding: 20px 0 20px 0;
+	padding: 20px 10px;
 	text-transform: uppercase;
 	color: #fff;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
@@ -892,6 +891,7 @@ img#wpstats {
 .grid-item-wrapper {
 	position: absolute;
 	display: table;
+	color: #be1f17;
 	z-index: 100;
 	top: 0;
 	left: 0;
@@ -998,25 +998,26 @@ img#wpstats {
 	height: 1500px;
 }
 
-.about-artisan .grid-item-wrapper {
+.about-artisan.content .grid-item-wrapper {
 	text-align: left;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	height: 100%;
 }
 
-.about-artisan h6,
-.about-artisan p {
+.about-artisan.content h6,
+.about-artisan.content p {
 	max-width: 85%;
 	margin: 0 auto;
 }
 
-.about-artisan h6 {
+.about-artisan.content h6 {
 	margin-top: 56px;
 	margin-bottom: 10px;
 }
 
-.about-artisan p {
+.about-artisan.content p {
+	color: #eee;
 	font-size: 0.8em;
 	margin-bottom: 56px;
 	overflow: hidden;
@@ -1256,7 +1257,7 @@ img#wpstats {
 
 /* =Case Study
 ----------------------------------------------- */
-#section-case-study .about-artisan p {
+#section-case-study .about-artisan.content p {
 	margin: 50px auto;
 }
 
