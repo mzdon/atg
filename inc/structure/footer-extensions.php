@@ -20,61 +20,20 @@ function interface_footer_widget_area() {
 	echo '<div class="social-wrap"><div class="pre-social">Follow Artisan Trade Guild<span></span></div>';
 	get_sidebar( 'footer' );
 	echo '<div class="post-social"><span></span>Share Artisan Trade Guild</div></div>';
-}
 
-/****************************************************************************************/
-if ((1 != $options['disable_bottom']) && (!empty($options['social_phone'] ) || !empty($options['social_email'] ) || !empty($options['social_location']))) {
-add_action( 'interface_footer', 'interface_footer_infoblog', 10 );
-/**
- * Opens the footer infobox
- */
-/****************************************************************************************/
+	$output = '<div class="copyright"><p>'.__( 'Copyright &copy;', 'interface' ).' Artisan Trade Guild, Inc. '.interface_the_year().' All Rights Reserved</p>';
+	$output .= '<p>All photography is the sole property of Artisan Trade Guild, Inc. unless otherwise noted.</p>';
+	$output .= '<p>No part of this website may be reproduced without Artisan Trade Guild, Inc.\'s express consent</p>';
+	$output .= '<p>Backlinks are allowed.</p></div><!-- .copyright -->';
+	echo $output;
+}
 
 add_action( 'interface_footer', 'interface_footer_div_close', 15 );
 /**
  * Opens the site generator div.
  */
 function interface_footer_div_close() {
-	echo '</div> <!-- .container -->
-
-	</div> <!-- .info-bar -->';
-	} 
-}
-/****************************************************************************************/
-
-add_action( 'interface_footer', 'interface_open_sitegenerator_div', 20 );
-/**
- * Opens the site generator div.
- */
-function interface_open_sitegenerator_div() {
-	echo '
-
-	<div id="site-generator">
-				<div class="container clearfix">';
-}
-
-/****************************************************************************************/
-
-add_action( 'interface_footer', 'interface_footer_info', 30 );
-/**
- * function to show the footer info, copyright information
- */
-function interface_footer_info() {         
-   $output = '<div class="copyright"><p>'.__( 'Copyright &copy;', 'interface' ).' Artisan Trade Guild, Inc. '.interface_the_year().' All Rights Reserved</p>';
-   $output .= '<p>All photography is the sole property of Artisan Trade Guild, Inc. unless otherwise noted.</p>';
-   $output .= '<p>No part of this website may be reproduced without Artisan Trade Guild, Inc.\'s express consent</p>';
-   $output .= '<p>Backlinks are allowed.</p></div><!-- .copyright -->';
-   echo $output;
-}
-/****************************************************************************************/
-
-add_action( 'interface_footer', 'interface_close_sitegenerator_div', 35 );
-/**
- * Shows the back to top icon to go to top.
- */
-function interface_close_sitegenerator_div() {
-echo '</div><!-- .container -->	
-			</div><!-- #site-generator -->';
+	echo '</div> <!-- .container --></div> <!-- .info-bar -->';
 }
 
 /****************************************************************************************/

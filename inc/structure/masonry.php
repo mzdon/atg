@@ -30,8 +30,9 @@ function render_atg_masonry( $postType = false ) {
 		$id = $query->post->ID;
 		$meta = get_post_meta($id);
 		$isAboutContent = false;
-		$isAbout = false;
+		$thumbOnly = false;
 		$text = false;
+		$caseStudyStars = false;
 		$width = $meta[ 'masonry_width' ] ? $meta[ 'masonry_width' ][ 0 ] : 1;
 		$height = $meta[ 'masonry_height' ] ? $meta[ 'masonry_height' ][ 0 ] : 1;
 		$classes = array(
@@ -43,11 +44,14 @@ function render_atg_masonry( $postType = false ) {
 			if( $category->slug == 'about-artisan' && preg_match( '/about-artisan/', get_permalink() ) ) {
 				$isAboutContent = true;
 				array_push( $classes, 'content' );
-			} else if( $category->slug == 'about-artistan' ) {
-				$isAbout = true;
+			} else if( $category->slug == 'about-artisan' || $category->slug == 'no-lightbox' ) {
+				$thumbOnly = true;
 			}
 			if( $category->slug == 'text' ) {
 				$text = true;
+			}
+			if( $text && $postType ) {
+				$caseStudyStars = true;
 			}
 		}
 
@@ -74,9 +78,11 @@ function render_atg_masonry( $postType = false ) {
 
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
 		if( $isAboutContent ) {
-			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</p></div>';
-		} else if( $isAbout ) {
+			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</p>' . ( $postType ? '<span class="spade"></span>' : '' ) . '</div>';
+		} else if( $thumbOnly ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></div>';
+		} else if ( $caseStudyStars ) {
+			$output .= '<div class="grid-item-wrapper"><div class="title"><p>' . get_the_title() . '</p><p class="emphasize">' . get_the_content() . '</p><span class="stars"></span></div></div>';
 		} else if( $text ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></div>';
 		}else {

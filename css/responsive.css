@@ -91,24 +91,16 @@
 	.menu-toggle {
 		display: inline-block;
 		background-color: rgba(0, 0, 0, 0);
+		background-image: url( '../images/hamburger.png' );
+		background-size: cover;
 		font-size: 0;
 		border: 0 none;
 		padding: 0;
 		color: #777;
 		width: 30px;
-		height: 21px;
-		margin: 20px 0;
+		height: 26px;
+		margin: 10px 0;
 		cursor: pointer;
-	}
-	.menu-toggle:before {
-		display: inline-block;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-		font-size: 25px;
-		line-height: 0;
-		font-family: 'Genericons';
-		vertical-align: top;
-		content: '\f419';
 	}
 	.hgroup-right {
 		clear: both;
@@ -124,11 +116,12 @@
 		text-align: center;
 		position: relative;
 		z-index: 101;
+		overflow: visible;
 	}
 	#section-menu nav {
 		display: block;
 		position: absolute;
-		top: 61px;
+		top: 46px;
 		left: 0;
 		width: 100%;
 		background-color: #2e0000;

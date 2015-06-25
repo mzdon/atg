@@ -48,7 +48,7 @@ jQuery( function() {
 	var landing = jQuery( '.section-landing' );
 	//landing.parallax("50%", 0.5);
 	
-	function sizeLanding() {
+	/*function sizeLanding() {
 		var cache = sizeLanding.cache = sizeLanding.cache || {};
 		
 		var windowHeight = $window.height();
@@ -70,7 +70,7 @@ jQuery( function() {
 		cache.cycleAfter && cache.cycleAfter();
 	}
 		
-	sizeLanding();
+	sizeLanding();*/
 
 	function sizeTestimonial() {
 		var cycle = jQuery( '.testimonial-cycle' ).data( cycle ),
@@ -109,7 +109,7 @@ jQuery( function() {
 	$window.resize( function() {
 		clearTimeout( rszTmr );
 		rszTmr = setTimeout( function () {
-			sizeLanding();
+			//sizeLanding();
 			sizeTestimonial();
 		}, 500 ) 
 	});

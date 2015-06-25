@@ -99,7 +99,6 @@ function interface_load_files() {
 
 	/** Load Structure */
 	require_once( INTERFACE_STRUCTURE_DIR . '/header-extensions.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/searchform-extensions.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/sidebar-extensions.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/footer-extensions.php' );
 	require_once( INTERFACE_STRUCTURE_DIR . '/content-extensions.php' );

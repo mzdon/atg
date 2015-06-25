@@ -5,10 +5,16 @@
 	function atg_landing_render() {
 		global $interface_theme_setting_value;
 		$options = $interface_theme_setting_value;
-		
-		if( !empty( $options[ 'featured_post_slider' ] ) ) {
+
+		$output = '<section id="section-landing" class="section-landing parallax featured-slider">';
+		$output .= '<video src="' . get_template_directory_uri() . '/videos/header.mp4" autoplay loop>Your browser does not support the <code>video</code> html tag!</video>';
+		$output .= '</section>';
+		echo $output;
+
+		if( /*!empty( $options[ 'featured_post_slider' ] )*/false ) {
 			$interface_featured_sliders .= '<section id="section-landing" class="section-landing parallax featured-slider"><div class="slider-cycle">';
 			
+			$interface_featured_sliders .= '<video src="' . get_template_directory_uri() . '/videos/header.mp4" autoplay loop>Failure</video>';
 			foreach( $options[ 'featured_post_slider' ] as $i => $url ) {
 
 				if( $url == '' ) {
@@ -42,7 +48,7 @@
 			$interface_featured_sliders .= '</div><!-- .slider-cycle --><!--<nav id="controllers" class="clearfix"></nav>--><!-- #controllers --></section><!-- .featured-slider -->';
 			
 			echo $interface_featured_sliders;
-		} else {
+		} else if( false ) {
 			$output = '<section id="section-landing" class="section-landing parallax"><div class="site-overlay"></div><div class="container clearfix"><div class="align-center welcome-content" id="welcome-content"><h2 id="headline" class="headline">';
 			$output .= get_bloginfo( 'name' );
 			$output .= '</h2><div id="sub-headline" class="sub-headline">';

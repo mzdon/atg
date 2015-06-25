@@ -6,7 +6,8 @@
 		
 		$skip = [
 			'uncategorized',
-			'text'
+			'text',
+			'no-lightbox'
 		];
 		$categories = get_categories();
 		if( !empty( $categories ) ) {

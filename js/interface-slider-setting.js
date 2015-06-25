@@ -9,7 +9,7 @@ jQuery(window).load(function() {
 	var transition_effect = atg_slider_value.transition_effect;
 	var transition_delay = atg_slider_value.transition_delay;
 	var transition_duration = atg_slider_value.transition_duration;
-	jQuery('.slider-cycle').cycle({ 
+	/*jQuery('.slider-cycle').cycle({ 
 		fx: transition_effect, 
 		//pager: '#controllers',
 		activePagerClass: 'active',
@@ -25,7 +25,7 @@ jQuery(window).load(function() {
 			jQuery( this ).addClass( 'active-slide' );
 		},
 		cleartypeNoBg: true
-	});
+	});*/
 	jQuery('.highlight-cycle').cycle({ 
 		fx: transition_effect, 
 		//pager: '#highlight-controllers',
