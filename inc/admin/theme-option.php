@@ -20,7 +20,7 @@ add_action( 'admin_enqueue_scripts', 'interface_jquery_javascript_file_cookie' )
  * @uses wp_register_script
  */
 function interface_jquery_javascript_file_cookie() {
-   wp_register_script( 'jquery-cookie', INTERFACE_ADMIN_JS_URL . '/jquery.cookie.min.js', array( 'jquery' ) );
+   wp_register_script( 'jquery-cookie', ADMIN_JS_URL . '/jquery.cookie.min.js', array( 'jquery' ) );
    wp_enqueue_style('thickbox');
 
     wp_enqueue_script('media-upload');
@@ -37,9 +37,9 @@ add_action( 'admin_print_scripts-appearance_page_theme_options', 'interface_admi
  * @uses wp_enqueue_script to add javascripts to WordPress generated pages.
  */
 function interface_admin_scripts() {
-   wp_enqueue_script( 'interface_admin', INTERFACE_ADMIN_JS_URL . '/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
-   wp_enqueue_script( 'interface_toggle_effect', INTERFACE_ADMIN_JS_URL . '/toggle-effect.js' );
-   wp_enqueue_script( 'interface_image_upload', INTERFACE_ADMIN_JS_URL . '/add-image-script.js', array( 'jquery','media-upload', 'thickbox' ) );
+   wp_enqueue_script( 'interface_admin', ADMIN_JS_URL . '/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+   wp_enqueue_script( 'interface_toggle_effect', ADMIN_JS_URL . '/toggle-effect.js' );
+   wp_enqueue_script( 'interface_image_upload', ADMIN_JS_URL . '/add-image-script.js', array( 'jquery','media-upload', 'thickbox' ) );
 }
 
 /****************************************************************************************/
@@ -53,7 +53,7 @@ add_action( 'admin_print_styles-appearance_page_theme_options', 'interface_admin
  */
 function interface_admin_styles() {
 	wp_enqueue_style( 'thickbox' );
-	wp_enqueue_style( 'interface_admin_style', INTERFACE_ADMIN_CSS_URL. '/admin.css' );
+	wp_enqueue_style( 'interface_admin_style', ADMIN_CSS_URL. '/admin.css' );
 }
 
 /****************************************************************************************/

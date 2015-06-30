@@ -42,26 +42,26 @@ $sidebar_layout = array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'no-sidebar',
 															'label' 		=> __( 'No sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/no-sidebar.png'
+															'thumbnail' => ADMIN_IMAGES_URL . '/no-sidebar.png'
 															), 
 							'no-sidebar-full-width' => array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'no-sidebar-full-width',
 															'label' 		=> __( 'No sidebar, Full Width', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/no-sidebar-fullwidth.png'
+															'thumbnail' => ADMIN_IMAGES_URL . '/no-sidebar-fullwidth.png'
 															),
 							
 							'left-sidebar' => array(
 															'id'			=> 'interface_sidebarlayout',
 															'value' 		=> 'left-sidebar',
 															'label' 		=> __( 'Left sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/left-sidebar.png'
+															'thumbnail' => ADMIN_IMAGES_URL . '/left-sidebar.png'
 															),
 							'right-sidebar' => array(
 															'id' 			=> 'interface_sidebarlayout',
 															'value' 		=> 'right-sidebar',
 															'label' 		=> __( 'Right sidebar', 'interface' ),
-															'thumbnail' => INTERFACE_ADMIN_IMAGES_URL . '/right-sidebar.png'
+															'thumbnail' => ADMIN_IMAGES_URL . '/right-sidebar.png'
 															)
 						);
 	

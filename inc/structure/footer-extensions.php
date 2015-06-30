@@ -51,7 +51,7 @@ function atg_landing_images() {
 		}
 	} else {
 		$output .= '.section-landing { background-image: url(\'';
-		$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : INTERFACE_IMAGES_URL . '/background.jpg';
+		$imgUrl = $options[ 'landing_image' ] ? $options[ 'landing_image' ] : IMAGES_URL . '/background.jpg';
 		$output .= $imgUrl . '\');}';
 	}
 	if( !empty( $options[ 'highlight_slider' ] ) ) {

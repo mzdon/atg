@@ -1,137 +1,98 @@
 <?php
-/**
- * Interface defining constants, adding files and WordPress core functionality.
- *
- * Defining some constants, loading all the required files and Adding some core functionality.
- * @uses add_theme_support() To add support for post thumbnails and automatic feed links.
- * @uses register_nav_menu() To add support for navigation menu.
- * @uses set_post_thumbnail_size() To set a custom post thumbnail size.
- *
- * @package Theme Horse
- * @subpackage Interface
- * @since Interface 1.0
- */
-add_action( 'after_setup_theme', 'interface_setup' );
-/**
- * This content width is based on the theme structure and style.
- */
- function interface_setup() {
-	 	global $content_width;
-		if ( ! isset( $content_width ) ){
-			$content_width = 700;
-		}
- }
 
+add_action( 'atg_init', 'define_constants', 10 );
 
-add_action( 'interface_init', 'interface_constants', 10 );
-/**
- * This function defines the Interface theme constants
- *
- * @since 1.0
- */
-function interface_constants() {
+function define_constants() {
 
 	/** Define Directory Location Constants */
-	define( 'INTERFACE_PARENT_DIR', get_template_directory() );
-	define( 'INTERFACE_CHILD_DIR', get_stylesheet_directory() );
-	define( 'INTERFACE_IMAGES_DIR', INTERFACE_PARENT_DIR . '/images' );
-	define( 'INTERFACE_INC_DIR', INTERFACE_PARENT_DIR. '/inc' );
-	define( 'INTERFACE_PARENT_CSS_DIR', INTERFACE_PARENT_DIR. '/css' );
-	define( 'INTERFACE_ADMIN_DIR', INTERFACE_INC_DIR . '/admin' );
-	define( 'INTERFACE_ADMIN_IMAGES_DIR', INTERFACE_ADMIN_DIR . '/images' );
-	define( 'INTERFACE_ADMIN_JS_DIR', INTERFACE_ADMIN_DIR . '/js' );
-	define( 'INTERFACE_ADMIN_CSS_DIR', INTERFACE_ADMIN_DIR . '/css' );
-	define( 'INTERFACE_JS_DIR', INTERFACE_PARENT_DIR . '/js' );
-	define( 'INTERFACE_CSS_DIR', INTERFACE_PARENT_DIR . '/css' );	
-	define( 'INTERFACE_FUNCTIONS_DIR', INTERFACE_INC_DIR . '/functions' );
-	define( 'INTERFACE_SHORTCODES_DIR', INTERFACE_INC_DIR . '/footer_info' );
-	define( 'INTERFACE_STRUCTURE_DIR', INTERFACE_INC_DIR . '/structure' );
-	if ( ! defined( 'INTERFACE_LANGUAGES_DIR' ) ) /** So we can define with a child theme */
-		define( 'INTERFACE_LANGUAGES_DIR', INTERFACE_PARENT_DIR . '/languages' );
-	define( 'INTERFACE_WIDGETS_DIR', INTERFACE_INC_DIR . '/widgets' );
+	define( 'PARENT_DIR', get_template_directory() );
+	define( 'CHILD_DIR', get_stylesheet_directory() );
+	define( 'IMAGES_DIR', PARENT_DIR . '/images' );
+	define( 'INC_DIR', PARENT_DIR. '/inc' );
+	define( 'PARENT_CSS_DIR', PARENT_DIR. '/css' );
+	define( 'ADMIN_DIR', INC_DIR . '/admin' );
+	define( 'ADMIN_IMAGES_DIR', ADMIN_DIR . '/images' );
+	define( 'ADMIN_JS_DIR', ADMIN_DIR . '/js' );
+	define( 'ADMIN_CSS_DIR', ADMIN_DIR . '/css' );
+	define( 'JS_DIR', PARENT_DIR . '/js' );
+	define( 'CSS_DIR', PARENT_DIR . '/css' );	
+	define( 'FUNCTIONS_DIR', INC_DIR . '/functions' );
+	define( 'SHORTCODES_DIR', INC_DIR . '/footer_info' );
+	define( 'STRUCTURE_DIR', INC_DIR . '/structure' );
+	define( 'WIDGETS_DIR', INC_DIR . '/widgets' );
 
 	/** Define URL Location Constants */
-	define( 'INTERFACE_PARENT_URL', get_template_directory_uri() );
-	define( 'INTERFACE_CHILD_URL', get_stylesheet_directory_uri() );
-	define( 'INTERFACE_IMAGES_URL', INTERFACE_PARENT_URL . '/images' );
-	define( 'INTERFACE_INC_URL', INTERFACE_PARENT_URL . '/inc' );
-	define( 'INTERFACE_ADMIN_URL', INTERFACE_INC_URL . '/admin' );
-	define( 'INTERFACE_ADMIN_IMAGES_URL', INTERFACE_ADMIN_URL . '/images' );
-	define( 'INTERFACE_ADMIN_JS_URL', INTERFACE_ADMIN_URL . '/js' );
-	define( 'INTERFACE_ADMIN_CSS_URL', INTERFACE_ADMIN_URL . '/css' );
-	define( 'INTERFACE_JS_URL', INTERFACE_PARENT_URL . '/js' );
-	define( 'INTERFACE_CSS_URL', INTERFACE_PARENT_URL . '/css' );
-	define( 'INTERFACE_FUNCTIONS_URL', INTERFACE_INC_URL . '/functions' );
-	define( 'INTERFACE_SHORTCODES_URL', INTERFACE_INC_URL . '/footer_info' );
-	define( 'INTERFACE_STRUCTURE_URL', INTERFACE_INC_URL . '/structure' );
-	if ( ! defined( 'INTERFACE_LANGUAGES_URL' ) ) /** So we can predefine to child theme */
-		define( 'INTERFACE_LANGUAGES_URL', INTERFACE_PARENT_URL . '/languages' );
-	define( 'INTERFACE_WIDGETS_URL', INTERFACE_INC_URL . '/widgets' );
+	define( 'PARENT_URL', get_template_directory_uri() );
+	define( 'CHILD_URL', get_stylesheet_directory_uri() );
+	define( 'IMAGES_URL', PARENT_URL . '/images' );
+	define( 'INC_URL', PARENT_URL . '/inc' );
+	define( 'ADMIN_URL', INC_URL . '/admin' );
+	define( 'ADMIN_IMAGES_URL', ADMIN_URL . '/images' );
+	define( 'ADMIN_JS_URL', ADMIN_URL . '/js' );
+	define( 'ADMIN_CSS_URL', ADMIN_URL . '/css' );
+	define( 'JS_URL', PARENT_URL . '/js' );
+	define( 'CSS_URL', PARENT_URL . '/css' );
+	define( 'FUNCTIONS_URL', INC_URL . '/functions' );
+	define( 'SHORTCODES_URL', INC_URL . '/footer_info' );
+	define( 'STRUCTURE_URL', INC_URL . '/structure' );
+	define( 'WIDGETS_URL', INC_URL . '/widgets' );
 
 }
 
-add_action( 'interface_init', 'interface_load_files', 15 );
-/**
- * Loading the included files.
- *
- * @since 1.0
- */
-function interface_load_files() {
+add_action( 'atg_init', 'load_files', 15 );
+
+function load_files() {
 	/** 
-	 * interface_add_files hook
+	 * atg_add_files hook
 	 *
 	 * Adding other addtional files if needed.
 	 */
-	do_action( 'interface_add_files' );
+	do_action( 'atg_add_files' );
 
 	/** Load functions */
-	require_once( INTERFACE_FUNCTIONS_DIR . '/i18n.php' );
-	require_once( INTERFACE_FUNCTIONS_DIR . '/custom-header.php' );
-	require_once( INTERFACE_FUNCTIONS_DIR . '/functions.php' );
-	require_once( INTERFACE_FUNCTIONS_DIR . '/custom-style.php' );
-	require_once( INTERFACE_ADMIN_DIR . '/interface-themedefaults-value.php' );
-	require_once( INTERFACE_ADMIN_DIR . '/theme-option.php' );
-	require_once( INTERFACE_ADMIN_DIR . '/interface-metaboxes.php' );
+	require_once( FUNCTIONS_DIR . '/i18n.php' );
+	require_once( FUNCTIONS_DIR . '/custom-header.php' );
+	require_once( FUNCTIONS_DIR . '/functions.php' );
+	require_once( FUNCTIONS_DIR . '/custom-style.php' );
+	require_once( ADMIN_DIR . '/interface-themedefaults-value.php' );
+	require_once( ADMIN_DIR . '/theme-option.php' );
+	require_once( ADMIN_DIR . '/interface-metaboxes.php' );
 	
 
 	/** Load Shortcodes */
-	require_once( INTERFACE_SHORTCODES_DIR . '/interface-footer_info.php' );
+	require_once( SHORTCODES_DIR . '/interface-footer_info.php' );
 
 	/** Load Structure */
-	require_once( INTERFACE_STRUCTURE_DIR . '/header-extensions.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/sidebar-extensions.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/footer-extensions.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/content-extensions.php' );
+	require_once( STRUCTURE_DIR . '/header-extensions.php' );
+	require_once( STRUCTURE_DIR . '/sidebar-extensions.php' );
+	require_once( STRUCTURE_DIR . '/footer-extensions.php' );
 	
-	require_once( INTERFACE_STRUCTURE_DIR . '/landing.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/menu.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/masonry.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/testimonial.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/visual-highlight.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/case-study.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/quote.php' );
-	require_once( INTERFACE_STRUCTURE_DIR . '/contact.php' );
+	require_once( STRUCTURE_DIR . '/landing.php' );
+	require_once( STRUCTURE_DIR . '/menu.php' );
+	require_once( STRUCTURE_DIR . '/masonry.php' );
+	require_once( STRUCTURE_DIR . '/testimonial.php' );
+	require_once( STRUCTURE_DIR . '/visual-highlight.php' );
+	require_once( STRUCTURE_DIR . '/case-study.php' );
+	require_once( STRUCTURE_DIR . '/quote.php' );
+	require_once( STRUCTURE_DIR . '/contact.php' );
 
 	/** Load Widgets and Widgetized Area */
-	require_once( INTERFACE_WIDGETS_DIR . '/interface_widgets.php' );
+	require_once( WIDGETS_DIR . '/interface_widgets.php' );
 }
 
-add_action( 'interface_init', 'interface_core_functionality', 20 );
+add_action( 'atg_init', 'core_functionality', 20 );
 /**
  * Adding the core functionality of WordPess.
  *
  * @since 1.0
  */
-function interface_core_functionality() {
+function core_functionality() {
 	/** 
 	 * interface_add_functionality hook
 	 *
 	 * Adding other addtional functionality if needed.
 	 */
-	do_action( 'interface_add_functionality' );
-
-	// Add default posts and comments RSS feed links to head
-	add_theme_support( 'automatic-feed-links' );
+	do_action( 'atg_add_functionality' );
 
 	/*
 	* Let WordPress manage the document title.
@@ -145,7 +106,7 @@ function interface_core_functionality() {
 	add_theme_support( 'post-thumbnails' ); 
  
 	// This theme uses wp_nav_menu() in header menu location.
-	register_nav_menu( 'primary', __( 'Primary Menu', 'interface' ) );
+	register_nav_menu( 'primary', 'Primary Menu' );
 
 	// Add Interface custom image sizes
 	add_image_size( 'featured', 670, 300, true );
@@ -155,22 +116,14 @@ function interface_core_functionality() {
 	add_image_size( 'gallery', 474, 342, true ); 				// used to show gallery all images
 	add_image_size( 'icon', 100, 100, true );						//used for icon on business layout
 	
-
-	/**
-	 * This theme supports custom background color and image
-	 */
-	add_theme_support( 'custom-background' );
-
-	// Adding excerpt option box for pages as well
-	add_post_type_support( 'page', 'excerpt' );
 }
 
 /** 
- * interface_init hook
+ * atg_init hook
  *
  * Hooking some functions of functions.php file to this action hook.
  */
-do_action( 'interface_init' );
+do_action( 'atg_init' );
 
 add_action( 'init', 'atg_init' );
 
