@@ -884,7 +884,7 @@ img#wpstats {
 
 .grid.full-width {
 	width: 99%;
-	margin: 1% 0 0 1%;
+	margin: 0 0 0 1%;
 }
 
 .grid .grid-size {
@@ -1322,7 +1322,7 @@ img#wpstats {
 }
 
 #section-quote .quote-bg {
-	background-image: url( 'images/Quote.jpg' );
+	background-image: url( 'images/quote.jpg' );
 	background-position: center;
 	background-size: auto 100%;
 }

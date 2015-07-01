@@ -11,10 +11,10 @@
 		];
 		$categories = get_categories();
 		if( !empty( $categories ) ) {
-			$output .= '<li class="category-filter" data-category="All"><a href="">All</a></li>';
+			$output .= '<li class="category-filter" data-category="All"><a href="#section-grid">All</a></li>';
 			foreach( $categories as $category ) {
 				if( !in_array( $category->slug, $skip ) ) {
-					$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="">' . $category->name . '</a></li>';
+					$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="#section-grid">' . $category->name . '</a></li>';
 				}
 			}
 		}

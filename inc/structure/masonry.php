@@ -76,6 +76,10 @@ function render_atg_masonry( $postType = false ) {
 			$imgUrl = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' )[ 0 ];
 		}
 
+		if( !$text && !$postType && ( !isset( $fullImgUrl ) || is_null( $fullImgUrl ) ) )  {
+			$thumbOnly = true;
+		}
+
 		$output .= '<article id="' . $id . '" class="' . implode( " ", $classes ) . '">';
 		if( $isAboutContent ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');">' . ( $postType ? '' : '<h6>' . get_the_title( $id ) . '</h6>' ) . '<p>' .get_the_content() . '</p>' . ( $postType ? '<span class="spade"></span>' : '' ) . '</div>';
@@ -85,8 +89,8 @@ function render_atg_masonry( $postType = false ) {
 			$output .= '<div class="grid-item-wrapper"><div class="title"><p>' . get_the_title() . '</p><p class="emphasize">' . get_the_content() . '</p><span class="stars"></span></div></div>';
 		} else if( $text ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></div>';
-		}else {
-			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
+		} else {
+			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox' . ( $postType == 'case_study' ? '[case_study]' : '' ) . '" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
 		}
 		$output .= '</article>';
 

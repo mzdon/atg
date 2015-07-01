@@ -24,15 +24,15 @@ jQuery( function() {
 	} )();
 		
 	// Menu smooth scroll
-	jQuery( '.nav-menu' ).localScroll( 800 );
+	jQuery( '.nav-menu' ).localScroll( { offset: -100, duration: 800 } );
 	
 	var $window = jQuery( window ),
 		navSection = jQuery( '#section-menu' );
 		
 	function checkStickyMenu() {
-		if( !navSection.hasClass( 'sticky' ) && window.scrollY > window.innerHeight ) {
+		if( !navSection.hasClass( 'sticky' ) && window.scrollY > jQuery( '#section-landing' ).height() ) {
 			navSection.addClass( 'sticky' );
-		} else if( navSection.hasClass( 'sticky' ) && window.scrollY <= window.innerHeight ) {
+		} else if( navSection.hasClass( 'sticky' ) && window.scrollY <= jQuery( '#section-landing' ).height() ) {
 			navSection.removeClass( 'sticky' );
 		}
 	};
