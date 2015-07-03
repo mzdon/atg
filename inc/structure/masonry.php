@@ -90,7 +90,7 @@ function render_atg_masonry( $postType = false ) {
 		} else if( $text ) {
 			$output .= '<div class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></div>';
 		} else {
-			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox' . ( $postType == 'case_study' ? '[case_study]' : '' ) . '" class="grid-item-wrapper" title="' . get_the_title( $id ) . '" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
+			$output .= '<a href="' . ( $fullImgUrl ? $fullImgUrl : $imgUrl ) . '" rel="lightbox' . ( $postType == 'case_study' ? '[case_study]' : '' ) . '" class="grid-item-wrapper" style="background-image: url(\'' . $imgUrl . '\');"></a>'; /*<div class="shadow"></div><div class="title"><h2>' . get_the_title( $id ) . '</h2><p>' .get_the_content() . '</p></div></a>';*/
 		}
 		$output .= '</article>';
 

@@ -1024,6 +1024,7 @@ img#wpstats {
 }
 
 .about-artisan.content p {
+	font-family: sans-serif;
 	color: #eee;
 	font-size: 0.8em;
 	margin-bottom: 56px;
@@ -1034,7 +1035,7 @@ img#wpstats {
 /* =Visual Highlight Slider
 ----------------------------------------------- */
 .highlight-slider, .highlight-image {
-	height: 440px;
+	height: 680px;
 	position: relative;
 }
 
@@ -1279,6 +1280,7 @@ img#wpstats {
 }
 
 #section-case-study .about-artisan.content p {
+	font-family: sans-serif;
 	margin: 50px auto;
 	position: relative;
 	z-index: 10;
@@ -1404,4 +1406,9 @@ img#wpstats {
 	font-size: 0.75em;
 	line-height: 1em;
 	padding: 0 1em 1em;
+}
+
+/* Light-box overlay */
+div#overlay {
+	background-color: #fff;
 }
