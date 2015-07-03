@@ -643,6 +643,19 @@ img#wpstats {
 	z-index: 101;
 }
 
+#section-menu .menu-icon {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	margin-left: 20px;
+	height: 62px;
+	width: 62px;
+	background-image: url( 'images/atg_logo_simple.png' );
+	background-position: center;
+	background-size: contain;
+}
+
 #section-menu li {
 	float: left;
 	position: relative;
@@ -727,9 +740,11 @@ img#wpstats {
 
 .atg-menu {
 	text-align: center;
+	position: relative;
 }
 
 .nav-menu {
+	margin-left: 82px;
 	display: inline-block;
 }
 

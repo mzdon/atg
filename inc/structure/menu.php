@@ -2,7 +2,7 @@
 	add_action( 'atg_menu', 'render_atg_menu' );
 	
 	function render_atg_menu() {
-		$output =  '<section id="section-menu"><button class="menu-toggle">Responsive Menu</button><nav><div class="atg-menu"><ul class="nav-menu">';
+		$output =  '<section id="section-menu"><button class="menu-toggle">Responsive Menu</button><nav><div class="atg-menu"><span class="menu-icon"></span><ul class="nav-menu">';
 		
 		$skip = [
 			'uncategorized',
