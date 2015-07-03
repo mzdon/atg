@@ -160,6 +160,26 @@ jQuery( function() {
 			}
 		})( $grid, $filters[ i ] );
 	}
+	var $filterParents = jQuery( '.category-parent' );
+	for( var i = 0, len = $filterParents.length; i < len; i++ ) {
+		( function( filterParent ) {
+			var fn = function( e ) {
+				e.preventDefault();
+				e.stopPropagation();
+
+				if( this.className.indexOf( 'active' ) > -1 ) {
+					jQuery( this ).removeClass( 'active' );
+				} else {
+					jQuery( this ).addClass( 'active' );
+				}
+			}
+			if( filterParent.addEventListener ) {
+				filterParent.addEventListener( 'click', fn );
+			} else {
+				filter.attachEvent( 'onclick' , fn );
+			}
+		} )( $filterParents[ i ] );
+	}
 
 	var $caseStudy = jQuery( '#section-case-study .grid' );
 	$caseStudy.masonry({

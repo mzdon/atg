@@ -9,14 +9,42 @@
 			'text',
 			'no-lightbox'
 		];
+		$applications = [
+			'tilework',
+			'masonry',
+			'flooring',
+			'hardscaping'
+		];
+		$locations = [
+			'bathroom',
+			'kitchen',
+			//'living-room',
+			'homes',
+			'outdoor'
+		];
+
 		$categories = get_categories();
 		if( !empty( $categories ) ) {
-			$output .= '<li class="category-filter" data-category="All"><a href="#section-grid">All</a></li>';
+			$output .= '<li class="category-filter" data-category="All"><a href="#section-grid">View All</a></li>';
+			$applicationsOutputStart = '<li class="category-parent"><a href="">Applications</a><ul>';
+			$applicationsOutput = '';
+			$applicationsOutputEnd = '</ul></li>';
+			$locationsOutputStart = '<li class="category-parent"><a href="">Locations</a><ul>';
+			$locationsOutput = '';
+			$locationsOutputEnd = '</ul></li>';
 			foreach( $categories as $category ) {
-				if( !in_array( $category->slug, $skip ) ) {
-					$output .= '<li class="category-filter" data-category="' . $category->slug . '"><a href="#section-grid">' . $category->name . '</a></li>';
+				$str = '<li class="category-filter" data-category="' . $category->slug . '"><a href="#section-grid">' . $category->name . '</a></li>';
+				if( in_array( $category->slug, $applications ) ) {
+					$applicationsOutput .= $str;
+				} else if ( in_array( $category->slug, $locations ) ) {
+					$locationsOutput .= $str;
+				} else if( !in_array( $category->slug, $skip ) ) {
+					$output .= $str;
 				}
+				unset( $str );
 			}
+			$output .= $applicationsOutputStart . $applicationsOutput . $applicationsOutputEnd;
+			$output .= $locationsOutputStart . $locationsOutput . $locationsOutputEnd;
 		}
 		
 		$args = array(

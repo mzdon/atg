@@ -141,13 +141,48 @@
 		padding: 10px 0;
 		height: inherit;
 	}
+	#section-menu .category-parent > a:before {
+		content: '';
+		display: inline-block;
+		position: relative;
+		vertical-align: middle;
+		left: -10px;
+		height: 16px;
+		width: 16px;
+		background-image: url( '../images/arrow_right.png' );
+		background-position: center;
+		background-size: contain;
+		-ms-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-webkit-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	#section-menu .category-parent.active > a:before {
+		-webkit-transform: rotate(0.25turn);
+		-moz-trasnform: rotate(0.25turn);
+		-ms-trasnform: rotate(0.25turn);
+		-transform: rotate(0.25turn);
+	}
 	/* Dropdown */
-	#section-menu ul li ul,
-	#section-menu ul li:hover ul ul,
-	#section-menu ul ul li:hover ul ul,
-	#section-menu ul ul ul li:hover ul ul,
-	#section-menu ul ul ul ul li:hover ul ul {
+	#section-menu ul li:hover ul,
+	#section-menu ul ul li:hover ul,
+	#section-menu ul ul ul li:hover ul,
+	#section-menu ul ul ul ul li:hover ul,
+	#section-menu ul ul ul ul ul li:hover ul {
+		display: none;
+	}
+	#section-menu .category-parent ul {
+		height: 0;
+		-ms-transition: all 0.3s ease-out;
+		-moz-transition: all 0.3s ease-out;
+		-webkit-transition: all 0.3s ease-out;
+		-o-transition: all 0.3s ease-out;
+		transition: all 0.3s ease-out;
+	}
+	#section-menu .category-parent.active ul {
 		display: block;
+		height: auto;
 	}
 	#section-menu ul li ul {
 		position: inherit;
@@ -158,18 +193,8 @@
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
-	#section-menu ul li ul li a,
-	#section-menu ul li.current-menu-item ul li a,
-	#section-menu ul li ul li.current-menu-item a,
-	#section-menu ul li.current_page_ancestor ul li a,
-	#section-menu ul li.current-menu-ancestor ul li a,
-	#section-menu ul li.current_page_item ul li a {
+	#section-menu ul li ul li a {
 		padding: 10px 0 10px 15px;
-	}
-	#section-menu ul li ul li a:hover,
-	#section-menu ul li ul li:hover > a,
-	#section-menu ul li.current-menu-item ul li a:hover {
-		background-color: inherit;
 	}
 	#section-menu ul li ul li ul {
 		left: 0;
@@ -218,9 +243,25 @@
 	.grid-item.about-artisan.content.width-2  {
 		width: 99%;
 	}
+
+	.grid-item.about-artisan.content.height-3,
+	.grid-item.capabilities.height-2,
+	.grid-item.content.height-2 {
+		height: auto;
+	}
+
+	.grid-item.about-artisan.content.height-3 .grid-item-wrapper,
+	.grid-item.capabilities.height-2 .grid-item-wrapper,
+	.grid-item.content.height-2 .grid-item-wrapper {
+		position: relative;
+	}
 	
 	.grid-item.height-2, .grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 450px;
+	}
+
+	#section-case-study .about-artisan.content p {
+		margin: 10px auto 90px;
 	}
 
 	#section-testimonial .main {
@@ -305,7 +346,7 @@
 	}
 	
 	.grid-item.about-artisan.content.height-3 {
-		height: 500px;
+		//height: 500px;
 	}
 
 	#section-quote {
@@ -322,8 +363,8 @@
 }
 
 @media only screen and (min-width: 326px) and (max-width: 520px) {
-	.grid-item.about-artisan.content.height-2 {
-		height: 500px;
+	.grid-item.about-artisan.content.height-3 {
+		//height: 600px;
 	}
 	
 	.grid-item.about-artisan.content h6 {
@@ -357,7 +398,7 @@
 	}
 	
 	.grid-item.about-artisan.content.height-3 {
-		height: 660px;
+		//height: 660px;
 	}
 	
 	.grid-item.about-artisan.content h6 {
