@@ -7,14 +7,13 @@
 		$options = $interface_theme_setting_value;
 
 		$output = '<section id="section-landing" class="section-landing parallax featured-slider">';
-		$output .= '<video src="' . get_template_directory_uri() . '/videos/header.mp4" autoplay loop>Your browser does not support the <code>video</code> html tag!</video>';
+		$output .= '<video src="' . get_template_directory_uri() . '/videos/header.mp4" loop>Your browser does not support the <code>video</code> html tag!</video>';
 		$output .= '</section>';
 		echo $output;
 
-		if( /*!empty( $options[ 'featured_post_slider' ] )*/false ) {
+		/*if( !empty( $options[ 'featured_post_slider' ] ) ) {
 			$interface_featured_sliders .= '<section id="section-landing" class="section-landing parallax featured-slider"><div class="slider-cycle">';
-			
-			$interface_featured_sliders .= '<video src="' . get_template_directory_uri() . '/videos/header.mp4" autoplay loop>Failure</video>';
+
 			foreach( $options[ 'featured_post_slider' ] as $i => $url ) {
 
 				if( $url == '' ) {
@@ -55,7 +54,7 @@
 			$output .= get_bloginfo( 'description' );
 			$output .= '</div></div></div></section>';
 			echo $output;
-		}
+		}*/
 	}
 	
 ?>

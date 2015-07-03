@@ -30,6 +30,7 @@
 		( function( $ ) {
 			$( window ).load( function() {
 				$( '#loading-cover' ).fadeOut( 1000 );
+				$( '#section-landing video' )[ 0 ].play();
 			} );
 		})( jQuery );
 	</script>
