@@ -2,13 +2,6 @@
 ----------------------------------------------- */
 /* All Tablet Portrait size smaller than standard 1079 (devices and browsers) */
 @media only screen and (max-width: 1078px) {
-	.container,
-	.narrow-layout .wrapper {
-		width: 708px;
-	}
-	.narrow-layout .container {
-		width: 668px;
-	}
 	.clearfix-third,
 	.clearfix-fourth {
 		clear: none;
@@ -39,7 +32,7 @@
 	}
 
 	.grid-item.width-3, .grid-item.about-artisan.content.width-2  {
-		width: 74%;
+		width: 100%;
 	}
 
 	.grid-item.width-4, .grid-item.width-5 {
@@ -106,10 +99,12 @@
 		clear: both;
 		float: none;
 	}
-	.nav-menu {
+	.nav-menu, 
+	#section-menu .atg-menu > a {
 		display: none;
 	}
-	.toggled-on .nav-menu {
+	.toggled-on .nav-menu,
+	#section-menu.toggled-on .atg-menu > a {
 		display: block;
 	}
 	#section-menu {
@@ -253,13 +248,13 @@
 		width: 99%;
 	}
 
-	.grid-item.about-artisan.content.height-3,
+	.grid-item.about-artisan.content.height-2,
 	.grid-item.capabilities.height-2,
 	.grid-item.content.height-2 {
 		height: auto;
 	}
 
-	.grid-item.about-artisan.content.height-3 .grid-item-wrapper,
+	.grid-item.about-artisan.content.height-2 .grid-item-wrapper,
 	.grid-item.capabilities.height-2 .grid-item-wrapper,
 	.grid-item.content.height-2 .grid-item-wrapper {
 		position: relative;
@@ -350,7 +345,7 @@
 		height: 220px;
 	}
 	
-	.grid-item.about-artisan.content.height-3 {
+	.grid-item.about-artisan.content.height-2 {
 		//height: 500px;
 	}
 
@@ -368,7 +363,7 @@
 }
 
 @media only screen and (min-width: 326px) and (max-width: 520px) {
-	.grid-item.about-artisan.content.height-3 {
+	.grid-item.about-artisan.content.height-2 {
 		//height: 600px;
 	}
 	
@@ -406,7 +401,7 @@
 		height: 220px;
 	}
 	
-	.grid-item.about-artisan.content.height-3 {
+	.grid-item.about-artisan.content.height-2 {
 		//height: 660px;
 	}
 	

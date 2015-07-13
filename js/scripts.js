@@ -21,10 +21,21 @@ jQuery( function() {
 		jQuery( '.menu-toggle' ).on( 'click', function() {
 			nav.toggleClass( 'toggled-on' );
 		} );
+
+		jQuery( '.atg-menu a[href!=""]' ).on( 'click', function() {
+			if( nav.hasClass( 'toggled-on' ) ) {
+				nav.removeClass( 'toggled-on' );
+			}
+
+			var parentCat = jQuery( '.category-parent.active' );
+			if( parentCat ) {
+				parentCat.each( function() { jQuery( this ).removeClass( 'active' ) } );
+			}
+		} );
 	} )();
 		
 	// Menu smooth scroll
-	jQuery( '.nav-menu' ).localScroll( { offset: -100, duration: 800 } );
+	jQuery( '.atg-menu' ).localScroll( { offset: -160, duration: 800 } );
 	
 	var $window = jQuery( window ),
 		navSection = jQuery( '#section-menu' );
@@ -162,6 +173,7 @@ jQuery( function() {
 	}
 	var $filterParents = jQuery( '.category-parent' );
 	for( var i = 0, len = $filterParents.length; i < len; i++ ) {
+		// active toggle
 		( function( filterParent ) {
 			var fn = function( e ) {
 				e.preventDefault();

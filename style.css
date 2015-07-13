@@ -30,14 +30,6 @@ html {
 :focus {
 	outline: 0;
 }
-::selection {
-	background: #63c6ae;
-	color: #fff;
-}
-::-moz-selection {
-	background: #63c6ae;
-	color: #fff;
-}
 ol,
 ul {
 	list-style: none;
@@ -160,7 +152,7 @@ body {
 }
 
 .wrapper > section {
-	margin: 10px 0 0 0;
+	margin: 60px 0 0 0;
 	overflow: hidden;
 }
 
@@ -643,6 +635,11 @@ img#wpstats {
 	z-index: 101;
 }
 
+/*#section-menu .menu-icon {
+	position: absolute;
+	left: 0;
+	top: 0;
+}*/
 #section-menu .menu-icon {
 	display: block;
 	position: absolute;
@@ -978,22 +975,35 @@ img#wpstats {
 }
 
 #section-grid .grid-item-wrapper .title h2,
-#section-grid .grid-item.capabilities .grid-item-wrapper .title h2 {
-	color: #eee;
+#section-grid .grid-item.capabilities .grid-item-wrapper .title h2,
+#section-grid .grid-item.capabilities .grid-item-wrapper .title h3 {
 	font-size: 1.625em;
 	line-height: 1em;
 }
 
+#section-grid .grid-item.capabilities .grid-item-wrapper .title h2 {
+	color: #eee;
+}
+
 #section-grid .capabilities .title ul {
+	font-family: sans-serif;
 	list-style: circle inside;
 	text-align: left;
 	margin-left: 20px;
 	color: #eee;
+	font-size: 0.9em;
+	text-transform: none;
+}
+
+#section-grid .capabilities .title ul li {
+	margin-bottom: 8px;
 }
 
 #section-grid .grid-item.capabilities .grid-item-wrapper .title p {
 	color: #eee;
-	font-size: 100%;
+	font-size: 0.9em;
+	text-align: left;
+	margin-left: 20px;
 }
 
 #section-grid .grid-item.capabilities .title {
@@ -1042,7 +1052,7 @@ img#wpstats {
 #section-grid .grid-item.text p,
 #section-grid .grid-item.text .title h2 {
 	color: #5c0f09;
-	font-size: 3em;
+	font-size: 2.5em;
 	line-height: 1em;
 }
 
@@ -1060,21 +1070,45 @@ img#wpstats {
 }
 
 .about-artisan.content h6 {
-	margin-top: 66px;
-	margin-bottom: 10px;
+	//margin-top: 66px;
+	//margin-bottom: 10px;
+	margin: 10px auto;
 }
 
 .about-artisan.content p {
 	font-family: sans-serif;
 	color: #eee;
 	font-size: 0.9em;
-	margin-bottom: 56px;
+	//margin-bottom: 56px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	padding-top: 10px;
 }
 
 /* =Visual Highlight Slider
 ----------------------------------------------- */
+#section-visual-highlight .slides {
+	position: relative;
+}
+
+#section-visual-highlight .slides .caption {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+#section-visual-highlight .slides .caption p {
+	color: #fff;
+	font-size: 5.5em;
+	text-transform: uppercase;
+	text-align: center;
+	max-width: 400px;
+	margin: 0 auto;
+	font-family: 'PlantinMT-Light';
+}
+
 .highlight-slider, .highlight-image {
 	height: 680px;
 	position: relative;
@@ -1394,6 +1428,7 @@ img#wpstats {
 	position: relative;
 	width: 100%;
 	text-align: right;
+	color: #150000;
 }
 
 #section-quote .quote-text p:before {
@@ -1449,7 +1484,15 @@ img#wpstats {
 	padding: 0 1em 1em;
 }
 
-/* Light-box overlay */
+.copyright p {
+	margin: 0;
+}
+
+/* Light-box */
 div#overlay {
 	background-color: #fff;
+}
+#lightbox {
+	position: fixed !important;
+	top: 0px !important;
 }
