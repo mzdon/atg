@@ -15,7 +15,7 @@
 					continue;
 				}
 
-				$match = preg_match( "/\/([^\/]*)\.(?:png|jpg)$/", $url, $matches );
+				/*$match = preg_match( "/\/([^\/]*)\.(?:png|jpg)$/", $url, $matches );
 				
 				if( $match ) {
 					$key = $matches[ 1 ];
@@ -26,17 +26,17 @@
 					'post_mime_type' => 'image',
 					'name' => $key
 				);
-				$posts = get_posts( $args );
+				$posts = get_posts( $args );*/
 				$highlight_sliders .= '<div class="slides"><figure class="highlight-image highlight-image'.$i.'"></figure>';
 				
-				if( $posts[ 0 ]->post_excerpt ) {
+				/*if( $posts[ 0 ]->post_excerpt ) {
 					$highlight_sliders .= '<div class="caption"><p>' . $posts[ 0 ]->post_excerpt . '</p></div>';
 					
-					/*if( $posts[ 0 ]->post_content ) {
+					if( $posts[ 0 ]->post_content ) {
 						$highlight_sliders .= '<div class="name">' . $posts[ 0 ]->post_content . '</div>';
 					}
-					$highlight_sliders .= '</div>';*/
-				}
+					$highlight_sliders .= '</div>';
+				}*/
 				$highlight_sliders .= '</div><!-- .slides -->';
 			}
 			$highlight_sliders .= '</div><!-- .slider-cycle --><!--<nav id="highlight-controllers" class="clearfix"></nav>--><!-- #controllers --></section><!-- .featured-slider -->';

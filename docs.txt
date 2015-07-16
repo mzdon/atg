@@ -1,8 +1,6 @@
 Post Instructions
 * Assign categories for filtering
-* By default, posts with a category will display featured image and hidden title and content that will dispaly on hover
-* No catagory ( uncategorized ) will display the featured image and nothing else, no title or content
-* Text category will display background image and text always, hover or not
+* Text category will display background image and text from post always.  It's best to wrap this text with a <p> tag or add some markup if need be.
 * About Artisan is a special category for the About Artisan section, it's best to not to assign anything else that category
 	It handles the frame background and other special reposive sizing because this is a unique text based grid item
 * Masonry height and width are integers
@@ -14,7 +12,3 @@ Post Instructions
 	It's an integer between 0 and 100
 	Higher numbers are show higher
 	The order is not guaranteed, it's just tries to follow the order... several factors are in play here
-
-Landing Slider
-* Options found in Appearance > Theme Options > Slider Options
-* If the image used as one of the slider images, the title

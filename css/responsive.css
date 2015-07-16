@@ -46,9 +46,15 @@
 	.grid-item.height-3, .grid-item.height-4, .grid-item.height-5 {
 		height: 680px;
 	}
+
+	#section-quote .quote-text h1 {
+		font-size: 3.5em;
+		margin-top: 0.8em;
+	}
 	
 	#section-contact {
-		width: 860px;
+		width: 98%;
+		margin: 0 1%;
 	}
 }
 
@@ -290,6 +296,12 @@
 		top: auto;
 		bottom: 240px;
 	}
+
+	#section-quote .quote-text h1,
+	.banner p {
+		font-size: 3em;
+		margin-top: 0.9em;
+	}
 	
 	#section-contact {
 		width: 98%;
@@ -353,10 +365,6 @@
 		height: 220px;
 	}
 
-	#section-quote .quote-text h1 {
-		font-size: 2em;
-	}
-
 	#section-quote .quote-text p {
 		font-size: 0.75em;
 	}
@@ -377,6 +385,11 @@
 
 	#section-case-study .about-artisan.content p {
 		margin: 10px auto 90px;
+	}
+
+	#section-quote .quote-text h1,
+	.banner p {
+		font-size: 2.25em;
 	}
 }
 

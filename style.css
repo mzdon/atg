@@ -1386,7 +1386,7 @@ img#wpstats {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 440px;
+	height: 220px;
 }
 
 #section-quote > div {
@@ -1401,12 +1401,10 @@ img#wpstats {
 #section-quote .quote-bg {
 	background-image: url( 'images/quote.jpg' );
 	background-position: center;
-	background-size: auto 100%;
 }
 
 #section-quote .quote-text {
 	position: relative;
-	left: -99999px;
 	width: 80%;
 	margin: 0 auto;
 	text-align: center;
@@ -1414,12 +1412,12 @@ img#wpstats {
 }
 
 #section-quote .quote-text h1 {
-	font-size: 5em;
+	font-size: 4.5em;
 	line-height: 1em;
 	display: inline-block;
 	vertical-align: middle;
 	position: relative;
-	padding: 1.5em 0 0;
+	padding: 0.25em 0 0;
 }
 
 #section-quote .quote-text p {
